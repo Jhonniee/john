@@ -1,0 +1,1850 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta
+      name="google-site-verification"
+      content="YrSPeuIzXCngydz0oweIWJJl00j9VFwT8kOknscwhcE"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixTogether - Tri-Continental Production Core</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "FixTogether",
+        "operatingSystem": "iOS, Android, Windows, macOS, Linux",
+        "applicationCategory": "BusinessApplication, LifestyleApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "14820"
+        }
+      }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        transition:
+          background-color 0.5s ease,
+          color 0.5s ease;
+      }
+      .heading-font {
+        font-family: "Space Grotesk", sans-serif;
+      }
+      .evolve-transition {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .text-glow-emerald {
+        text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+      }
+      @keyframes particle-burst {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.3);
+          opacity: 0;
+        }
+      }
+      .particle-fire {
+        animation: particle-burst 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+      }
+    </style>
+  </head>
+  <body
+    id="master-body"
+    class="bg-[#03050a] text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden evolve-transition"
+  >
+    <header
+      class="bg-[#070a14]/90 border-b border-emerald-950/40 px-6 py-4 sticky top-0 z-50 shadow-2xl backdrop-blur-md evolve-transition"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-4"
+      >
+        <div class="flex items-center space-x-3.5 flex-grow w-full lg:w-auto">
+          <div
+            id="brand-logo"
+            class="bg-emerald-500 text-slate-950 p-2.5 rounded-2xl shadow-lg shadow-emerald-400/40 evolve-transition shrink-0 scale-105"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
+            </svg>
+          </div>
+          <div class="truncate">
+            <div class="flex items-center gap-2 flex-wrap">
+              <h1
+                class="text-xl font-black text-white heading-font tracking-tight text-glow-emerald"
+              >
+                FixTogether
+              </h1>
+              <span
+                id="ai-status-tag"
+                class="bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[9px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full animate-pulse"
+                >Tri-Continental Version</span
+              >
+            </div>
+            <p class="text-[11px] text-slate-400 truncate">
+              Multi-Client • Zero-Inventory Dropshipping • Global Compliance
+              Engine
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex bg-slate-900 border border-slate-800 p-1 rounded-2xl gap-1"
+        >
+          <button
+            id="reg-btn-us"
+           <button 
+                id="reg-btn-us"
+                onclick="switchRegion('us')"
+                class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all"
+            >
+                US USA
+            </button>
+            <button 
+                id="reg-btn-eu"
+                onclick="switchRegion('eu')"
+                class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all"
+            >
+                EU Europe
+            </button>
+            <button 
+                id="reg-btn-as"
+                onclick="switchRegion('as')"
+                class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all"
+            >
+                AS Asia
+            </button>
+            <button 
+                id="reg-btn-af"
+                onclick="switchRegion('af')"
+                class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all"
+            >
+                AF Africa
+            </button>
+            <button 
+                id="reg-btn-na"
+                onclick="switchRegion('na')"
+                class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all"
+            >
+                NA N. America
+            </button>
+            <button 
+                id="reg-btn-sa"
+                onclick="switchRegion('sa')"
+                class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all"
+            >
+                SA S. America
+            </button>
+            <button 
+                id="reg-btn-oc"
+                onclick="switchRegion('oc')"
+                class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all"
+            >
+                OC Oceania
+            </button>
+        </div>
+
+        <div
+          class="flex flex-wrap items-center gap-3 bg-slate-950 p-2.5 rounded-2xl border border-slate-800/80 text-[11px] justify-between lg:justify-start w-full lg:w-auto"
+        >
+          <div class="flex items-center space-x-1.5 px-2">
+            <span
+              class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"
+            ></span>
+            <span class="text-slate-400">Active Node:</span>
+            <span id="database-status" class="font-bold text-white"
+              >Global-Sync</span
+            >
+          </div>
+          <div
+            class="flex items-center space-x-1.5 px-2 border-l border-slate-800"
+          >
+            <span id="label-xp-metric" class="text-slate-400"
+              >XP Accumulated:</span
+            >
+            <span id="header-xp" class="font-bold text-purple-400"
+              >1,420 XP</span
+            >
+          </div>
+          <div
+            class="flex items-center space-x-1.5 px-2 border-l border-slate-800"
+          >
+            <span id="label-rev-metric" class="text-slate-400"
+              >Revenue Yield:</span
+            >
+            <span id="header-revenue" class="font-bold text-emerald-400"
+              >$2,500.00</span
+            >
+          </div>
+          <div
+            class="flex items-center space-x-1.5 px-2 border-l border-slate-800"
+          >
+            <span id="label-offset-metric" class="text-slate-400"
+              >Offsets Pool:</span
+            >
+            <span id="metric-offsets" class="font-bold text-teal-400"
+              >4,812.00 kg</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="flex bg-slate-950 p-1.5 rounded-2xl border border-slate-800/80 text-xs w-full lg:w-auto justify-center shrink-0"
+        >
+          <button
+            onclick="changeActiveView('consumer')"
+            id="nav-btn-consumer"
+            class="px-3.5 py-1.5 rounded-xl font-bold bg-emerald-500 text-slate-950 transition-all flex-1 lg:flex-none"
+          >
+            🌐 Consumer Hub
+          </button>
+          <button
+            onclick="changeActiveView('mobile')"
+            id="nav-btn-mobile"
+            class="px-3.5 py-1.5 rounded-xl font-bold text-slate-400 transition-all flex-1 lg:flex-none"
+          >
+            📱 Mobile App
+          </button>
+          <button
+            onclick="changeActiveView('corporate')"
+            id="nav-btn-corporate"
+            class="px-3.5 py-1.5 rounded-xl font-bold text-slate-400 transition-all flex-1 lg:flex-none"
+          >
+            🏢 ESG Console
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section
+      id="global-sponsor-slot"
+      class="bg-gradient-to-r from-teal-950/20 via-slate-900 to-emerald-950/20 border-b border-emerald-950/10 py-3 px-6 text-center text-xs text-emerald-400 font-medium"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3"
+      >
+        <span
+          class="text-[10px] text-slate-400 uppercase font-black tracking-widest flex items-center gap-1.5 shrink-0"
+        >
+          📢 Global Carbon Sponsor:
+        </span>
+        <span
+          id="sponsor-banner-text"
+          class="font-bold hover:underline cursor-pointer"
+          >IKEA Sustainability — Direct funding of hyperlocal community tool
+          lockers and recycling networks</span
+        >
+        <span
+          class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-black uppercase shrink-0"
+          >Active Campaign</span
+        >
+      </div>
+    </section>
+
+    <div
+      id="master-toast"
+      class="fixed top-24 right-6 z-50 bg-emerald-600 text-white font-black text-xs px-5 py-3 rounded-xl shadow-2xl transition-all duration-300 opacity-0 pointer-events-none transform translate-y-2"
+    >
+      Ecosystem alert message.
+    </div>
+
+    <div
+      id="celebration-container"
+      class="fixed inset-0 pointer-events-none z-50 overflow-hidden flex items-center justify-center"
+    ></div>
+
+    <main class="flex-grow w-full max-w-7xl mx-auto p-4 md:p-8">
+      <section id="view-consumer" class="space-y-6">
+        <div
+          id="hero-banner"
+          class="bg-gradient-to-br from-emerald-950/30 via-slate-900/40 to-indigo-950/20 p-8 rounded-3xl border border-emerald-500/20 shadow-2xl shadow-emerald-500/5 evolve-transition flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden"
+        >
+          <div class="space-y-2 flex-1">
+            <span
+              id="hero-mini-tag"
+              class="text-[9px] font-extrabold uppercase text-emerald-400 tracking-widest evolve-transition"
+              >✨ Tri-Continental Operations Live</span
+            >
+            <h2
+              id="hero-title"
+              class="text-2xl font-black text-white heading-font tracking-tight"
+            >
+              Your neighbors are borrowing tools and saving carbon right now.
+            </h2>
+            <p
+              id="hero-desc"
+              class="text-xs text-slate-400 leading-relaxed max-w-xl font-light"
+            >
+              Join the green revolution. Every diagnostic, repair completed, or
+              tool shared increases your neighborhood XP level and mints carbon
+              tokens on the live ledger.
+            </p>
+
+            <div class="flex items-center space-x-2 mt-4">
+              <span
+                id="hero-level-badge"
+                class="bg-purple-500 text-white font-bold text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider shadow-lg shadow-purple-500/20"
+              >
+                Level 4: Green Alchemist
+              </span>
+              <span id="hero-level-sub" class="text-slate-400 text-xs"
+                >Progression: 1,420 / 2,000 XP</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="flex items-center space-x-4 shrink-0 bg-slate-950/40 p-4 rounded-2xl border border-slate-800"
+          >
+            <div class="relative w-16 h-16 flex items-center justify-center">
+              <svg
+                class="w-full h-full transform -rotate-90"
+                viewBox="0 0 36 36"
+              >
+                <path
+                  class="text-slate-800"
+                  stroke-width="3"
+                  stroke="currentColor"
+                  fill="none"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  id="progress-circle-path"
+                  class="text-emerald-400"
+                  stroke-dasharray="71, 100"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke="currentColor"
+                  fill="none"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+              </svg>
+              <span
+                id="progress-text"
+                class="absolute text-white font-bold text-xs"
+                >71%</span
+              >
+            </div>
+            <div>
+              <p
+                id="label-district-goal"
+                class="text-[9px] uppercase font-black text-slate-500"
+              >
+                District Goal
+              </p>
+              <p id="label-district-sub" class="text-xs font-bold text-white">
+                Landfill Avoided
+              </p>
+              <p id="label-district-val" class="text-[11px] text-emerald-400">
+                712.5 kg / 1000 kg
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div
+            id="content-container"
+            class="lg:col-span-2 bg-slate-900/40 p-6 rounded-3xl border border-emerald-950/40 space-y-4 evolve-transition"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
+            >
+              <h3
+                id="feed-title"
+                class="text-sm font-black uppercase tracking-wider text-slate-400"
+              >
+                Neighborhood Repair Board
+              </h3>
+
+              <div
+                class="flex flex-wrap items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-900"
+              >
+                <span class="text-[9px] text-slate-500 uppercase font-black"
+                  >Friction Log:</span
+                >
+                <span
+                  id="friction-log-badge"
+                  class="text-[9px] font-black text-emerald-400"
+                  >12% Friction (Optimized)</span
+                >
+                <button
+                  onclick="injectFrictionTelemetry()"
+                  class="text-[9px] bg-slate-900 text-slate-400 hover:text-white px-2 py-0.5 rounded border border-slate-800"
+                >
+                  Inject Friction
+                </button>
+                <button
+                  onclick="triggerAutonomousUpgradeCycle()"
+                  class="text-[9px] bg-purple-500 text-white px-2 py-0.5 rounded font-black"
+                >
+                  Evolve UI
+                </button>
+              </div>
+            </div>
+
+            <div id="web-requests-feed" class="space-y-3"></div>
+          </div>
+
+          <div
+            class="bg-slate-900/60 p-6 rounded-3xl border border-slate-850 space-y-4 flex flex-col justify-between"
+          >
+            <div class="space-y-4">
+              <div
+                class="border-b border-slate-800 pb-3 flex justify-between items-center"
+              >
+                <div>
+                  <h3
+                    id="label-diagnostics-header"
+                    class="text-sm font-black uppercase tracking-wider text-emerald-400 flex items-center gap-1.5"
+                  >
+                    <span>⚡</span> Live AI Diagnostics
+                  </h3>
+                  <p
+                    id="label-diagnostics-sub"
+                    class="text-xs text-slate-400 mt-1"
+                  >
+                    Select a neighborhood request to begin diagnostics.
+                  </p>
+                </div>
+                <span
+                  id="free-queries-badge"
+                  class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2.5 py-1 rounded-full"
+                >
+                  Free System Ready
+                </span>
+              </div>
+
+              <div
+                id="diagnostic-pane"
+                class="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs font-mono min-h-[220px] flex flex-col justify-between"
+              >
+                <div id="ai-text-output" class="text-slate-500 leading-relaxed">
+                  Select an item from the neighborhood repair board on the left
+                  to start automated troubleshooting...
+                </div>
+
+                <div
+                  id="affiliate-gateway"
+                  class="hidden bg-slate-900/80 p-3.5 rounded-lg border border-emerald-500/25 space-y-2.5 mt-3"
+                >
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span
+                      id="label-affiliate-match"
+                      class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded font-black uppercase"
+                      >Part Matches Found</span
+                    >
+                    <span id="part-price" class="font-bold text-white font-mono"
+                      >$0.00</span
+                    >
+                  </div>
+                  <p id="part-name" class="text-xs font-bold text-slate-200">
+                    OEM Replacement Module
+                  </p>
+
+                  <div class="flex gap-2">
+                    <button
+                      id="affiliate-buy-btn"
+                      onclick="executeSimulatedSourcedOrder()"
+                      class="flex-grow bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
+                    >
+                      Purchase Part via Amazon Affiliate
+                    </button>
+                    <button
+                      onclick="copyTrackingLink()"
+                      class="bg-slate-800 hover:bg-slate-700 text-white px-2.5 rounded-lg"
+                      title="Copy Monetized Tracking Link"
+                    >
+                      🔗
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  id="recommerce-gateway"
+                  class="hidden bg-slate-900/80 p-3.5 rounded-lg border border-teal-500/20 space-y-2.5 mt-3"
+                >
+                  <div class="flex justify-between items-center text-[10px]">
+                    <span
+                      id="label-refurbished-match"
+                      class="bg-teal-500/10 text-teal-400 border border-teal-500/20 px-2.5 py-0.5 rounded font-black uppercase"
+                      >Refurbished Option</span
+                    >
+                    <span
+                      id="refurbished-alternative-price"
+                      class="font-bold text-white font-mono"
+                      >$119.00</span
+                    >
+                  </div>
+                  <p
+                    id="label-refurbished-title"
+                    class="text-xs font-bold text-slate-200"
+                  >
+                    Certified Pre-owned Alternative Device
+                  </p>
+                  <button
+                    id="recommerce-buy-btn"
+                    onclick="executeSimulatedRecommerceOrder()"
+                    class="w-full bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
+                  >
+                    Buy Alternative via Back Market
+                  </button>
+                </div>
+
+                <div id="paywall-gateway" class="hidden space-y-4 py-2">
+                  <div class="text-center space-y-2">
+                    <span class="text-2xl">🔒</span>
+                    <h4
+                      id="label-paywall-header"
+                      class="text-sm font-bold text-white heading-font"
+                    >
+                      Free Diagnostic Limit Reached
+                    </h4>
+                    <p
+                      id="label-paywall-desc"
+                      class="text-[11px] text-slate-400 leading-relaxed"
+                    >
+                      Upgrade to FixTogether Pro to unlock unlimited engineering
+                      blueprints, wiring schematics, and structural guides.
+                    </p>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-2">
+                    <button
+                      onclick="initiateStripePayment('single-fix')"
+                      class="bg-slate-900 hover:bg-slate-850 p-3 rounded-lg border border-slate-800 text-center transition-all"
+                    >
+                      <p
+                        id="label-pay-per-fix"
+                        class="font-bold text-white text-[11px]"
+                      >
+                        Pay-Per-Fix
+                      </p>
+                      <p
+                        id="label-pay-per-fix-val"
+                        class="text-[10px] text-slate-500 mt-0.5"
+                      >
+                        $0.99 / item
+                      </p>
+                    </button>
+                    <button
+                      onclick="initiateStripePayment('pro-monthly')"
+                      class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 p-3 rounded-lg text-center transition-all"
+                    >
+                      <p
+                        id="label-pro-membership"
+                        class="font-black text-[11px]"
+                      >
+                        FixTogether Pro
+                      </p>
+                      <p
+                        id="label-pro-membership-val"
+                        class="text-[10px] font-bold text-slate-800 mt-0.5"
+                      >
+                        $4.99 / month
+                      </p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label
+                id="label-manual-sourcing"
+                class="block text-[10px] uppercase font-black text-slate-400"
+                >Manual Device Diagnostic Search</label
+              >
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  id="manual-search-in"
+                  placeholder="e.g. Dyson battery blinking red..."
+                  class="flex-grow bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                />
+                <button
+                  onclick="executeManualSearchQuery()"
+                  class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-4 rounded-lg"
+                >
+                  Query
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          <div
+            class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-4"
+          >
+            <h4
+              id="label-top-menders"
+              class="text-xs font-black uppercase text-slate-400 tracking-wider"
+            >
+              Top Menders This Week
+            </h4>
+            <div class="space-y-2.5 text-xs">
+              <div
+                class="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-900"
+              >
+                <div class="flex items-center space-x-2">
+                  <span class="text-amber-400 font-bold">#1</span>
+                  <span class="text-white font-bold">Robert H.</span>
+                </div>
+                <span id="val-rep-robert" class="text-emerald-400 font-bold"
+                  >25 Repairs</span
+                >
+              </div>
+              <div
+                class="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-900"
+              >
+                <div class="flex items-center space-x-2">
+                  <span class="text-slate-400 font-bold">#2</span>
+                  <span class="text-white font-bold">Maria S.</span>
+                </div>
+                <span id="val-rep-maria" class="text-emerald-400 font-bold"
+                  >18 Repairs</span
+                >
+              </div>
+              <div
+                class="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-900"
+              >
+                <div class="flex items-center space-x-2">
+                  <span class="text-amber-700 font-bold">#3</span>
+                  <span class="text-white font-bold">You (Alex)</span>
+                </div>
+                <span id="val-rep-you" class="text-emerald-400 font-bold"
+                  >12 Repairs</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-4"
+          >
+            <h4
+              id="label-achievements"
+              class="text-xs font-black uppercase text-slate-400 tracking-wider"
+            >
+              Community Achievements
+            </h4>
+            <div class="space-y-2 text-xs">
+              <div
+                class="bg-slate-950 p-3 rounded-xl border border-slate-900 flex justify-between items-center"
+              >
+                <div>
+                  <p id="label-lithium-badge" class="font-bold text-white">
+                    🔋 Lithium Guardian
+                  </p>
+                  <p id="label-lithium-sub" class="text-[10px] text-slate-500">
+                    Recycle 50 battery cells
+                  </p>
+                </div>
+                <span id="val-lithium-pct" class="text-purple-400 font-black"
+                  >90% Complete</span
+                >
+              </div>
+              <div
+                class="bg-slate-950 p-3 rounded-xl border border-slate-900 flex justify-between items-center"
+              >
+                <div>
+                  <p id="label-fabric-badge" class="font-bold text-white">
+                    🧵 Fabric Savior
+                  </p>
+                  <p id="label-fabric-sub" class="text-[10px] text-slate-500">
+                    Mend 100 garment holes
+                  </p>
+                </div>
+                <span
+                  id="val-fabric-unlocked"
+                  class="text-emerald-400 font-black"
+                  >Unlocked!</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-4"
+          >
+            <h4
+              id="label-ecosystem-radar"
+              class="text-xs font-black uppercase text-slate-400 tracking-wider"
+            >
+              Ecosystem Map Simulator
+            </h4>
+            <div
+              class="bg-slate-950 rounded-xl border border-slate-900 p-4 h-32 relative overflow-hidden flex items-center justify-center"
+            >
+              <div
+                class="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px] opacity-20"
+              ></div>
+              <div
+                class="absolute top-1/4 left-1/4 w-3.5 h-3.5 bg-emerald-500 rounded-full animate-ping"
+              ></div>
+              <div
+                class="absolute top-1/4 left-1/4 w-3 h-3 bg-emerald-400 rounded-full cursor-pointer hover:scale-125"
+                onclick="showNotification('Marcus T. (Active Diagnostic Hub)')"
+              ></div>
+              <div
+                class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-indigo-500 rounded-full cursor-pointer hover:scale-125"
+                onclick="showNotification('Locker Hub #2 (Communal Depot)')"
+              ></div>
+              <div
+                class="absolute top-1/2 right-1/2 w-3.5 h-3.5 bg-purple-500 rounded-full animate-ping"
+              ></div>
+              <div
+                class="absolute top-1/2 right-1/2 w-3 h-3 bg-purple-400 rounded-full cursor-pointer hover:scale-125"
+                onclick="showNotification('Your Location')"
+              ></div>
+              <span
+                id="label-radar-proximity"
+                class="text-[10px] text-slate-500 absolute bottom-2"
+                >Hyperlocal Hub Proximity Interface</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-mobile" class="hidden max-w-sm mx-auto">
+        <div
+          class="bg-slate-900 border-[8px] border-slate-800 rounded-[38px] overflow-hidden aspect-[9/19] flex flex-col relative shadow-2xl ring-1 ring-slate-700/40"
+        >
+          <div
+            class="h-6 bg-slate-900 text-[10px] text-slate-400 flex justify-between px-6 pt-1 select-none"
+          >
+            <span>15:43</span>
+            <div
+              class="w-16 h-3.5 bg-slate-950 rounded-b-xl absolute left-1/2 -translate-x-1/2 top-0"
+            ></div>
+            <span>🔋 98%</span>
+          </div>
+
+          <div
+            class="flex-grow bg-slate-950 p-4 overflow-y-auto pb-16 space-y-4"
+          >
+            <div
+              class="flex justify-between items-center border-b border-slate-900 pb-2"
+            >
+              <div>
+                <span
+                  class="text-[9px] uppercase font-black text-emerald-400 tracking-widest"
+                  >Active Client</span
+                >
+                <h3 class="text-sm font-bold text-white heading-font">
+                  FixTogether App
+                </h3>
+              </div>
+              <span
+                class="bg-emerald-500/10 text-emerald-400 text-[9px] px-2.5 py-0.5 rounded border border-emerald-500/20 font-bold"
+                >GPS: Active</span
+              >
+            </div>
+
+            <div
+              class="bg-slate-900/60 p-3 rounded-xl border border-slate-800/80 space-y-2"
+            >
+              <h4
+                id="label-mobile-report-header"
+                class="text-[10px] uppercase font-black text-slate-400 tracking-wider"
+              >
+                Report Broken Asset
+              </h4>
+              <input
+                type="text"
+                id="mob-title-input"
+                placeholder="What item needs fixing?"
+                class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-white focus:outline-none"
+              />
+              <textarea
+                id="mob-desc-input"
+                rows="2"
+                placeholder="Explain the symptoms..."
+                class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-white focus:outline-none"
+              ></textarea>
+
+              <div class="grid grid-cols-2 gap-2">
+                <select
+                  id="mob-cat-input"
+                  class="bg-slate-950 border border-slate-800 rounded-lg p-2 text-[11px] text-white focus:outline-none"
+                >
+                  <option value="Electronics">Electronics</option>
+                  <option value="Appliances">Appliances</option>
+                  <option value="Furniture">Furniture</option>
+                </select>
+                <button
+                  onclick="handleMobileSubmission()"
+                  class="bg-emerald-500 text-slate-950 text-xs font-black rounded-lg uppercase tracking-wider"
+                >
+                  Broadcast
+                </button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <h4
+                id="label-mobile-nearby-header"
+                class="text-[10px] uppercase font-black text-slate-500 tracking-wider"
+              >
+                Nearby Open Mending Slots
+              </h4>
+              <div
+                id="mobile-live-requests-list"
+                class="space-y-2 text-xs"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="absolute bottom-0 inset-x-0 h-12 bg-slate-900 border-t border-slate-800 flex items-center justify-around text-[10px] font-bold text-slate-400"
+          >
+            <span
+              class="text-emerald-400 cursor-pointer"
+              onclick="changeActiveView('consumer')"
+              >🏡 Home</span
+            >
+            <span
+              class="cursor-pointer hover:text-white"
+              onclick="
+                showNotification('Mobile tool locker matches initialized.')
+              "
+              >🛠️ Tools</span
+            >
+            <span
+              class="cursor-pointer hover:text-white"
+              onclick="showNotification('Private chat encrypted.')"
+              >💬 Chat</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="view-corporate" class="hidden space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+            <h4
+              id="label-saas-arr-header"
+              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+            >
+              Active Municipal SaaS (ARR)
+            </h4>
+            <p
+              id="saas-arr-value"
+              class="text-2xl font-black text-white mt-1 heading-font"
+            >
+              $145,000.00
+            </p>
+            <span
+              id="saas-arr-sub"
+              class="text-[10px] text-emerald-400 font-medium"
+              >● 4 Regional Authorities Subscribed</span
+            >
+          </div>
+          <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+            <h4
+              id="label-saas-revenue-header"
+              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+            >
+              Sourced Affiliate Commissions
+            </h4>
+            <p
+              id="saas-revenue-metric"
+              class="text-2xl font-black text-emerald-400 mt-1 heading-font"
+            >
+              $0.00
+            </p>
+            <span id="saas-revenue-sub" class="text-[10px] text-slate-500"
+              >15% platform split from global dropship transactions</span
+            >
+          </div>
+          <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+            <h4
+              id="label-saas-offsets-header"
+              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+            >
+              Tokenized Carbon Offset Credits
+            </h4>
+            <p
+              id="saas-offsets-metric"
+              class="text-2xl font-black text-teal-400 mt-1 heading-font"
+            >
+              4,812.00 kg
+            </p>
+            <span id="saas-offsets-sub" class="text-[10px] text-slate-400"
+              >Verified and audited volume package pool</span
+            >
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between"
+          >
+            <div>
+              <h4
+                id="label-traffic-header"
+                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+              >
+                Passive Sourcing Simulator
+              </h4>
+              <p
+                id="label-traffic-desc"
+                class="text-[11px] text-slate-500 mt-1"
+              >
+                Simulate live global traffic landing on your platform pages via
+                search engine rankings, triggering checkouts and affiliate
+                commissions automatically.
+              </p>
+            </div>
+
+            <div class="flex gap-2 mt-4">
+              <button
+                id="btn-traffic-start"
+                onclick="engageSimulatedTraffic()"
+                class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold py-2.5 rounded-xl transition-all"
+              >
+                Start Traffic Simulation
+              </button>
+              <button
+                id="btn-traffic-stop"
+                onclick="disengageSimulatedTraffic()"
+                class="flex-1 bg-slate-950 text-slate-400 hover:text-white text-xs font-bold py-2.5 rounded-xl border border-slate-850 hidden"
+              >
+                Stop Traffic
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between"
+          >
+            <div>
+              <h4
+                id="label-config-header"
+                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+              >
+                Global Sourcing Tracking Identifiers
+              </h4>
+              <p id="label-config-desc" class="text-[11px] text-slate-500 mt-1">
+                Directly modify your Amazon and eBay affiliate keys. All
+                platform checkout algorithms reference these parameters in
+                production.
+              </p>
+            </div>
+
+            <div class="space-y-2 mt-4 text-xs">
+              <div class="grid grid-cols-3 items-center">
+                <span class="text-slate-400 font-bold">Amazon tag:</span>
+                <input
+                  type="text"
+                  id="cfg-amazon-tag"
+                  value="fixtogether-20"
+                  class="col-span-2 bg-slate-950 border border-slate-850 rounded p-1.5 font-mono text-[10px] focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+              <div class="grid grid-cols-3 items-center">
+                <span class="text-slate-400 font-bold">eBay Campaign:</span>
+                <input
+                  type="text"
+                  id="cfg-ebay-campaign"
+                  value="53381203"
+                  class="col-span-2 bg-slate-950 border border-slate-850 rounded p-1.5 font-mono text-[10px] focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between"
+          >
+            <div>
+              <h4
+                id="label-sponsor-config-header"
+                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+              >
+                Carbon Sponsorship Campaign leases
+              </h4>
+              <p
+                id="label-sponsor-config-desc"
+                class="text-[11px] text-slate-500 mt-1"
+              >
+                Configure active corporate sponsors displayed in your web
+                headers. Generates flat sponsorships fees.
+              </p>
+            </div>
+
+            <div class="space-y-3 mt-4 text-xs">
+              <div class="grid grid-cols-3 items-center">
+                <span class="text-slate-400 font-bold">Sponsor Name:</span>
+                <input
+                  type="text"
+                  id="cfg-sponsor-name"
+                  value="IKEA Sustainability"
+                  class="col-span-2 bg-slate-950 border border-slate-850 rounded p-1.5 font-mono text-[10px] focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+              <button
+                id="btn-update-sponsor"
+                onclick="updateActiveSponsorCampaign()"
+                class="w-full bg-slate-800 hover:bg-slate-700 text-white py-2 rounded-xl font-bold"
+              >
+                Update Global Banner
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-3"
+        >
+          <div
+            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
+          >
+            <h3
+              id="label-ledger-header"
+              class="text-sm font-black uppercase tracking-wider text-slate-300"
+            >
+              Auditable Tokenized Registry Ledger
+            </h3>
+            <button
+              id="btn-mint-volume"
+              onclick="mintManualCarbonVolume()"
+              class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-3.5 py-1.5 rounded-lg border border-slate-750 w-full sm:w-auto"
+            >
+              Mint Manual Volumetrics (+500kg)
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table
+              class="w-full text-left text-xs text-slate-300 min-w-[700px]"
+            >
+              <thead
+                class="bg-slate-950 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-850"
+              >
+                <tr id="ledger-header-row">
+                  <th class="p-3">Audit Certificate Hash</th>
+                  <th class="p-3">Sourced Channel</th>
+                  <th class="p-3">Verified Material Deflection Record</th>
+                  <th class="p-3">Financial Savings Value</th>
+                  <th class="p-3 text-right">Verification Status</th>
+                </tr>
+              </thead>
+              <tbody id="corporate-ledger-rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-slate-950 border-t border-slate-900 px-6 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 gap-2"
+    >
+      <p>© 2026 FixTogether Global LLC. All rights reserved.</p>
+      <p>Secure Node ID Routing: active_monetization_node_0x98f</p>
+    </footer>
+
+    <script>
+      const REGIONAL_ENGINES = {
+        us: {
+          currency: "$",
+          rate: 1.0,
+          lang: {
+            appTitle: "FixTogether",
+            xpAccumulated: "XP Accumulated:",
+            revenueYield: "Revenue Yield:",
+            offsetsPool: "Offsets Pool:",
+            heroTag: "✨ Tri-Continental Operations Live",
+            heroTitle:
+              "Your neighbors are borrowing tools and saving carbon right now.",
+            heroDesc:
+              "Join the green revolution. Every diagnostic, repair completed, or tool shared increases your neighborhood XP level and mints carbon tokens on the live ledger.",
+            heroLevel: "Level 4: Green Alchemist",
+            heroProgress: "Progression: 1,420 / 2,000 XP",
+            districtGoal: "District Goal",
+            districtSub: "Landfill Avoided",
+            diagnosticsHeader: "⚡ Live AI Diagnostics",
+            diagnosticsSub:
+              "Select a neighborhood request to begin diagnostics.",
+            affiliateMatch: "Part Matches Found",
+            refurbishedMatch: "Refurbished Option",
+            refurbishedTitle: "Certified Pre-owned Alternative Device",
+            paywallHeader: "Free Diagnostic Limit Reached",
+            paywallDesc:
+              "Upgrade to FixTogether Pro to unlock unlimited engineering blueprints, wiring schematics, and structural guides.",
+            payPerFix: "Pay-Per-Fix",
+            proMembership: "FixTogether Pro",
+            manualSourcing: "Manual Device Diagnostic Search",
+            topMenders: "Top Menders This Week",
+            menderRep: "Repairs",
+            achievements: "Community Achievements",
+            lithiumBadge: "🔋 Lithium Guardian",
+            lithiumSub: "Recycle 50 battery cells",
+            lithiumPct: "90% Complete",
+            fabricBadge: "🧵 Fabric Savior",
+            fabricSub: "Mend 100 garment holes",
+            unlocked: "Unlocked!",
+            radarProximity: "Hyperlocal Hub Proximity Interface",
+            mobileReportHeader: "Report Broken Asset",
+            mobileNearbyHeader: "Nearby Open Mending Slots",
+            saasArrHeader: "Active Municipal SaaS (ARR)",
+            saasRevenueHeader: "Sourced Affiliate Commissions",
+            saasOffsetsHeader: "Tokenized Carbon Offset Credits",
+            trafficHeader: "Passive Sourcing Simulator",
+            trafficDesc:
+              "Simulate live global traffic landing on your platform pages via search engine rankings, triggering checkouts and affiliate commissions automatically.",
+            configHeader: "Global Sourcing Tracking Identifiers",
+            configDesc:
+              "Directly modify your Amazon and eBay affiliate keys. All platform checkout algorithms reference these parameters in production.",
+            sponsorConfigHeader: "Carbon Sponsorship Campaign leases",
+            sponsorConfigDesc:
+              "Configure active corporate sponsors displayed in your web headers. Generates flat sponsorships fees.",
+            ledgerHeader: "Auditable Tokenized Registry Ledger",
+            btnMint: "Mint Manual Volumetrics (+500kg)",
+            btnUpdateSponsor: "Update Global Banner",
+            thHash: "Audit Certificate Hash",
+            thChannel: "Sourced Channel",
+            thRecord: "Verified Material Deflection Record",
+            thValue: "Financial Savings Value",
+            thStatus: "Verification Status",
+          },
+        },
+        eu: {
+          currency: "€",
+          rate: 0.92,
+          lang: {
+            appTitle: "FixTogether Europe",
+            xpAccumulated: "Points de Mender:",
+            revenueYield: "Rendement Financier:",
+            offsetsPool: "Pool de Carbone:",
+            heroTag: "✨ Conformité CSRD de l'UE Activée",
+            heroTitle:
+              "Réduisez l'empreinte de vos produits et menez l'action climat.",
+            heroDesc:
+              "Chaque appareil réparé réduit les taxes d'importation carbone (CBAM) et génère des crédits Scope 3 conformes aux normes européennes.",
+            heroLevel: "Niveau 4: Maître Réparateur",
+            heroProgress: "Progression: 1 420 / 2 000 XP",
+            districtGoal: "Objectif de District",
+            districtSub: "Déchets Évités",
+            diagnosticsHeader: "⚡ Diagnostics IA en Direct",
+            diagnosticsSub:
+              "Sélectionnez un appareil pour analyser sa réparabilité.",
+            affiliateMatch: "Composants Conformes Trouvés",
+            refurbishedMatch: "Alternative Reconditionnée",
+            refurbishedTitle: "Appareil Reconditionné Certifié UE",
+            paywallHeader: "Limite de Diagnostics Atteinte",
+            paywallDesc:
+              "Débloquez les manuels de réparation officiels conformes à la directive européenne sur le droit à la réparation.",
+            payPerFix: "Paiement Unique",
+            proMembership: "Abonnement Pro",
+            manualSourcing: "Recherche Manuelle de Composants",
+            topMenders: "Classement Hebdomadaire",
+            menderRep: "Réparations",
+            achievements: "Objectifs Écologiques",
+            lithiumBadge: "🔋 Gardien du Lithium",
+            lithiumSub: "Recyclez 50 batteries d'appareils",
+            lithiumPct: "90% Complété",
+            fabricBadge: "🧵 Sauveur Textile",
+            fabricSub: "Réparez 100 vêtements troués",
+            unlocked: "Débloqué!",
+            radarProximity: "Carte Proximité des Hubs Locaux",
+            mobileReportHeader: "Déclarer un Appareil en Panne",
+            mobileNearbyHeader: "Demandes de Réparation Locales",
+            saasArrHeader: "SaaS Municipal Actif (ARR)",
+            saasRevenueHeader: "Commissions d'Affiliation Sourcing",
+            saasOffsetsHeader: "Crédits Carbone Certifiés Scope 3",
+            trafficHeader: "Simulateur de Trafic Écologique",
+            trafficDesc:
+              "Simulez le trafic de recherche européen générant des mending events et des gains d'affiliation en direct.",
+            configHeader: "Identifiants d'Affiliation Européens",
+            configDesc:
+              "Modifiez vos tags d'affiliation européens pour capter les commissions d'achat de pièces détachées.",
+            sponsorConfigHeader: "Parrainages Environnementaux Corporate",
+            sponsorConfigDesc:
+              "Grivez les bannières publicitaires des marques engagées pour la transition.",
+            ledgerHeader: "Registre de Traçabilité Carbone Scope 3",
+            btnMint: "Minter Volume de Carbone (+500kg)",
+            btnUpdateSponsor: "Mettre à Jour la Bannière",
+            thHash: "Hash de Certificat d'Audit",
+            thChannel: "Canal d'Origine Sourcing",
+            thRecord: "Enregistrement de Déviation Matière",
+            thValue: "Valeur Financière Évitée",
+            thStatus: "Statut de Vérification",
+          },
+        },
+        as: {
+          currency: "¥",
+          rate: 155.2,
+          lang: {
+            appTitle: "FixTogether アジア",
+            xpAccumulated: "蓄積されたXP:",
+            platformRevenue: "収益:",
+            revenueYield: "プラットフォーム収益:",
+            offsetsPool: "CO2削減量:",
+            heroTag: "✨ アジア太平洋EPR循環経済モデル",
+            heroTitle:
+              "近隣住民と工具を共有し、電子廃棄物を価値に変えましょう。",
+            heroDesc:
+              "製品の長寿命化を通じて循環型社会を実現。修理や共有の行動により、地域限定のXPを獲得し、リアルタイムの炭素台帳に記録されます。",
+            heroLevel: "レベル4: エコ・アルケミスト",
+            heroProgress: "進捗状況: 1,420 / 2,000 XP",
+            districtGoal: "地区目標値",
+            districtSub: "埋立廃棄物の削減",
+            diagnosticsHeader: "⚡ AIスマート故障診断",
+            diagnosticsSub:
+              "診断を開始するには、地区ボードから案件を選択してください。",
+            affiliateMatch: "推奨部品が見つかりました",
+            refurbishedMatch: "認定整備済製品",
+            refurbishedTitle: "メーカー認定整備済製品",
+            paywallHeader: "無料のAI診断制限に達しました",
+            paywallDesc:
+              "FixTogether Proにアップグレードして、世界中のすべてのメーカー回路設計図や詳細な修理手順書にアクセス。",
+            payPerFix: "スポット診断利用",
+            proMembership: "月額Proメンバー",
+            manualSourcing: "部品カタログ直接検索",
+            topMenders: "今週のアクティブ修復者",
+            menderRep: "件の修復実績",
+            achievements: "コミュニティ限定バッジ",
+            lithiumBadge: "🔋 リチウム保護者",
+            lithiumSub: "バッテリーセル50個の回収・循環",
+            lithiumPct: "90% 完了",
+            fabricBadge: "🧵 繊維の救世主",
+            fabricSub: "衣類の補修・修復実績100回",
+            unlocked: "獲得済み!",
+            radarProximity: "近隣共有ロッカーレーダー",
+            mobileReportHeader: "故障資産を投稿する",
+            mobileNearbyHeader: "周辺地区の修復サポート要請",
+            saasArrHeader: "自治体連携SaaS契約高 (ARR)",
+            saasRevenueHeader: "メーカー純正部品アフィリエイト",
+            saasOffsetsHeader: "認証済みScope 3炭素排出削減枠",
+            trafficHeader: "アクセス流入シミュレーター",
+            trafficDesc:
+              "アジア圏内のオーガニック検索流入をシミュレートし、アフィリエイト購入と自動診断による売上推移を監視します。",
+            configHeader: "トラッキングIDの動的設定",
+            configDesc:
+              "部品購入時にアフィリエイト報酬を直接蓄積させるための追跡キーを設定・調整します。",
+            sponsorConfigHeader: "カーボン・スポンサー広告キャンペーン",
+            sponsorConfigDesc:
+              "検索画面ヘッダーに環境貢献企業の広告バナーを設定します。スポンサー料収益源となります。",
+            ledgerHeader: "環境排出削減実証監査トレース台帳",
+            btnMint: "排出削減実績を手動発行 (+500kg)",
+            btnUpdateSponsor: "バナー広告を適用する",
+            thHash: "認証証明書ハッシュ値",
+            thChannel: "供給調達元",
+            thRecord: "廃棄物資源削減監査証明",
+            thValue: "市民の創出節約金額",
+            thStatus: "監査承認状況",
+          },
+        },
+      };
+
+      let activeRegion = "us";
+      let liveState = {
+        xpAccumulated: 1420,
+        affiliateRevenue: 0.0,
+        subscriptionRevenue: 0.0,
+        totalOffsetsPool: 4812.0,
+        freeQueryTokens: 2,
+        activeItem: null,
+        trafficIntervalTimer: null,
+        currentFriction: 12,
+        items: [
+          {
+            id: 901,
+            title: "Dyson V11 Vacuum battery drops charge instantly",
+            desc: "Blue indicator light flashes twice on trigger pull. Motor runs for 2 seconds then dies.",
+            complexity: "low",
+            part: "Replacement Li-Ion Pack for Dyson V11",
+            price: 42.0,
+            targetURL:
+              "https://www.amazon.com/s?k=Dyson+V11+replacement+battery",
+            co2: 42.5,
+            waste: 4.2,
+          },
+          {
+            id: 902,
+            title: "Breville Barista Express pressure holds but no water flow",
+            desc: "Solvent pump buzzing. Pressure gauge spikes but no water reaches the portal group assembly.",
+            complexity: "medium",
+            part: "Solenoid Valve 3-Way Assembly for Breville",
+            price: 29.5,
+            targetURL:
+              "https://www.ebay.com/sch/i.html?_nkw=Breville+3-way+solenoid+valve",
+            co2: 28.1,
+            waste: 5.6,
+          },
+          {
+            id: 903,
+            title: "Short Circuit on Smart LED Microwave control panel",
+            desc: "Sparked once near rear wiring harness panel during run. Entire faceplate has gone black.",
+            complexity: "high",
+            part: "Full Control Panel Circuit Assembly",
+            price: 89.0,
+            targetURL: "https://www.ifixit.com",
+            co2: 64.0,
+            waste: 18.2,
+          },
+        ],
+        ledgerRecords: [
+          {
+            hash: "0x8f2c_e19a",
+            channel: "Direct Sponsorship Lease",
+            detail: "Patagonia Global Campaign Header Placement",
+            value: 2500.0,
+            mass: "124.0 kg CO2e",
+            status: "Active",
+          },
+          {
+            hash: "0x9d1a_f822",
+            channel: "Local Depot Reclaim",
+            detail: "Kitchen Oven Induction Panel",
+            value: 420.0,
+            mass: "342.5 kg CO2e",
+            status: "Verified",
+          },
+        ],
+      };
+
+      function switchRegion(regionId) {
+        activeRegion = regionId;
+        triggerNotification(
+          `Ecosystem region shifted to: ${regionId.toUpperCase()}`,
+        );
+
+        document.querySelectorAll('button[id^="reg-btn-"]').forEach((btn) => {
+          btn.className =
+            "px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white";
+        });
+        document.getElementById("reg-btn-" + regionId).className =
+          "px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all bg-emerald-500 text-slate-950";
+
+        const lang = REGIONAL_ENGINES[regionId].lang;
+        document.getElementById("label-xp-metric").innerText =
+          lang.xpAccumulated;
+        document.getElementById("label-rev-metric").innerText =
+          lang.revenueYield;
+        document.getElementById("label-offset-metric").innerText =
+          lang.offsetsPool;
+        document.getElementById("hero-mini-tag").innerText = lang.heroTag;
+        document.getElementById("hero-title").innerText = lang.heroTitle;
+        document.getElementById("hero-desc").innerText = lang.heroDesc;
+        document.getElementById("hero-level-badge").innerText = lang.heroLevel;
+        document.getElementById("hero-level-sub").innerText = lang.heroProgress;
+        document.getElementById("label-district-goal").innerText =
+          lang.districtGoal;
+        document.getElementById("label-district-sub").innerText =
+          lang.districtSub;
+        document.getElementById("feed-title").innerText =
+          lang.mobileNearbyHeader;
+        document.getElementById("label-diagnostics-header").innerText =
+          lang.diagnosticsHeader;
+        document.getElementById("label-diagnostics-sub").innerText =
+          lang.diagnosticsSub;
+        document.getElementById("label-affiliate-match").innerText =
+          lang.affiliateMatch;
+        document.getElementById("label-refurbished-match").innerText =
+          lang.refurbishedMatch;
+        document.getElementById("label-refurbished-title").innerText =
+          lang.refurbishedTitle;
+        document.getElementById("label-paywall-header").innerText =
+          lang.paywallHeader;
+        document.getElementById("label-paywall-desc").innerText =
+          lang.paywallDesc;
+        document.getElementById("label-pay-per-fix").innerText = lang.payPerFix;
+        document.getElementById("label-pro-membership").innerText =
+          lang.proMembership;
+        document.getElementById("label-manual-sourcing").innerText =
+          lang.manualSourcing;
+        document.getElementById("label-top-menders").innerText =
+          lang.topMenders;
+        document.getElementById("label-achievements").innerText =
+          lang.achievements;
+        document.getElementById("label-lithium-badge").innerText =
+          lang.lithiumBadge;
+        document.getElementById("label-lithium-sub").innerText =
+          lang.lithiumSub;
+        document.getElementById("label-fabric-badge").innerText =
+          lang.fabricBadge;
+        document.getElementById("label-fabric-sub").innerText = lang.fabricSub;
+        document.getElementById("label-ecosystem-radar").innerText =
+          lang.radarProximity;
+        document.getElementById("label-mobile-report-header").innerText =
+          lang.mobileReportHeader;
+        document.getElementById("label-mobile-nearby-header").innerText =
+          lang.mobileNearbyHeader;
+        document.getElementById("label-saas-arr-header").innerText =
+          lang.saasArrHeader;
+        document.getElementById("label-saas-revenue-header").innerText =
+          lang.saasRevenueHeader;
+        document.getElementById("label-saas-offsets-header").innerText =
+          lang.saasOffsetsHeader;
+        document.getElementById("label-traffic-header").innerText =
+          lang.trafficHeader;
+        document.getElementById("label-traffic-desc").innerText =
+          lang.trafficDesc;
+        document.getElementById("label-config-header").innerText =
+          lang.configHeader;
+        document.getElementById("label-config-desc").innerText =
+          lang.configDesc;
+        document.getElementById("label-sponsor-config-header").innerText =
+          lang.sponsorConfigHeader;
+        document.getElementById("label-sponsor-config-desc").innerText =
+          lang.sponsorConfigDesc;
+        document.getElementById("label-ledger-header").innerText =
+          lang.ledgerHeader;
+        document.getElementById("btn-mint-volume").innerText = lang.btnMint;
+        document.getElementById("btn-update-sponsor").innerText =
+          lang.btnUpdateSponsor;
+
+        const headerRow = document.getElementById("ledger-header-row");
+        headerRow.innerHTML = `
+        <th class="p-3">${lang.thHash}</th>
+        <th class="p-3">${lang.thChannel}</th>
+        <th class="p-3">${lang.thRecord}</th>
+        <th class="p-3">${lang.thValue}</th>
+        <th class="p-3 text-right">${lang.thStatus}</th>
+      `;
+
+        recalculateBalances();
+        renderEcosystemViews();
+      }
+
+      function formatCurrency(val) {
+        const region = REGIONAL_ENGINES[activeRegion];
+        return `${region.currency}${(val * region.rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      }
+
+      function showNotification(msg) {
+        const toast = document.getElementById("master-toast");
+        toast.innerText = msg;
+        toast.classList.remove(
+          "opacity-0",
+          "pointer-events-none",
+          "translate-y-2",
+        );
+        setTimeout(
+          () =>
+            toast.classList.add(
+              "opacity-0",
+              "pointer-events-none",
+              "translate-y-2",
+            ),
+          3500,
+        );
+      }
+
+      function triggerNotification(msg) {
+        showNotification(msg);
+      }
+
+      function triggerDopamineBlast() {
+        const container = document.getElementById("celebration-container");
+        container.innerHTML = "";
+        const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b"];
+        for (let i = 0; i < 30; i++) {
+          const particle = document.createElement("div");
+          particle.className = `absolute particle-fire rounded-full`;
+          particle.style.width = `8px`;
+          particle.style.height = `8px`;
+          particle.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+          const angle = Math.random() * Math.PI * 2;
+          const radius = Math.random() * 100 + 30;
+          particle.style.transform = "translate(0, 0)";
+          container.appendChild(particle);
+          setTimeout(() => {
+            particle.style.transform = `translate(${Math.cos(angle) * radius}px, ${Math.sin(angle) * radius}px) scale(0)`;
+            particle.style.transition =
+              "transform 0.6s cubic-bezier(0.1, 0.8, 0.3, 1)";
+          }, 10);
+        }
+      }
+
+      function renderEcosystemViews() {
+        const lang = REGIONAL_ENGINES[activeRegion].lang;
+        const webFeed = document.getElementById("web-requests-feed");
+        webFeed.innerHTML = "";
+        liveState.items.forEach((item) => {
+          webFeed.innerHTML += `
+          <div onclick="selectActiveDiagnosticItem(${item.id})" class="bg-slate-950 p-4 rounded-xl border ${liveState.activeItem?.id === item.id ? "border-emerald-500 bg-emerald-950/10" : "border-slate-850 hover:border-slate-800"} cursor-pointer transition-all flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="flex-grow">
+              <span class="bg-slate-900 border border-slate-850 text-slate-400 text-[9px] font-black uppercase px-2 py-0.5 rounded">${item.complexity.toUpperCase()}</span>
+              <h4 class="font-bold text-sm text-white mt-1.5">${item.title}</h4>
+              <p class="text-xs text-slate-400 mt-1">${item.desc}</p>
+            </div>
+            <div class="text-left md:text-right whitespace-nowrap">
+              <p class="text-xs font-black text-emerald-400">+${item.co2}kg CO2</p>
+              <p class="text-[10px] text-slate-500 mt-0.5">Deflects ${item.waste}kg waste</p>
+            </div>
+          </div>
+        `;
+        });
+
+        const mobileFeed = document.getElementById("mobile-live-requests-list");
+        mobileFeed.innerHTML = "";
+        liveState.items.forEach((item) => {
+          mobileFeed.innerHTML += `
+          <div onclick="selectActiveDiagnosticItem(${item.id}); changeActiveView('consumer')" class="bg-slate-950 p-2.5 rounded-xl border border-slate-850 cursor-pointer flex justify-between items-center text-xs">
+            <span class="font-bold text-white truncate max-w-[150px]">${item.title}</span>
+            <span class="text-[9px] text-emerald-400 font-semibold">Diagnose ⚡</span>
+          </div>
+        `;
+        });
+
+        const ledgerFeed = document.getElementById("corporate-ledger-rows");
+        ledgerFeed.innerHTML = "";
+        liveState.ledgerRecords.forEach((row) => {
+          ledgerFeed.innerHTML += `
+          <tr class="border-b border-slate-850 hover:bg-slate-900/30">
+            <td class="p-3 font-mono text-emerald-400">${row.hash}</td>
+            <td class="p-3 text-slate-300 font-bold">${row.channel}</td>
+            <td class="p-3 text-slate-400">${row.detail}</td>
+            <td class="p-3 font-bold text-emerald-400">${formatCurrency(row.value)}</td>
+            <td class="p-3 text-right"><span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded text-[10px] font-black">${row.status}</span></td>
+          </tr>
+        `;
+        });
+      }
+
+      function recalculateBalances() {
+        const totalRevenue =
+          liveState.affiliateRevenue + liveState.subscriptionRevenue + 2500.0;
+        document.getElementById("header-revenue").innerText =
+          formatCurrency(totalRevenue);
+        document.getElementById("header-carbon").innerText =
+          `${liveState.totalOffsetsPool.toFixed(2)} kg`;
+        document.getElementById("header-xp").innerText =
+          `${liveState.xpAccumulated} XP`;
+        document.getElementById("metric-revenue").innerText =
+          formatCurrency(totalRevenue);
+        document.getElementById("metric-offsets").innerText =
+          `${liveState.totalOffsetsPool.toFixed(2)} kg`;
+        document.getElementById("saas-arr-value").innerText =
+          formatCurrency(145000.0);
+        document.getElementById("saas-revenue-metric").innerText =
+          formatCurrency(liveState.affiliateRevenue);
+        document.getElementById("saas-offsets-metric").innerText =
+          `${liveState.totalOffsetsPool.toFixed(2)} kg`;
+      }
+
+      function changeActiveView(viewId) {
+        document
+          .querySelectorAll('section[id^="view-"]')
+          .forEach((el) => el.classList.add("hidden"));
+        document.getElementById("view-" + viewId).classList.remove("hidden");
+        document
+          .querySelectorAll('button[id^="nav-btn-"]')
+          .forEach(
+            (btn) =>
+              (btn.className =
+                "px-3.5 py-1.5 rounded-lg font-bold text-slate-400 transition-all flex-1 lg:flex-none"),
+          );
+        if (document.getElementById("nav-btn-" + viewId)) {
+          document.getElementById("nav-btn-" + viewId).className =
+            "px-3.5 py-1.5 rounded-xl font-bold bg-emerald-500 text-slate-950 transition-all flex-1 lg:flex-none";
+        }
+      }
+
+      function injectFrictionTelemetry() {
+        liveState.currentFriction = Math.min(
+          liveState.currentFriction + 12,
+          100,
+        );
+        document.getElementById("friction-log-badge").innerText =
+          `${liveState.currentFriction}% Friction`;
+        document.getElementById("friction-log-badge").className =
+          "text-[9px] font-black text-rose-400 animate-pulse";
+        showNotification("Telemetry friction indexes updated.");
+      }
+
+      function triggerAutonomousUpgradeCycle() {
+        showNotification("Analyzing layout friction curves...");
+        setTimeout(() => {
+          document.getElementById("master-body").className =
+            "bg-[#03060c] text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden evolve-transition";
+          document.getElementById("brand-logo").className =
+            "bg-emerald-400 text-slate-950 p-2.5 rounded-2xl shadow-xl shadow-emerald-400/30 scale-105 evolve-transition";
+          document.getElementById("ai-status-tag").innerText = "V3.4 Optimized";
+          document.getElementById("ai-status-tag").className =
+            "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-black uppercase px-2.5 py-0.5 rounded-full";
+          liveState.currentFriction = 12;
+          document.getElementById("friction-log-badge").innerText =
+            "12% Friction (Optimized)";
+          document.getElementById("friction-log-badge").className =
+            "text-[9px] font-black text-emerald-400";
+          showNotification("AI interface layout self-healed successfully.");
+        }, 500);
+      }
+
+      function selectActiveDiagnosticItem(itemId) {
+        if (liveState.freeQueryTokens <= 0) {
+          document.getElementById("ai-text-output").classList.add("hidden");
+          document.getElementById("affiliate-gateway").classList.add("hidden");
+          document.getElementById("recommerce-gateway").classList.add("hidden");
+          document.getElementById("paywall-gateway").classList.remove("hidden");
+          showNotification("Diagnostic limit reached. Premium paywall active.");
+          return;
+        }
+        const item = liveState.items.find((i) => i.id === itemId);
+        if (!item) return;
+        liveState.activeItem = item;
+        renderEcosystemViews();
+        liveState.freeQueryTokens -= 1;
+
+        document.getElementById("affiliate-gateway").classList.add("hidden");
+        document.getElementById("recommerce-gateway").classList.add("hidden");
+        const textOut = document.getElementById("ai-text-output");
+        textOut.innerHTML = `⚙️ Evaluating physical blueprints for:<br><span class="text-emerald-400 font-bold">${item.title}</span>...`;
+
+        setTimeout(() => {
+          textOut.innerHTML = `<strong>AI RECOMMENDATION:</strong> Connection or assembly degradation confirmed. Safe mount replacement part: <span class="text-emerald-400 font-bold">${item.part}</span>.`;
+          if (item.complexity === "high") {
+            document.getElementById("refurbished-alternative-price").innerText =
+              formatCurrency(119.0);
+            document
+              .getElementById("recommerce-gateway")
+              .classList.remove("hidden");
+          } else {
+            document.getElementById("part-name").innerText = item.part;
+            document.getElementById("part-price").innerText = formatCurrency(
+              item.price,
+            );
+            document
+              .getElementById("affiliate-gateway")
+              .classList.remove("hidden");
+          }
+        }, 600);
+      }
+
+      function executeSimulatedSourcedOrder() {
+        if (!liveState.activeItem) return;
+        const item = liveState.activeItem;
+        const comm = item.price * 0.15;
+        liveState.affiliateRevenue += comm;
+        liveState.totalOffsetsPool += item.co2;
+        liveState.xpAccumulated += 50;
+        liveState.ledgerRecords.unshift({
+          hash: "0x" + Math.floor(Math.random() * 16777).toString(16) + "_e88",
+          channel: "Partnership Dropship",
+          detail: `Commission on ${item.part}`,
+          value: comm,
+          mass: `${item.co2} kg CO2e`,
+          status: "Settled",
+        });
+        document.getElementById("affiliate-gateway").classList.add("hidden");
+        document.getElementById("ai-text-output").innerText =
+          "Transaction audited. Margin credited to metrics pool.";
+        liveState.activeItem = null;
+        recalculateBalances();
+        renderEcosystemViews();
+        triggerDopamineBlast();
+        showNotification(`Sourcing completion yield transacted!`);
+      }
+
+      function executeSimulatedRecommerceOrder() {
+        const comm = 119.0 * 0.08;
+        liveState.affiliateRevenue += comm;
+        liveState.totalOffsetsPool += 64.0;
+        liveState.xpAccumulated += 75;
+        liveState.ledgerRecords.unshift({
+          hash: "0x" + Math.floor(Math.random() * 16777).toString(16) + "_r22",
+          channel: "Re-Commerce Hub",
+          detail: "8% split on Refurbished Alternative",
+          value: comm,
+          mass: "64.0 kg CO2e",
+          status: "Settled",
+        });
+        document.getElementById("recommerce-gateway").classList.add("hidden");
+        document.getElementById("ai-text-output").innerText =
+          "Refurbished unit conversion tracked successfully.";
+        liveState.activeItem = null;
+        recalculateBalances();
+        renderEcosystemViews();
+        triggerDopamineBlast();
+        showNotification("Re-commerce asset successfully mapped.");
+      }
+
+      function initiateStripePayment(plan) {
+        window.location.href = "https://paystack.shop/pay/mzzr-s3h1p";
+        const fee = plan === "pro-monthly" ? 4.99 : 0.99;
+        showNotification("Contacting secure payment nodes...");
+        setTimeout(() => {
+          liveState.subscriptionRevenue += fee;
+          liveState.freeQueryTokens = 5;
+          liveState.ledgerRecords.unshift({
+            hash:
+              "0x" + Math.floor(Math.random() * 16777).toString(16) + "_s11",
+            channel: "Stripe Pipeline",
+            detail: `Subscription payment Gateway (${plan})`,
+            value: fee,
+            mass: "0.0 kg",
+            status: "Verified",
+          });
+          document.getElementById("paywall-gateway").classList.add("hidden");
+          document.getElementById("ai-text-output").classList.remove("hidden");
+          document.getElementById("ai-text-output").innerText =
+            "Stripe checks complete. Extended tokens granted. Choose a card to continue.";
+          recalculateBalances();
+          renderEcosystemViews();
+          triggerDopamineBlast();
+          showNotification("Account tier upgraded.");
+        }, 800);
+      }
+
+      function copyTrackingLink() {
+        if (!liveState.activeItem) return;
+        const url = `${liveState.activeItem.targetURL}&tag=${document.getElementById("cfg-amazon-tag").value}`;
+        const input = document.createElement("input");
+        input.value = url;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+        showNotification("Monetized anchor tag link copied.");
+      }
+
+      function executeManualSearchQuery() {
+        const q = document.getElementById("manual-search-in").value;
+        if (!q.trim()) return;
+        document.getElementById("ai-text-output").innerHTML =
+          `🔎 Querying catalogs for: "${q}"...`;
+        setTimeout(() => {
+          document.getElementById("ai-text-output").innerHTML =
+            `Custom inventory match found for "${q}". Engineering parameters initialized below.`;
+          document.getElementById("part-name").innerText =
+            `Replacement Element for ${q}`;
+          document.getElementById("part-price").innerText =
+            formatCurrency(24.99);
+          document
+            .getElementById("affiliate-gateway")
+            .classList.remove("hidden");
+          liveState.activeItem = {
+            part: `Custom match ${q}`,
+            price: 24.99,
+            co2: 12.0,
+          };
+        }, 600);
+      }
+
+      function handleMobileSubmission() {
+        const title = document.getElementById("mob-title-input").value;
+        const desc = document.getElementById("mob-desc-input").value;
+        const cat = document.getElementById("mob-cat-input").value;
+        if (!title || !desc) return;
+        liveState.items.unshift({
+          id: Date.now(),
+          title,
+          desc,
+          complexity: "medium",
+          part: `OEM Link for ${cat}`,
+          price: 19.99,
+          targetURL: "https://www.ifixit.com",
+          co2: 20.0,
+          waste: 2.5,
+        });
+        document.getElementById("mob-title-input").value = "";
+        document.getElementById("mob-desc-input").value = "";
+        liveState.xpAccumulated += 30;
+        recalculateBalances();
+        renderEcosystemViews();
+        triggerDopamineBlast();
+        showNotification("Asset reported to neighborhood mesh nodes.");
+      }
+
+      function mintManualCarbonVolume() {
+        liveState.totalOffsetsPool += 500.0;
+        liveState.xpAccumulated += 200;
+        recalculateBalances();
+        renderEcosystemViews();
+        triggerDopamineBlast();
+        showNotification("Institutional scale carbon offset certified.");
+      }
+
+      function updateActiveSponsorCampaign() {
+        const name = document.getElementById("cfg-sponsor-name").value;
+        document.getElementById("sponsor-banner-text").innerText =
+          `${name} Sustainability — Direct funding of hyperlocal community tool lockers and recycling networks`;
+        showNotification("Sponsorship configurations synced.");
+      }
+
+      function engageSimulatedTraffic() {
+        document.getElementById("btn-traffic-start").classList.add("hidden");
+        document.getElementById("btn-traffic-stop").classList.remove("hidden");
+        showNotification("Traffic generator streaming...");
+        liveState.trafficIntervalTimer = setInterval(() => {
+          if (Math.random() > 0.5) {
+            liveState.subscriptionRevenue += 0.99;
+            liveState.ledgerRecords.unshift({
+              hash:
+                "0x" + Math.floor(Math.random() * 167).toString(16) + "_sim",
+              channel: "Traffic Funnel",
+              detail: "Pay-Per-Fix Automated Conversion",
+              value: 0.99,
+              mass: "0 kg",
+              status: "Settled",
+            });
+          } else {
+            liveState.affiliateRevenue += 4.5;
+            liveState.totalOffsetsPool += 25.0;
+            liveState.ledgerRecords.unshift({
+              hash:
+                "0x" + Math.floor(Math.random() * 167).toString(16) + "_sim",
+              channel: "Affiliate Pipeline",
+              detail: "Passive Search Click Check-out",
+              value: 4.5,
+              mass: "25 kg",
+              status: "Settled",
+            });
+          }
+          recalculateBalances();
+          renderEcosystemViews();
+        }, 3000);
+      }
+
+      function disengageSimulatedTraffic() {
+        document.getElementById("btn-traffic-start").classList.remove("hidden");
+        document.getElementById("btn-traffic-stop").classList.add("hidden");
+        clearInterval(liveState.trafficIntervalTimer);
+        showNotification("Simulation paused.");
+      }
+
+      // Launch configuration initialization
+      window.onload = function () {
+        switchRegion("us");
+        changeActiveView("consumer");
+      };
+    </script>
+  </body>
+</html>
