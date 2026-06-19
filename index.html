@@ -42,7 +42,17 @@
         transition:
           background-color 0.5s ease,
           color 0.5s ease;
-        background-image: radial-gradient(circle at top left, rgba(16, 185, 129, 0.14), transparent 22%), radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 18%);
+        background-image:
+          radial-gradient(
+            circle at top left,
+            rgba(59, 130, 246, 0.16),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(16, 185, 129, 0.12),
+            transparent 20%
+          );
       }
       .heading-font {
         font-family: "Space Grotesk", sans-serif;
@@ -50,13 +60,13 @@
       .evolve-transition {
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .text-glow-emerald {
-        text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+      .text-glow-blue {
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
       }
       .glass-card {
         background: rgba(15, 23, 42, 0.92);
         backdrop-filter: blur(14px);
-        border: 1px solid rgba(74, 222, 128, 0.14);
+        border: 1px solid rgba(59, 130, 246, 0.2);
       }
       .btn-primary {
         border-radius: 1rem;
@@ -64,10 +74,13 @@
         font-size: 0.7rem;
         font-weight: 900;
         letter-spacing: 0.22em;
-        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-        background: linear-gradient(135deg, #22c55e 0%, #14b8a6 100%);
-        color: #030712;
-        box-shadow: 0 18px 45px rgba(16, 185, 129, 0.12);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          opacity 0.25s ease;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: #ffffff;
+        box-shadow: 0 18px 45px rgba(59, 130, 246, 0.25);
       }
       .btn-secondary {
         border-radius: 1rem;
@@ -75,10 +88,13 @@
         font-size: 0.7rem;
         font-weight: 900;
         letter-spacing: 0.22em;
-        transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          border-color 0.25s ease;
         background: rgba(15, 23, 42, 0.98);
-        border: 1px solid rgba(148, 163, 184, 0.22);
-        color: #cbd5e1;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #f8fafc;
       }
       .btn-primary:hover,
       .btn-secondary:hover {
@@ -87,7 +103,7 @@
       }
       .card-fade:hover {
         transform: translateY(-5px);
-        box-shadow: 0 24px 65px rgba(16, 185, 129, 0.12);
+        box-shadow: 0 24px 65px rgba(59, 130, 246, 0.15);
       }
       .checkout-overlay {
         backdrop-filter: blur(10px);
@@ -95,7 +111,7 @@
       }
       .checkout-panel {
         background: rgba(15, 23, 42, 0.96);
-        border: 1px solid rgba(74, 222, 128, 0.16);
+        border: 1px solid rgba(59, 130, 246, 0.2);
       }
       .blur-highlight {
         background: rgba(15, 23, 42, 0.6);
@@ -121,218 +137,136 @@
   </head>
   <body
     id="master-body"
-    class="bg-[#03050a] text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden evolve-transition"
+    class="bg-[#03050a] text-slate-200 min-h-screen flex flex-col justify-between overflow-x-hidden evolve-transition"
   >
     <header
-      class="bg-[#070a14]/90 border-b border-emerald-950/40 px-6 py-4 sticky top-0 z-50 shadow-2xl backdrop-blur-md evolve-transition"
+      class="bg-[#070a14]/95 border-b border-blue-950/40 px-4 py-2 sticky top-0 z-50 backdrop-blur-md shadow-2xl"
     >
-      <div
-        class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-4"
-      >
-        <div class="flex items-center space-x-3.5 flex-grow w-full lg:w-auto">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-4">
           <div
             id="brand-logo"
-            class="bg-emerald-500 text-slate-950 p-2.5 rounded-2xl shadow-lg shadow-emerald-400/40 evolve-transition shrink-0 scale-105"
+            class="bg-blue-500 text-slate-950 p-2 rounded-xl w-9 h-9 flex items-center justify-center shrink-0 shadow-lg shadow-blue-400/30"
           >
             <svg
-              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              class="w-5 h-5"
             >
+              <path d="m14 2 8 8" />
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
+                d="M20 11a1.3 1.3 0 0 1-1.8 0l-4.5-4.5a1.3 1.3 0 0 1 0-1.8l1-1a1.3 1.3 0 0 1 1.8 0l4.5 4.5a1.3 1.3 0 0 1 0 1.8z"
               />
+              <path d="M15 11 4.5 21.5a1.5 1.5 0 0 1-2.1-2.1L13 9" />
+              <path d="M4.5 16.5 3 15" />
             </svg>
           </div>
-          <div class="truncate">
-            <div class="flex items-center gap-2 flex-wrap">
+
+          <div class="shrink-0">
+            <div class="flex items-center gap-1.5">
               <h1
-                class="text-xl font-black text-white heading-font tracking-tight text-glow-emerald"
+                class="text-base font-black text-white heading-font tracking-tight text-glow-blue"
               >
                 FixTogether
               </h1>
               <span
-                id="ai-status-tag"
-                class="bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[9px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full animate-pulse"
-                >Tri-Continental Version</span
+                class="bg-blue-500/20 text-blue-300 border border-blue-500/30 text-[8px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-full"
+                >Tri-Con</span
               >
             </div>
-            <p class="text-[11px] text-slate-400 truncate">
-              Multi-Client • Zero-Inventory Dropshipping • Global Compliance
-              Engine
-            </p>
+          </div>
+
+          <div
+            class="hidden lg:flex bg-slate-950 p-1 rounded-xl border border-slate-800 gap-1 text-[10px]"
+          >
+            <button
+              onclick="changeActiveView('consumer')"
+              id="nav-btn-consumer"
+              class="px-2.5 py-1 rounded-lg font-bold bg-blue-500 text-white"
+            >
+              🌐 Consumer Hub
+            </button>
+            <button
+              onclick="changeActiveView('mobile')"
+              id="nav-btn-mobile"
+              class="px-2.5 py-1 rounded-lg font-bold text-slate-400"
+            >
+              📱 Mobile App
+            </button>
+            <button
+              onclick="changeActiveView('corporate')"
+              id="nav-btn-corporate"
+              class="px-2.5 py-1 rounded-lg font-bold text-slate-400"
+            >
+              🏢 ESG Console
+            </button>
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-2">
-          <div
-            class="flex flex-wrap bg-slate-900 border border-slate-800 p-1 rounded-2xl gap-1"
+        <div class="flex items-center gap-3">
+          <select
+            id="region-selector"
+            onchange="switchRegion(this.value)"
+            class="bg-slate-950 border border-slate-800 text-[10px] font-bold p-1.5 rounded-lg text-white outline-none cursor-pointer"
           >
-            <button
-              id="reg-btn-gl"
-              onclick="switchRegion('gl')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              GL World
-            </button>
-            <button
-              id="reg-btn-us"
-              onclick="switchRegion('us')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              US USA
-            </button>
-            <button
-              id="reg-btn-eu"
-              onclick="switchRegion('eu')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              EU Europe
-            </button>
-            <button
-              id="reg-btn-as"
-              onclick="switchRegion('as')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              AS Asia
-            </button>
-            <button
-              id="reg-btn-af"
-              onclick="switchRegion('af')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              AF Africa
-            </button>
-            <button
-              id="reg-btn-na"
-              onclick="switchRegion('na')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              NA N. America
-            </button>
-            <button
-              id="reg-btn-sa"
-              onclick="switchRegion('sa')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              SA S. America
-            </button>
-            <button
-              id="reg-btn-oc"
-              onclick="switchRegion('oc')"
-              class="px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white"
-            >
-              OC Oceania
-            </button>
-          </div>
-          <div
-            class="flex items-center gap-2 rounded-2xl border border-slate-800 bg-slate-900 p-2"
-          >
-            <label
-              for="language-selector"
-              class="text-[10px] uppercase tracking-[0.35em] text-slate-400"
-            >
-              Lang
-            </label>
-            <select
-              id="language-selector"
-              onchange="switchLanguage(this.value)"
-              class="bg-slate-950 border border-slate-800 text-[10px] text-white rounded-xl px-3 py-1"
-            >
-              <option value="en">English</option>
-              <option value="es">Español</option>
-              <option value="fr">Français</option>
-              <option value="zh">中文</option>
-              <option value="ar">العربية</option>
-              <option value="hi">हिन्दी</option>
-              <option value="pt">Português</option>
-              <option value="ru">Русский</option>
-              <option value="ja">日本語</option>
-              <option value="de">Deutsch</option>
-              <option value="all">All Languages</option>
-            </select>
-          </div>
-        </div>
+            <option value="gl">GL World</option>
+            <option value="us">US USA</option>
+            <option value="eu">EU Europe</option>
+            <option value="as">AS Asia</option>
+            <option value="af">AF Africa</option>
+            <option value="na">NA N. America</option>
+            <option value="sa">SA S. America</option>
+            <option value="oc">OC Oceania</option>
+          </select>
 
-        <div
-          class="flex flex-wrap items-center gap-3 bg-slate-950 p-2.5 rounded-2xl border border-slate-800/80 text-[11px] justify-between lg:justify-start w-full lg:w-auto"
-        >
-          <div class="flex items-center space-x-1.5 px-2">
-            <span
-              class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"
-            ></span>
-            <span class="text-slate-400">Active Node:</span>
-            <span id="database-status" class="font-bold text-white"
-              >Global-Sync</span
-            >
-          </div>
-          <div
-            class="flex items-center space-x-1.5 px-2 border-l border-slate-800"
+          <select
+            id="language-selector"
+            onchange="switchLanguage(this.value)"
+            class="bg-slate-950 border border-slate-800 text-[10px] text-white rounded-lg p-1.5 font-bold outline-none cursor-pointer"
           >
-            <span id="label-xp-metric" class="text-slate-400"
-              >XP Accumulated:</span
-            >
-            <span id="header-xp" class="font-bold text-purple-400"
-              >1,420 XP</span
-            >
-          </div>
-          <div
-            class="flex items-center space-x-1.5 px-2 border-l border-slate-800"
-          >
-            <span id="label-rev-metric" class="text-slate-400"
-              >Revenue Yield:</span
-            >
-            <span id="header-revenue" class="font-bold text-emerald-400"
-              >$2,500.00</span
-            >
-          </div>
-          <div
-            class="flex items-center space-x-1.5 px-2 border-l border-slate-800"
-          >
-            <span id="label-offset-metric" class="text-slate-400"
-              >Offsets Pool:</span
-            >
-            <span id="metric-offsets" class="font-bold text-teal-400"
-              >4,812.00 kg</span
-            >
-          </div>
-        </div>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+            <option value="zh">ZH</option>
+            <option value="ar">AR</option>
+            <option value="hi">HI</option>
+            <option value="pt">PT</option>
+            <option value="ru">RU</option>
+            <option value="ja">JA</option>
+            <option value="de">DE</option>
+          </select>
 
-        <div
-          class="flex bg-slate-950 p-1.5 rounded-2xl border border-slate-800/80 text-xs w-full lg:w-auto justify-center shrink-0"
-        >
-          <button
-            onclick="changeActiveView('consumer')"
-            id="nav-btn-consumer"
-            class="px-3.5 py-1.5 rounded-xl font-bold bg-emerald-500 text-slate-950 transition-all flex-1 lg:flex-none"
+          <div
+            class="hidden xl:flex items-center gap-3 text-[10px] bg-slate-950/60 border border-slate-900 px-3 py-1.5 rounded-xl font-medium"
           >
-            🌐 Consumer Hub
-          </button>
-          <button
-            onclick="changeActiveView('mobile')"
-            id="nav-btn-mobile"
-            class="px-3.5 py-1.5 rounded-xl font-bold text-slate-400 transition-all flex-1 lg:flex-none"
-          >
-            📱 Mobile App
-          </button>
-          <button
-            onclick="changeActiveView('corporate')"
-            id="nav-btn-corporate"
-            class="px-3.5 py-1.5 rounded-xl font-bold text-slate-400 transition-all flex-1 lg:flex-none"
-          >
-            🏢 ESG Console
-          </button>
-        </div>
-        <div class="flex items-center gap-2 justify-end w-full lg:w-auto">
+            <span class="text-slate-400"
+              >XP:
+              <strong id="header-xp" class="text-purple-300 font-bold"
+                >1,420 XP</strong
+              ></span
+            >
+            <span class="text-slate-400"
+              >Rev:
+              <strong id="header-revenue" class="text-blue-300 font-bold"
+                >$2,500.00</strong
+              ></span
+            >
+            <span class="text-slate-400"
+              >Pool:
+              <strong id="metric-offsets" class="text-teal-300 font-bold"
+                >4,812.00 kg</strong
+              ></span
+            >
+          </div>
+
           <button
             onclick="openCheckoutPreview('pro-monthly')"
-            class="btn-primary"
+            class="btn-primary text-[10px] px-3 py-1.5 rounded-xl font-bold tracking-normal"
           >
-            Premium Access
+            Premium
           </button>
         </div>
       </div>
@@ -340,32 +274,21 @@
 
     <section
       id="global-sponsor-slot"
-      class="bg-gradient-to-r from-teal-950/20 via-slate-900 to-emerald-950/20 border-b border-emerald-950/10 py-3 px-6 text-center text-xs text-emerald-400 font-medium"
+      class="bg-blue-950/10 py-1.5 px-4 text-center text-[10px] text-blue-300 font-bold border-b border-blue-950/20"
     >
-      <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3"
+      📢
+      <span class="text-white uppercase font-black tracking-wider mr-1"
+        >Global Carbon Sponsor:</span
       >
-        <span
-          class="text-[10px] text-slate-400 uppercase font-black tracking-widest flex items-center gap-1.5 shrink-0"
-        >
-          📢 Global Carbon Sponsor:
-        </span>
-        <span
-          id="sponsor-banner-text"
-          class="font-bold hover:underline cursor-pointer"
-          >IKEA Sustainability — Direct funding of hyperlocal community tool
-          lockers and recycling networks</span
-        >
-        <span
-          class="text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-black uppercase shrink-0"
-          >Active Campaign</span
-        >
-      </div>
+      <span id="sponsor-banner-text" class="hover:underline cursor-pointer"
+        >IKEA Sustainability — Hyperlocal community tool lockers and recycling
+        networks</span
+      >
     </section>
 
     <div
       id="master-toast"
-      class="fixed top-24 right-6 z-50 bg-emerald-600 text-white font-black text-xs px-5 py-3 rounded-xl shadow-2xl transition-all duration-300 opacity-0 pointer-events-none transform translate-y-2"
+      class="fixed top-24 right-6 z-50 bg-blue-600 text-white font-black text-xs px-5 py-3 rounded-xl shadow-2xl transition-all duration-300 opacity-0 pointer-events-none transform translate-y-2"
     >
       Ecosystem alert message.
     </div>
@@ -378,28 +301,46 @@
       <div class="checkout-panel max-w-2xl w-full rounded-3xl p-6 relative">
         <button
           onclick="closeCheckoutPreview()"
-          class="absolute right-5 top-5 text-slate-400 hover:text-white"
+          class="absolute right-5 top-5 text-white hover:text-red-400 font-bold"
           aria-label="Close checkout preview"
         >
           ✕
         </button>
-        <span class="text-[10px] uppercase tracking-[0.3em] text-emerald-400 font-black">
+        <span
+          class="text-[10px] uppercase tracking-[0.3em] text-blue-300 font-black"
+        >
           Premium Checkout Preview
         </span>
-        <h3 id="checkout-plan-label" class="mt-4 text-2xl font-black text-white"></h3>
-        <p id="checkout-plan-sub" class="mt-2 text-sm text-slate-400"></p>
+        <h3
+          id="checkout-plan-label"
+          class="mt-4 text-2xl font-black text-white"
+        ></h3>
+        <p
+          id="checkout-plan-sub"
+          class="mt-2 text-sm text-white font-medium"
+        ></p>
         <div class="mt-5 grid gap-3 sm:grid-cols-2">
           <div class="rounded-3xl border border-slate-800 bg-slate-900 p-4">
-            <p class="text-[9px] uppercase tracking-[0.3em] text-slate-500">Region</p>
-            <p id="checkout-plan-region" class="mt-2 text-white font-bold">Local</p>
+            <p class="text-[9px] uppercase tracking-[0.3em] text-white">
+              Region
+            </p>
+            <p id="checkout-plan-region" class="mt-2 text-white font-bold">
+              Local
+            </p>
           </div>
           <div class="rounded-3xl border border-slate-800 bg-slate-900 p-4">
-            <p class="text-[9px] uppercase tracking-[0.3em] text-slate-500">Price</p>
-            <p id="checkout-plan-price" class="mt-2 text-white font-bold">$0.00</p>
+            <p class="text-[9px] uppercase tracking-[0.3em] text-white">
+              Price
+            </p>
+            <p id="checkout-plan-price" class="mt-2 text-white font-bold">
+              $0.00
+            </p>
           </div>
         </div>
-        <div class="mt-5 rounded-3xl border border-slate-800 bg-slate-950 p-4 text-slate-400 text-sm">
-          <p id="checkout-plan-feature" class="font-medium text-white"></p>
+        <div
+          class="mt-5 rounded-3xl border border-slate-800 bg-slate-950 p-4 text-white text-sm"
+        >
+          <p id="checkout-plan-feature" class="font-bold text-white"></p>
         </div>
         <div class="mt-5 flex flex-wrap gap-3 items-center">
           <button
@@ -409,10 +350,7 @@
           >
             Proceed to Paystack
           </button>
-          <button
-            onclick="closeCheckoutPreview()"
-            class="btn-secondary"
-          >
+          <button onclick="closeCheckoutPreview()" class="btn-secondary">
             Cancel
           </button>
         </div>
@@ -428,12 +366,12 @@
       <section id="view-consumer" class="space-y-6">
         <div
           id="hero-banner"
-          class="bg-gradient-to-br from-emerald-950/30 via-slate-900/40 to-indigo-950/20 p-8 rounded-3xl border border-emerald-500/20 shadow-2xl shadow-emerald-500/5 evolve-transition flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden"
+          class="bg-gradient-to-br from-blue-950/30 via-slate-900/50 to-indigo-950/30 p-5 sm:p-8 rounded-3xl border border-blue-500/30 shadow-2xl shadow-blue-500/5 evolve-transition flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden"
         >
           <div class="space-y-2 flex-1">
             <span
               id="hero-mini-tag"
-              class="text-[9px] font-extrabold uppercase text-emerald-400 tracking-widest evolve-transition"
+              class="text-[9px] font-extrabold uppercase text-blue-300 tracking-widest evolve-transition"
               >✨ Tri-Continental Operations Live</span
             >
             <h2
@@ -444,7 +382,7 @@
             </h2>
             <p
               id="hero-desc"
-              class="text-xs text-slate-400 leading-relaxed max-w-xl font-light"
+              class="text-xs text-white leading-relaxed max-w-xl font-medium"
             >
               Join the green revolution. Every diagnostic, repair completed, or
               tool shared increases your neighborhood XP level and mints carbon
@@ -454,23 +392,27 @@
             <div class="flex items-center space-x-2 mt-4">
               <span
                 id="hero-level-badge"
-                class="bg-purple-500 text-white font-bold text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider shadow-lg shadow-purple-500/20"
+                class="bg-purple-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider shadow-lg shadow-purple-500/20"
               >
                 Level 4: Green Alchemist
               </span>
-              <span id="hero-level-sub" class="text-slate-400 text-xs"
+              <span id="hero-level-sub" class="text-white font-bold text-xs"
                 >Progression: 1,420 / 2,000 XP</span
               >
             </div>
 
-            <div class="grid gap-3 sm:grid-cols-2 mt-6">
-              <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-3 card-fade">
-                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Instant Global Sync</p>
-                <p class="mt-2 text-sm font-bold text-white">Repair visibility across 7 regions</p>
-              </div>
-              <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-3 card-fade">
-                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Premium Service</p>
-                <p class="mt-2 text-sm font-bold text-white">Priority Paystack checkout and verified partners</p>
+            <div class="mt-6 max-w-md">
+              <div
+                class="rounded-3xl border border-slate-700 bg-slate-950/90 p-4 card-fade"
+              >
+                <p
+                  class="text-[10px] uppercase tracking-[0.3em] text-blue-300 font-bold"
+                >
+                  Instant Global Sync
+                </p>
+                <p class="mt-2 text-sm font-bold text-white">
+                  Repair visibility across 7 regions
+                </p>
               </div>
             </div>
 
@@ -491,7 +433,7 @@
           </div>
 
           <div
-            class="flex items-center space-x-4 shrink-0 bg-slate-950/40 p-4 rounded-2xl border border-slate-800"
+            class="flex items-center space-x-4 shrink-0 bg-slate-950/60 p-4 rounded-2xl border border-slate-700"
           >
             <div class="relative w-16 h-16 flex items-center justify-center">
               <svg
@@ -507,7 +449,7 @@
                 />
                 <path
                   id="progress-circle-path"
-                  class="text-emerald-400"
+                  class="text-blue-400"
                   stroke-dasharray="71, 100"
                   stroke-width="3"
                   stroke-linecap="round"
@@ -518,23 +460,27 @@
               </svg>
               <span
                 id="progress-text"
-                class="absolute text-white font-bold text-xs"
+                class="absolute text-white font-black text-xs"
                 >71%</span
               >
             </div>
             <div>
-              role="status"
-              aria-live="polite"
-              class="fixed top-24 right-6 z-50 bg-emerald-600 text-white font-black text-xs px-5 py-3 rounded-2xl shadow-2xl transition-all duration-300 opacity-0 pointer-events-none transform translate-y-2"
+              <p
                 id="label-district-goal"
-                class="text-[9px] uppercase font-black text-slate-500"
+                class="text-[9px] uppercase font-black text-white"
               >
                 District Goal
               </p>
-              <p id="label-district-sub" class="text-xs font-bold text-white">
+              <p
+                id="label-district-sub"
+                class="text-xs font-black text-white mt-0.5"
+              >
                 Landfill Avoided
               </p>
-              <p id="label-district-val" class="text-[11px] text-emerald-400">
+              <p
+                id="label-district-val"
+                class="text-[11px] font-bold text-blue-300"
+              >
                 712.5 kg / 1000 kg
               </p>
             </div>
@@ -544,14 +490,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div
             id="content-container"
-            class="lg:col-span-2 bg-slate-900/40 p-6 rounded-3xl border border-emerald-950/40 space-y-4 evolve-transition"
+            class="lg:col-span-2 bg-slate-900/40 p-6 rounded-3xl border border-blue-950/40 space-y-4 evolve-transition"
           >
             <div
               class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
             >
               <h3
                 id="feed-title"
-                class="text-sm font-black uppercase tracking-wider text-slate-400"
+                class="text-sm font-black uppercase tracking-wider text-white"
               >
                 Neighborhood Repair Board
               </h3>
@@ -559,23 +505,23 @@
               <div
                 class="flex flex-wrap items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-900"
               >
-                <span class="text-[9px] text-slate-500 uppercase font-black"
+                <span class="text-[9px] text-white uppercase font-black"
                   >Friction Log:</span
                 >
                 <span
                   id="friction-log-badge"
-                  class="text-[9px] font-black text-emerald-400"
+                  class="text-[9px] font-black text-blue-300"
                   >12% Friction (Optimized)</span
                 >
                 <button
                   onclick="injectFrictionTelemetry()"
-                  class="text-[9px] bg-slate-900 text-slate-400 hover:text-white px-2 py-0.5 rounded border border-slate-800"
+                  class="text-[9px] bg-slate-900 text-white hover:bg-slate-800 px-2 py-0.5 rounded border border-slate-700 font-bold"
                 >
                   Inject Friction
                 </button>
                 <button
                   onclick="triggerAutonomousUpgradeCycle()"
-                  class="text-[9px] bg-purple-500 text-white px-2 py-0.5 rounded font-black"
+                  class="text-[9px] bg-blue-500 text-white px-2 py-0.5 rounded font-black shadow-md shadow-blue-500/20"
                 >
                   Evolve UI
                 </button>
@@ -586,7 +532,7 @@
           </div>
 
           <div
-            class="bg-slate-900/60 p-6 rounded-3xl border border-slate-850 space-y-4 flex flex-col justify-between"
+            class="bg-slate-900/60 p-6 rounded-3xl border border-slate-800 space-y-4 flex flex-col justify-between"
           >
             <div class="space-y-4">
               <div
@@ -595,20 +541,20 @@
                 <div>
                   <h3
                     id="label-diagnostics-header"
-                    class="text-sm font-black uppercase tracking-wider text-emerald-400 flex items-center gap-1.5"
+                    class="text-sm font-black uppercase tracking-wider text-blue-300 flex items-center gap-1.5"
                   >
                     <span>⚡</span> Live AI Diagnostics
                   </h3>
                   <p
                     id="label-diagnostics-sub"
-                    class="text-xs text-slate-400 mt-1"
+                    class="text-xs text-white font-medium mt-1"
                   >
                     Select a neighborhood request to begin diagnostics.
                   </p>
                 </div>
                 <span
                   id="free-queries-badge"
-                  class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  class="bg-blue-500/20 text-blue-300 border border-blue-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full"
                 >
                   Free System Ready
                 </span>
@@ -618,26 +564,29 @@
                 id="diagnostic-pane"
                 class="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs font-mono min-h-[220px] flex flex-col justify-between"
               >
-                <div id="ai-text-output" class="text-slate-500 leading-relaxed">
+                <div
+                  id="ai-text-output"
+                  class="text-white font-medium leading-relaxed"
+                >
                   Select an item from the neighborhood repair board on the left
                   to start automated troubleshooting...
                 </div>
 
                 <div
                   id="affiliate-gateway"
-                  class="hidden bg-slate-900/80 p-3.5 rounded-lg border border-emerald-500/25 space-y-2.5 mt-3"
+                  class="hidden bg-slate-900/80 p-3.5 rounded-lg border border-blue-500/30 space-y-2.5 mt-3"
                 >
                   <div class="flex justify-between items-center text-[10px]">
                     <span
                       id="label-affiliate-match"
-                      class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded font-black uppercase"
+                      class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2.5 py-0.5 rounded font-black uppercase"
                       >Part Matches Found</span
                     >
                     <span id="part-price" class="font-bold text-white font-mono"
                       >$0.00</span
                     >
                   </div>
-                  <p id="part-name" class="text-xs font-bold text-slate-200">
+                  <p id="part-name" class="text-xs font-bold text-white">
                     OEM Replacement Module
                   </p>
 
@@ -645,7 +594,7 @@
                     <button
                       id="affiliate-buy-btn"
                       onclick="executeSimulatedSourcedOrder()"
-                      class="flex-grow bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
+                      class="flex-grow bg-blue-500 hover:bg-blue-400 text-white font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
                     >
                       Purchase Part via Amazon Affiliate
                     </button>
@@ -666,7 +615,7 @@
                   <div class="flex justify-between items-center text-[10px]">
                     <span
                       id="label-refurbished-match"
-                      class="bg-teal-500/10 text-teal-400 border border-teal-500/20 px-2.5 py-0.5 rounded font-black uppercase"
+                      class="bg-teal-500/10 text-teal-300 border border-teal-500/20 px-2.5 py-0.5 rounded font-black uppercase"
                       >Refurbished Option</span
                     >
                     <span
@@ -677,14 +626,14 @@
                   </div>
                   <p
                     id="label-refurbished-title"
-                    class="text-xs font-bold text-slate-200"
+                    class="text-xs font-bold text-white"
                   >
                     Certified Pre-owned Alternative Device
                   </p>
                   <button
                     id="recommerce-buy-btn"
                     onclick="executeSimulatedRecommerceOrder()"
-                    class="w-full bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
+                    class="w-full bg-teal-500 hover:bg-teal-400 text-white font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
                   >
                     Buy Alternative via Back Market
                   </button>
@@ -692,12 +641,12 @@
 
                 <div
                   id="paywall-gateway"
-                  class="hidden mt-4 rounded-3xl glass-card p-5 text-center shadow-2xl shadow-emerald-500/10"
+                  class="hidden mt-4 rounded-3xl glass-card p-5 text-center shadow-2xl shadow-blue-500/10"
                 >
                   <div class="max-w-3xl mx-auto">
                     <div class="flex justify-center mb-4">
                       <span
-                        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-300 text-xl"
+                        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 text-blue-300 text-xl"
                         >💎</span
                       >
                     </div>
@@ -706,7 +655,9 @@
                     >
                       FixTogether Premium Access
                     </h3>
-                    <p class="text-[11px] text-slate-300 leading-relaxed mb-5">
+                    <p
+                      class="text-[11px] text-white leading-relaxed mb-5 font-medium"
+                    >
                       Unlock unlimited expert repairs, global supplier sync, and
                       priority service with secure Paystack checkout.
                     </p>
@@ -715,7 +666,7 @@
                       class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center"
                     >
                       <span
-                        class="text-[10px] uppercase tracking-[0.3em] text-slate-500"
+                        class="text-[10px] uppercase tracking-[0.3em] text-white font-bold"
                         >Checkout mode</span
                       >
                       <div class="flex gap-2">
@@ -741,16 +692,20 @@
                         class="rounded-3xl border border-slate-800 bg-slate-950 p-4 text-left card-fade"
                       >
                         <p
-                          class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2"
+                          class="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-2"
                         >
                           Popular
                         </p>
                         <p class="text-2xl font-black text-white">
                           $4.99<span
                             class="text-sm font-semibold text-slate-400"
-                          > / mo</span>
+                          >
+                            / mo</span
+                          >
                         </p>
-                        <p class="text-[10px] text-slate-400 mt-3 leading-5">
+                        <p
+                          class="text-[10px] text-white mt-3 leading-5 font-medium"
+                        >
                           Unlimited diagnostics, AI repair blueprints, and live
                           global hubs.
                         </p>
@@ -766,16 +721,20 @@
                         class="rounded-3xl border border-slate-800 bg-slate-950 p-4 text-left card-fade"
                       >
                         <p
-                          class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2"
+                          class="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-2"
                         >
                           Elite
                         </p>
                         <p class="text-2xl font-black text-white">
                           $49.99<span
                             class="text-sm font-semibold text-slate-400"
-                          > / mo</span>
+                          >
+                            / mo</span
+                          >
                         </p>
-                        <p class="text-[10px] text-slate-400 mt-3 leading-5">
+                        <p
+                          class="text-[10px] text-white mt-3 leading-5 font-medium"
+                        >
                           Premium fleet access, priority onboarding, and
                           enterprise-level insights.
                         </p>
@@ -786,2222 +745,14 @@
                           Unlock Elite
                         </button>
                       </div>
-
-                      <div
-                        class="rounded-3xl border border-slate-800 bg-slate-950 p-4 text-left card-fade"
-                      >
-                        <p
-                          class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-2"
-                        >
-                          Lifetime
-                        </p>
-                        <p class="text-2xl font-black text-white">
-                          $299<span
-                            class="text-sm font-semibold text-slate-400"
-                          > one-time</span>
-                        </p>
-                        <p class="text-[10px] text-slate-400 mt-3 leading-5">
-                          Full access, lifetime updates, and VIP support without
-                          recurring fees.
-                        </p>
-                        <button
-                          onclick="openCheckoutPreview('lifetime')"
-                          class="mt-4 w-full btn-secondary"
-                        >
-                          Buy Lifetime
-                        </button>
-                      </div>
-                    </div>
-
-                    <div
-                      class="mt-5 rounded-3xl border border-slate-800 bg-slate-950 p-4 text-left text-[10px] text-slate-400"
-                    >
-                      <p class="font-semibold text-slate-100">
-                        Secure Paystack checkout
-                      </p>
-                      <p class="mt-2">
-                        Local and international cards accepted. Instant
-                        activation, no delay.
-                      </p>
-                      <p class="mt-2 text-slate-500">
-                        Recommended for power users who want advanced action,
-                        global sync, and premium restoration workflows.
-                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-                    >
-                      <p class="font-semibold text-slate-100">
-                        Secure Paystack checkout
-                      </p>
-                      <p class="mt-2">
-                        Local and international cards accepted. Instant
-                        activation, no delay.
-                      </p>
-                      <p class="mt-2 text-slate-500">
-                        Recommended for power users who want advanced action,
-                        global sync, and premium restoration workflows.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-2">
-              <label
-                id="label-manual-sourcing"
-                class="block text-[10px] uppercase font-black text-slate-400"
-                >Manual Device Diagnostic Search</label
-              >
-              <div class="flex gap-2">
-                <input
-                  type="text"
-                  id="manual-search-in"
-                  placeholder="e.g. Dyson battery blinking red..."
-                  class="flex-grow bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
-                />
-                <button
-                  onclick="executeManualSearchQuery()"
-                  class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-4 rounded-lg"
-                >
-                  Query
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="global-marketplace-panel"
-          class="bg-slate-900/40 p-6 rounded-3xl border border-emerald-950/30 space-y-5 evolve-transition"
-        >
-          <div
-            class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
-          >
-            <div>
-              <h3
-                id="global-market-title"
-                class="text-sm font-black uppercase tracking-wider text-slate-400"
-              >
-                Global Repair & Borrow Marketplace
-              </h3>
-              <p
-                id="global-market-subtitle"
-                class="text-xs text-slate-500 max-w-2xl"
-              >
-                Search repair shops, borrow or lend items, and score community
-                impact anywhere in the world.
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <button
-                onclick="setMarketplaceMode('repair')"
-                id="market-mode-repair"
-                class="rounded-full bg-emerald-500/10 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-emerald-200 font-black"
-              >
-                Repair Finder
-              </button>
-              <button
-                onclick="setMarketplaceMode('borrow')"
-                id="market-mode-borrow"
-                class="rounded-full bg-slate-800 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-slate-300 font-black"
-              >
-                Borrow / Lend
-              </button>
-              <button
-                onclick="setMarketplaceMode('impact')"
-                id="market-mode-impact"
-                class="rounded-full bg-slate-800 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-slate-300 font-black"
-              >
-                Impact Dashboard
-              </button>
-            </div>
-          </div>
-
-          <div class="grid gap-4 lg:grid-cols-3">
-            <div
-              class="rounded-3xl border border-slate-800 bg-slate-950 p-4 space-y-4"
-            >
-              <div class="flex items-center justify-between">
-                <div>
-                  <p
-                    class="text-[10px] uppercase tracking-[0.3em] text-slate-500"
-                  >
-                    Search repair shop
-                  </p>
-                  <h4
-                    id="repair-search-label"
-                    class="font-bold text-white text-sm"
-                  >
-                    Find repair shops worldwide
-                  </h4>
-                </div>
-                <span class="text-[10px] text-emerald-400 font-black"
-                  >World</span
-                >
-              </div>
-              <input
-                id="repair-shop-search-in"
-                type="text"
-                placeholder="e.g. cracked phone screen, laptop repair, drill borrow"
-                class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
-              />
-              <select
-                id="repair-shop-region"
-                class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white"
-              >
-                <option value="all">All Continents</option>
-                <option value="af">Africa</option>
-                <option value="as">Asia</option>
-                <option value="eu">Europe</option>
-                <option value="na">North America</option>
-                <option value="sa">South America</option>
-                <option value="oc">Oceania</option>
-              </select>
-              <button
-                onclick="searchRepairShops()"
-                class="w-full rounded-2xl bg-emerald-500 px-4 py-2 text-[10px] font-black uppercase text-slate-950"
-              >
-                Search Shops
-              </button>
-              <div
-                id="repair-shop-results"
-                class="space-y-3 max-h-80 overflow-y-auto"
-              ></div>
-            </div>
-
-            <div
-              class="rounded-3xl border border-slate-800 bg-slate-950 p-4 space-y-4"
-            >
-              <div class="flex items-center justify-between">
-                <div>
-                  <p
-                    class="text-[10px] uppercase tracking-[0.3em] text-slate-500"
-                  >
-                    Borrow or lend
-                  </p>
-                  <h4
-                    id="borrow-market-label"
-                    class="font-bold text-white text-sm"
-                  >
-                    Borrow/Lend Marketplace
-                  </h4>
-                </div>
-                <span class="text-[10px] text-emerald-400 font-black"
-                  >Fee-enabled</span
-                >
-              </div>
-              <div class="space-y-2">
-                <input
-                  id="borrow-item-title"
-                  placeholder="e.g. Cordless drill, DSLR camera, camping gear"
-                  class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
-                />
-                <select
-                  id="borrow-item-type"
-                  class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white"
-                >
-                  <option value="tool">Tool</option>
-                  <option value="device">Device</option>
-                  <option value="appliance">Appliance</option>
-                  <option value="vehicle">Vehicle</option>
-                  <option value="other">Other</option>
-                </select>
-                <input
-                  id="borrow-item-region"
-                  placeholder="Continent or city"
-                  class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
-                />
-                <div class="grid grid-cols-2 gap-2">
-                  <input
-                    id="borrow-item-fee"
-                    placeholder="Fee (USD)"
-                    class="bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
-                  />
-                  <input
-                    id="borrow-item-duration"
-                    placeholder="Duration e.g. 3 days"
-                    class="bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
-                  />
-                </div>
-                <textarea
-                  id="borrow-item-desc"
-                  rows="3"
-                  placeholder="Describe the item and lending terms"
-                  class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
-                ></textarea>
-              </div>
-              <button
-                onclick="postBorrowListing()"
-                class="w-full rounded-2xl bg-emerald-500 px-4 py-2 text-[10px] font-black uppercase text-slate-950"
-              >
-                Post Listing
-              </button>
-              <div
-                id="borrow-listings"
-                class="space-y-3 max-h-80 overflow-y-auto"
-              ></div>
-            </div>
-
-            <div
-              class="rounded-3xl border border-slate-800 bg-slate-950 p-4 space-y-4"
-            >
-              <div class="flex items-center justify-between">
-                <div>
-                  <p
-                    class="text-[10px] uppercase tracking-[0.3em] text-slate-500"
-                  >
-                    Impact dashboard
-                  </p>
-                  <h4 class="font-bold text-white text-sm">
-                    Local & Global Impact
-                  </h4>
-                </div>
-                <span class="text-[10px] text-slate-400">Points</span>
-              </div>
-              <div class="space-y-3">
-                <div class="rounded-2xl bg-slate-900 p-4">
-                  <p
-                    class="text-[10px] uppercase tracking-[0.3em] text-slate-500"
-                  >
-                    Community Points
-                  </p>
-                  <p
-                    id="impact-points-value"
-                    class="text-3xl font-black text-emerald-400"
-                  >
-                    1,420
-                  </p>
-                </div>
-                <div class="rounded-2xl bg-slate-900 p-4 grid gap-2">
-                  <div class="flex justify-between text-[10px] text-slate-400">
-                    <span>Items Tracked</span
-                    ><span id="tracked-items-value">18</span>
-                  </div>
-                  <div class="flex justify-between text-[10px] text-slate-400">
-                    <span>Neighborhood Actions</span
-                    ><span id="neighborhood-actions-value">24</span>
-                  </div>
-                  <div class="flex justify-between text-[10px] text-slate-400">
-                    <span>Borrow Listings</span
-                    ><span id="borrow-listings-count">0</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          <div
-            class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-4"
-          >
-            <h4
-              id="label-top-menders"
-              class="text-xs font-black uppercase text-slate-400 tracking-wider"
-            >
-              Top Menders This Week
-            </h4>
-            <div class="space-y-2.5 text-xs">
-              <div
-                class="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-900"
-              >
-                <div class="flex items-center space-x-2">
-                  <span class="text-amber-400 font-bold">#1</span>
-                  <span class="text-white font-bold">Robert H.</span>
-                </div>
-                <span id="val-rep-robert" class="text-emerald-400 font-bold"
-                  >25 Repairs</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-900"
-              >
-                <div class="flex items-center space-x-2">
-                  <span class="text-slate-400 font-bold">#2</span>
-                  <span class="text-white font-bold">Maria S.</span>
-                </div>
-                <span id="val-rep-maria" class="text-emerald-400 font-bold"
-                  >18 Repairs</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center bg-slate-950 p-3 rounded-xl border border-slate-900"
-              >
-                <div class="flex items-center space-x-2">
-                  <span class="text-amber-700 font-bold">#3</span>
-                  <span class="text-white font-bold">You (Alex)</span>
-                </div>
-                <span id="val-rep-you" class="text-emerald-400 font-bold"
-                  >12 Repairs</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-4"
-          >
-            <h4
-              id="label-achievements"
-              class="text-xs font-black uppercase text-slate-400 tracking-wider"
-            >
-              Community Achievements
-            </h4>
-            <div class="space-y-2 text-xs">
-              <div
-                class="bg-slate-950 p-3 rounded-xl border border-slate-900 flex justify-between items-center"
-              >
-                <div>
-                  <p id="label-lithium-badge" class="font-bold text-white">
-                    🔋 Lithium Guardian
-                  </p>
-                  <p id="label-lithium-sub" class="text-[10px] text-slate-500">
-                    Recycle 50 battery cells
-                  </p>
-                </div>
-                <span id="val-lithium-pct" class="text-purple-400 font-black"
-                  >90% Complete</span
-                >
-              </div>
-              <div
-                class="bg-slate-950 p-3 rounded-xl border border-slate-900 flex justify-between items-center"
-              >
-                <div>
-                  <p id="label-fabric-badge" class="font-bold text-white">
-                    🧵 Fabric Savior
-                  </p>
-                  <p id="label-fabric-sub" class="text-[10px] text-slate-500">
-                    Mend 100 garment holes
-                  </p>
-                </div>
-                <span
-                  id="val-fabric-unlocked"
-                  class="text-emerald-400 font-black"
-                  >Unlocked!</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-4"
-          >
-            <h4
-              id="label-ecosystem-radar"
-              class="text-xs font-black uppercase text-slate-400 tracking-wider"
-            >
-              Ecosystem Map Simulator
-            </h4>
-            <div
-              class="bg-slate-950 rounded-xl border border-slate-900 p-4 h-32 relative overflow-hidden flex items-center justify-center"
-            >
-              <div
-                class="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px] opacity-20"
-              ></div>
-              <div
-                class="absolute top-1/4 left-1/4 w-3.5 h-3.5 bg-emerald-500 rounded-full animate-ping"
-              ></div>
-              <div
-                class="absolute top-1/4 left-1/4 w-3 h-3 bg-emerald-400 rounded-full cursor-pointer hover:scale-125"
-                onclick="showNotification('Marcus T. (Active Diagnostic Hub)')"
-              ></div>
-              <div
-                class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-indigo-500 rounded-full cursor-pointer hover:scale-125"
-                onclick="showNotification('Locker Hub #2 (Communal Depot)')"
-              ></div>
-              <div
-                class="absolute top-1/2 right-1/2 w-3.5 h-3.5 bg-purple-500 rounded-full animate-ping"
-              ></div>
-              <div
-                class="absolute top-1/2 right-1/2 w-3 h-3 bg-purple-400 rounded-full cursor-pointer hover:scale-125"
-                onclick="showNotification('Your Location')"
-              ></div>
-              <span
-                id="label-radar-proximity"
-                class="text-[10px] text-slate-500 absolute bottom-2"
-                >Hyperlocal Hub Proximity Interface</span
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="view-mobile" class="hidden max-w-sm mx-auto">
-        <div
-          class="bg-slate-900 border-[8px] border-slate-800 rounded-[38px] overflow-hidden aspect-[9/19] flex flex-col relative shadow-2xl ring-1 ring-slate-700/40"
-        >
-          <div
-            class="h-6 bg-slate-900 text-[10px] text-slate-400 flex justify-between px-6 pt-1 select-none"
-          >
-            <span>15:43</span>
-            <div
-              class="w-16 h-3.5 bg-slate-950 rounded-b-xl absolute left-1/2 -translate-x-1/2 top-0"
-            ></div>
-            <span>🔋 98%</span>
-          </div>
-
-          <div
-            class="flex-grow bg-slate-950 p-4 overflow-y-auto pb-16 space-y-4"
-          >
-            <div
-              class="flex justify-between items-center border-b border-slate-900 pb-2"
-            >
-              <div>
-                <span
-                  class="text-[9px] uppercase font-black text-emerald-400 tracking-widest"
-                  >Active Client</span
-                >
-                <h3 class="text-sm font-bold text-white heading-font">
-                  FixTogether App
-                </h3>
-              </div>
-              <span
-                class="bg-emerald-500/10 text-emerald-400 text-[9px] px-2.5 py-0.5 rounded border border-emerald-500/20 font-bold"
-                >GPS: Active</span
-              >
-            </div>
-
-            <div
-              class="bg-slate-900/60 p-3 rounded-xl border border-slate-800/80 space-y-2"
-            >
-              <h4
-                id="label-mobile-report-header"
-                class="text-[10px] uppercase font-black text-slate-400 tracking-wider"
-              >
-                Report Broken Asset
-              </h4>
-              <input
-                type="text"
-                id="mob-title-input"
-                placeholder="What item needs fixing?"
-                class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-white focus:outline-none"
-              />
-              <textarea
-                id="mob-desc-input"
-                rows="2"
-                placeholder="Explain the symptoms..."
-                class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-white focus:outline-none"
-              ></textarea>
-
-              <div class="grid grid-cols-2 gap-2">
-                <select
-                  id="mob-cat-input"
-                  class="bg-slate-950 border border-slate-800 rounded-lg p-2 text-[11px] text-white focus:outline-none"
-                >
-                  <option value="Electronics">Electronics</option>
-                  <option value="Appliances">Appliances</option>
-                  <option value="Furniture">Furniture</option>
-                </select>
-                <button
-                  onclick="handleMobileSubmission()"
-                  class="bg-emerald-500 text-slate-950 text-xs font-black rounded-lg uppercase tracking-wider"
-                >
-                  Broadcast
-                </button>
-              </div>
-            </div>
-
-            <div class="space-y-2">
-              <h4
-                id="label-mobile-nearby-header"
-                class="text-[10px] uppercase font-black text-slate-500 tracking-wider"
-              >
-                Nearby Open Mending Slots
-              </h4>
-              <div
-                id="mobile-live-requests-list"
-                class="space-y-2 text-xs"
-              ></div>
-            </div>
-          </div>
-
-          <div
-            class="absolute bottom-0 inset-x-0 h-12 bg-slate-900 border-t border-slate-800 flex items-center justify-around text-[10px] font-bold text-slate-400"
-          >
-            <span
-              class="text-emerald-400 cursor-pointer"
-              onclick="changeActiveView('consumer')"
-              >🏡 Home</span
-            >
-            <span
-              class="cursor-pointer hover:text-white"
-              onclick="
-                showNotification('Mobile tool locker matches initialized.')
-              "
-              >🛠️ Tools</span
-            >
-            <span
-              class="cursor-pointer hover:text-white"
-              onclick="showNotification('Private chat encrypted.')"
-              >💬 Chat</span
-            >
-          </div>
-        </div>
-      </section>
-
-      <section id="view-corporate" class="hidden space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
-            <h4
-              id="label-saas-arr-header"
-              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-            >
-              Active Municipal SaaS (ARR)
-            </h4>
-            <p
-              id="saas-arr-value"
-              class="text-2xl font-black text-white mt-1 heading-font"
-            >
-              $145,000.00
-            </p>
-            <span
-              id="saas-arr-sub"
-              class="text-[10px] text-emerald-400 font-medium"
-              >● 4 Regional Authorities Subscribed</span
-            >
-          </div>
-          <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
-            <h4
-              id="label-saas-revenue-header"
-              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-            >
-              Sourced Affiliate Commissions
-            </h4>
-            <p
-              id="saas-revenue-metric"
-              class="text-2xl font-black text-emerald-400 mt-1 heading-font"
-            >
-              $0.00
-            </p>
-            <span id="saas-revenue-sub" class="text-[10px] text-slate-500"
-              >15% platform split from global dropship transactions</span
-            >
-          </div>
-          <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
-            <h4
-              id="label-saas-offsets-header"
-              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-            >
-              Tokenized Carbon Offset Credits
-            </h4>
-            <p
-              id="saas-offsets-metric"
-              class="text-2xl font-black text-teal-400 mt-1 heading-font"
-            >
-              4,812.00 kg
-            </p>
-            <span id="saas-offsets-sub" class="text-[10px] text-slate-400"
-              >Verified and audited volume package pool</span
-            >
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div
-            class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between"
-          >
-            <div>
-              <h4
-                id="label-traffic-header"
-                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-              >
-                Passive Sourcing Simulator
-              </h4>
-              <p
-                id="label-traffic-desc"
-                class="text-[11px] text-slate-500 mt-1"
-              >
-                Simulate live global traffic landing on your platform pages via
-                search engine rankings, triggering checkouts and affiliate
-                commissions automatically.
-              </p>
-            </div>
-
-            <div class="flex gap-2 mt-4">
-              <button
-                id="btn-traffic-start"
-                onclick="engageSimulatedTraffic()"
-                class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold py-2.5 rounded-xl transition-all"
-              >
-                Start Traffic Simulation
-              </button>
-              <button
-                id="btn-traffic-stop"
-                onclick="disengageSimulatedTraffic()"
-                class="flex-1 bg-slate-950 text-slate-400 hover:text-white text-xs font-bold py-2.5 rounded-xl border border-slate-850 hidden"
-              >
-                Stop Traffic
-              </button>
-            </div>
-          </div>
-
-          <div
-            class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between"
-          >
-            <div>
-              <h4
-                id="label-config-header"
-                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-              >
-                Global Sourcing Tracking Identifiers
-              </h4>
-              <p id="label-config-desc" class="text-[11px] text-slate-500 mt-1">
-                Directly modify your Amazon and eBay affiliate keys. All
-                platform checkout algorithms reference these parameters in
-                production.
-              </p>
-            </div>
-
-            <div class="space-y-2 mt-4 text-xs">
-              <div class="grid grid-cols-3 items-center">
-                <span class="text-slate-400 font-bold">Amazon tag:</span>
-                <input
-                  type="text"
-                  id="cfg-amazon-tag"
-                  value="fixtogether-20"
-                  class="col-span-2 bg-slate-950 border border-slate-850 rounded p-1.5 font-mono text-[10px] focus:outline-none focus:border-emerald-500"
-                />
-              </div>
-              <div class="grid grid-cols-3 items-center">
-                <span class="text-slate-400 font-bold">eBay Campaign:</span>
-                <input
-                  type="text"
-                  id="cfg-ebay-campaign"
-                  value="53381203"
-                  class="col-span-2 bg-slate-950 border border-slate-850 rounded p-1.5 font-mono text-[10px] focus:outline-none focus:border-emerald-500"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between"
-          >
-            <div>
-              <h4
-                id="label-sponsor-config-header"
-                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-              >
-                Carbon Sponsorship Campaign leases
-              </h4>
-              <p
-                id="label-sponsor-config-desc"
-                class="text-[11px] text-slate-500 mt-1"
-              >
-                Configure active corporate sponsors displayed in your web
-                headers. Generates flat sponsorships fees.
-              </p>
-            </div>
-
-            <div class="space-y-3 mt-4 text-xs">
-              <div class="grid grid-cols-3 items-center">
-                <span class="text-slate-400 font-bold">Sponsor Name:</span>
-                <input
-                  type="text"
-                  id="cfg-sponsor-name"
-                  value="IKEA Sustainability"
-                  class="col-span-2 bg-slate-950 border border-slate-850 rounded p-1.5 font-mono text-[10px] focus:outline-none focus:border-emerald-500"
-                />
-              </div>
-              <button
-                id="btn-update-sponsor"
-                onclick="updateActiveSponsorCampaign()"
-                class="w-full bg-slate-800 hover:bg-slate-700 text-white py-2 rounded-xl font-bold"
-              >
-                Update Global Banner
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 space-y-3"
-        >
-          <div
-            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
-          >
-            <h3
-              id="label-ledger-header"
-              class="text-sm font-black uppercase tracking-wider text-slate-300"
-            >
-              Auditable Tokenized Registry Ledger
-            </h3>
-            <button
-              id="btn-mint-volume"
-              onclick="mintManualCarbonVolume()"
-              class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-3.5 py-1.5 rounded-lg border border-slate-750 w-full sm:w-auto"
-            >
-              Mint Manual Volumetrics (+500kg)
-            </button>
-          </div>
-          <div class="overflow-x-auto">
-            <table
-              class="w-full text-left text-xs text-slate-300 min-w-[700px]"
-            >
-              <thead
-                class="bg-slate-950 text-slate-400 text-[10px] uppercase font-bold border-b border-slate-850"
-              >
-                <tr id="ledger-header-row">
-                  <th class="p-3">Audit Certificate Hash</th>
-                  <th class="p-3">Sourced Channel</th>
-                  <th class="p-3">Verified Material Deflection Record</th>
-                  <th class="p-3">Financial Savings Value</th>
-                  <th class="p-3 text-right">Verification Status</th>
-                </tr>
-              </thead>
-              <tbody id="corporate-ledger-rows"></tbody>
-            </table>
           </div>
         </div>
       </section>
     </main>
-
-    <footer
-      class="bg-slate-950 border-t border-slate-900 px-6 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 gap-2"
-    >
-      <p>© 2026 FixTogether Global LLC. All rights reserved.</p>
-      <p>Secure Node ID Routing: active_monetization_node_0x98f</p>
-    </footer>
-
-    <script>
-      const REGIONAL_ENGINES = {
-        us: {
-          currency: "$",
-          rate: 1.0,
-          lang: {
-            appTitle: "FixTogether",
-            xpAccumulated: "XP Accumulated:",
-            revenueYield: "Revenue Yield:",
-            offsetsPool: "Offsets Pool:",
-            heroTag: "✨ Tri-Continental Operations Live",
-            heroTitle:
-              "Your neighbors are borrowing tools and saving carbon right now.",
-            heroDesc:
-              "Join the green revolution. Every diagnostic, repair completed, or tool shared increases your neighborhood XP level and mints carbon tokens on the live ledger.",
-            heroLevel: "Level 4: Green Alchemist",
-            heroProgress: "Progression: 1,420 / 2,000 XP",
-            districtGoal: "District Goal",
-            districtSub: "Landfill Avoided",
-            diagnosticsHeader: "⚡ Live AI Diagnostics",
-            diagnosticsSub:
-              "Select a neighborhood request to begin diagnostics.",
-            affiliateMatch: "Part Matches Found",
-            refurbishedMatch: "Refurbished Option",
-            refurbishedTitle: "Certified Pre-owned Alternative Device",
-            paywallHeader: "Free Diagnostic Limit Reached",
-            paywallDesc:
-              "Upgrade to FixTogether Pro to unlock unlimited engineering blueprints, wiring schematics, and structural guides.",
-            payPerFix: "Pay-Per-Fix",
-            proMembership: "FixTogether Pro",
-            manualSourcing: "Manual Device Diagnostic Search",
-            topMenders: "Top Menders This Week",
-            menderRep: "Repairs",
-            achievements: "Community Achievements",
-            lithiumBadge: "🔋 Lithium Guardian",
-            lithiumSub: "Recycle 50 battery cells",
-            lithiumPct: "90% Complete",
-            fabricBadge: "🧵 Fabric Savior",
-            fabricSub: "Mend 100 garment holes",
-            unlocked: "Unlocked!",
-            radarProximity: "Hyperlocal Hub Proximity Interface",
-            mobileReportHeader: "Report Broken Asset",
-            mobileNearbyHeader: "Nearby Open Mending Slots",
-            saasArrHeader: "Active Municipal SaaS (ARR)",
-            saasRevenueHeader: "Sourced Affiliate Commissions",
-            saasOffsetsHeader: "Tokenized Carbon Offset Credits",
-            trafficHeader: "Passive Sourcing Simulator",
-            trafficDesc:
-              "Simulate live global traffic landing on your platform pages via search engine rankings, triggering checkouts and affiliate commissions automatically.",
-            configHeader: "Global Sourcing Tracking Identifiers",
-            configDesc:
-              "Directly modify your Amazon and eBay affiliate keys. All platform checkout algorithms reference these parameters in production.",
-            sponsorConfigHeader: "Carbon Sponsorship Campaign leases",
-            sponsorConfigDesc:
-              "Configure active corporate sponsors displayed in your web headers. Generates flat sponsorships fees.",
-            ledgerHeader: "Auditable Tokenized Registry Ledger",
-            btnMint: "Mint Manual Volumetrics (+500kg)",
-            btnUpdateSponsor: "Update Global Banner",
-            thHash: "Audit Certificate Hash",
-            thChannel: "Sourced Channel",
-            thRecord: "Verified Material Deflection Record",
-            thValue: "Financial Savings Value",
-            thStatus: "Verification Status",
-          },
-        },
-        eu: {
-          currency: "€",
-          rate: 0.92,
-          lang: {
-            appTitle: "FixTogether Europe",
-            xpAccumulated: "Points de Mender:",
-            revenueYield: "Rendement Financier:",
-            offsetsPool: "Pool de Carbone:",
-            heroTag: "✨ Conformité CSRD de l'UE Activée",
-            heroTitle:
-              "Réduisez l'empreinte de vos produits et menez l'action climat.",
-            heroDesc:
-              "Chaque appareil réparé réduit les taxes d'importation carbone (CBAM) et génère des crédits Scope 3 conformes aux normes européennes.",
-            heroLevel: "Niveau 4: Maître Réparateur",
-            heroProgress: "Progression: 1 420 / 2 000 XP",
-            districtGoal: "Objectif de District",
-            districtSub: "Déchets Évités",
-            diagnosticsHeader: "⚡ Diagnostics IA en Direct",
-            diagnosticsSub:
-              "Sélectionnez un appareil pour analyser sa réparabilité.",
-            affiliateMatch: "Composants Conformes Trouvés",
-            refurbishedMatch: "Alternative Reconditionnée",
-            refurbishedTitle: "Appareil Reconditionné Certifié UE",
-            paywallHeader: "Limite de Diagnostics Atteinte",
-            paywallDesc:
-              "Débloquez les manuels de réparation officiels conformes à la directive européenne sur le droit à la réparation.",
-            payPerFix: "Paiement Unique",
-            proMembership: "Abonnement Pro",
-            manualSourcing: "Recherche Manuelle de Composants",
-            topMenders: "Classement Hebdomadaire",
-            menderRep: "Réparations",
-            achievements: "Objectifs Écologiques",
-            lithiumBadge: "🔋 Gardien du Lithium",
-            lithiumSub: "Recyclez 50 batteries d'appareils",
-            lithiumPct: "90% Complété",
-            fabricBadge: "🧵 Sauveur Textile",
-            fabricSub: "Réparez 100 vêtements troués",
-            unlocked: "Débloqué!",
-            radarProximity: "Carte Proximité des Hubs Locaux",
-            mobileReportHeader: "Déclarer un Appareil en Panne",
-            mobileNearbyHeader: "Demandes de Réparation Locales",
-            saasArrHeader: "SaaS Municipal Actif (ARR)",
-            saasRevenueHeader: "Commissions d'Affiliation Sourcing",
-            saasOffsetsHeader: "Crédits Carbone Certifiés Scope 3",
-            trafficHeader: "Simulateur de Trafic Écologique",
-            trafficDesc:
-              "Simulez le trafic de recherche européen générant des mending events et des gains d'affiliation en direct.",
-            configHeader: "Identifiants d'Affiliation Européens",
-            configDesc:
-              "Modifiez vos tags d'affiliation européens pour capter les commissions d'achat de pièces détachées.",
-            sponsorConfigHeader: "Parrainages Environnementaux Corporate",
-            sponsorConfigDesc:
-              "Grivez les bannières publicitaires des marques engagées pour la transition.",
-            ledgerHeader: "Registre de Traçabilité Carbone Scope 3",
-            btnMint: "Minter Volume de Carbone (+500kg)",
-            btnUpdateSponsor: "Mettre à Jour la Bannière",
-            thHash: "Hash de Certificat d'Audit",
-            thChannel: "Canal d'Origine Sourcing",
-            thRecord: "Enregistrement de Déviation Matière",
-            thValue: "Valeur Financière Évitée",
-            thStatus: "Statut de Vérification",
-          },
-        },
-        as: {
-          currency: "¥",
-          rate: 155.2,
-          lang: {
-            appTitle: "FixTogether アジア",
-            xpAccumulated: "蓄積されたXP:",
-            platformRevenue: "収益:",
-            revenueYield: "プラットフォーム収益:",
-            offsetsPool: "CO2削減量:",
-            heroTag: "✨ アジア太平洋EPR循環経済モデル",
-            heroTitle:
-              "近隣住民と工具を共有し、電子廃棄物を価値に変えましょう。",
-            heroDesc:
-              "製品の長寿命化を通じて循環型社会を実現。修理や共有の行動により、地域限定のXPを獲得し、リアルタイムの炭素台帳に記録されます。",
-            heroLevel: "レベル4: エコ・アルケミスト",
-            heroProgress: "進捗状況: 1,420 / 2,000 XP",
-            districtGoal: "地区目標値",
-            districtSub: "埋立廃棄物の削減",
-            diagnosticsHeader: "⚡ AIスマート故障診断",
-            diagnosticsSub:
-              "診断を開始するには、地区ボードから案件を選択してください。",
-            affiliateMatch: "推奨部品が見つかりました",
-            refurbishedMatch: "認定整備済製品",
-            refurbishedTitle: "メーカー認定整備済製品",
-            paywallHeader: "無料のAI診断制限に達しました",
-            paywallDesc:
-              "FixTogether Proにアップグレードして、世界中のすべてのメーカー回路設計図や詳細な修理手順書にアクセス。",
-            payPerFix: "スポット診断利用",
-            proMembership: "月額Proメンバー",
-            manualSourcing: "部品カタログ直接検索",
-            topMenders: "今週のアクティブ修復者",
-            menderRep: "件の修復実績",
-            achievements: "コミュニティ限定バッジ",
-            lithiumBadge: "🔋 リチウム保護者",
-            lithiumSub: "バッテリーセル50個の回収・循環",
-            lithiumPct: "90% 完了",
-            fabricBadge: "🧵 繊維の救世主",
-            fabricSub: "衣類の補修・修復実績100回",
-            unlocked: "獲得済み!",
-            radarProximity: "近隣共有ロッカーレーダー",
-            mobileReportHeader: "故障資産を投稿する",
-            mobileNearbyHeader: "周辺地区の修復サポート要請",
-            saasArrHeader: "自治体連携SaaS契約高 (ARR)",
-            saasRevenueHeader: "メーカー純正部品アフィリエイト",
-            saasOffsetsHeader: "認証済みScope 3炭素排出削減枠",
-            trafficHeader: "アクセス流入シミュレーター",
-            trafficDesc:
-              "アジア圏内のオーガニック検索流入をシミュレートし、アフィリエイト購入と自動診断による売上推移を監視します。",
-            configHeader: "トラッキングIDの動的設定",
-            configDesc:
-              "部品購入時にアフィリエイト報酬を直接蓄積させるための追跡キーを設定・調整します。",
-            sponsorConfigHeader: "カーボン・スポンサー広告キャンペーン",
-            sponsorConfigDesc:
-              "検索画面ヘッダーに環境貢献企業の広告バナーを設定します。スポンサー料収益源となります。",
-            ledgerHeader: "環境排出削減実証監査トレース台帳",
-            btnMint: "排出削減実績を手動発行 (+500kg)",
-            btnUpdateSponsor: "バナー広告を適用する",
-            thHash: "認証証明書ハッシュ値",
-            thChannel: "供給調達元",
-            thRecord: "廃棄物資源削減監査証明",
-            thValue: "市民の創出節約金額",
-            thStatus: "監査承認状況",
-          },
-        },
-        gl: {
-          currency: "¤",
-          rate: 1.0,
-          lang: {
-            appTitle: "FixTogether Global",
-            xpAccumulated: "Global XP:",
-            revenueYield: "Global Yield:",
-            offsetsPool: "Global Offset Pool:",
-            heroTag: "✨ Global Repair Network Live",
-            heroTitle:
-              "Discover repair shops, share tools, and power neighborhood impact worldwide.",
-            heroDesc:
-              "One global marketplace for repair services, borrow/lend items, and sustainability points across every continent.",
-            heroLevel: "Level 5: World Builder",
-            heroProgress: "Progression: 1,420 / 4,000 XP",
-            districtGoal: "Global Impact Goal",
-            districtSub: "Items Tracked",
-            diagnosticsHeader: "⚡ Global Repair Intelligence",
-            diagnosticsSub:
-              "Find the best repair shop or reuse route anywhere in the world.",
-            affiliateMatch: "Global Matches Found",
-            refurbishedMatch: "Circular Economy Picks",
-            refurbishedTitle: "Worldwide Certified Refurbished",
-            paywallHeader: "Global Access Required",
-            paywallDesc:
-              "Unlock the world-class toolkit for repair coordination, item lending, and cross-border sustainability action.",
-            payPerFix: "Global Pay-Per-Fix",
-            proMembership: "Global Pro Access",
-            manualSourcing: "Global Search Hub",
-            topMenders: "World Top Menders",
-            menderRep: "Repairs Completed",
-            achievements: "Global Achievements",
-            lithiumBadge: "🌍 Planet Guardian",
-            lithiumSub: "Reuse 100 chargers and tools",
-            lithiumPct: "76% Complete",
-            fabricBadge: "🧵 Global Mend Champion",
-            fabricSub: "Share 50 reusable clothing items",
-            unlocked: "Unlocked!",
-            radarProximity: "Worldwide Neighborhood Radar",
-            mobileReportHeader: "Post a Repair Request",
-            mobileNearbyHeader: "Nearby and Global Repair Slots",
-            saasArrHeader: "Global SaaS Engagement",
-            saasRevenueHeader: "Cross-Border Commissions",
-            saasOffsetsHeader: "Global Carbon Credits",
-            trafficHeader: "Worldwide Demand Simulator",
-            trafficDesc:
-              "Simulate global interest in repair, reuse, and circular economy actions across continents.",
-            configHeader: "Global Tracking IDs",
-            configDesc:
-              "Configure international affiliate and repair partner identifiers for every market.",
-            sponsorConfigHeader: "Worldwide Sponsor Mesh",
-            sponsorConfigDesc:
-              "Activate corporate sponsorships that fund repair ecosystems across cities and continents.",
-            ledgerHeader: "World Impact Ledger",
-            btnMint: "Mint Community Impact (+500kg)",
-            btnUpdateSponsor: "Update Global Sponsor Banner",
-            thHash: "Global Audit Hash",
-            thChannel: "Channel",
-            thRecord: "Impact Record",
-            thValue: "Value Generated",
-            thStatus: "Status",
-          },
-        },
-      };
-
-      let activeRegion = "us";
-      let activeLanguage = "en";
-      const LANGUAGE_ENGINES = {
-        en: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "Global Repair & Borrow Marketplace",
-          globalMarketSub:
-            "Search repair shops, borrow or lend items, and score community impact anywhere in the world.",
-          repairSearchLabel: "Find repair shops worldwide",
-          borrowMarketLabel: "Borrow/Lend Marketplace",
-          searchPlaceholder:
-            "e.g. cracked phone screen, laptop repair, drill borrow",
-          listItemPlaceholder: "e.g. Cordless drill, DSLR camera, camping gear",
-          feeLabel: "Fee (USD)",
-          trackButton: "Track Item",
-          listButton: "Post Listing",
-        },
-        es: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "Mercado Global de Reparación y Préstamo",
-          globalMarketSub:
-            "Busca talleres, presta o pide prestado artículos y gana puntos de impacto comunitario en todo el mundo.",
-          repairSearchLabel: "Encuentra talleres de reparación",
-          borrowMarketLabel: "Mercado de Préstamo/Préstamo",
-          searchPlaceholder:
-            "ej. pantalla de teléfono agrietada, reparación de portátil, taladro",
-          listItemPlaceholder:
-            "ej. taladro inalámbrico, cámara DSLR, equipo de camping",
-          feeLabel: "Tarifa (USD)",
-          trackButton: "Rastrear artículo",
-          listButton: "Publicar anuncio",
-        },
-        fr: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "Marché mondial Réparation & Prêt",
-          globalMarketSub:
-            "Trouvez des ateliers, empruntez ou prêtez des articles et cumulez des points d'impact dans le monde entier.",
-          repairSearchLabel: "Trouvez des ateliers de réparation",
-          borrowMarketLabel: "Marché Prêter/Emprunter",
-          searchPlaceholder:
-            "p.ex. écran de téléphone fissuré, réparation d'ordinateur portable, perceuse",
-          listItemPlaceholder:
-            "p.ex. perceuse sans fil, appareil photo DSLR, matériel de camping",
-          feeLabel: "Frais (USD)",
-          trackButton: "Suivre l'article",
-          listButton: "Publier l'annonce",
-        },
-        zh: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "全球维修与借用市场",
-          globalMarketSub:
-            "搜索维修店、借出或借入物品，并在全球范围内获取社区影响积分。",
-          repairSearchLabel: "查找全球维修店",
-          borrowMarketLabel: "借用/出借市场",
-          searchPlaceholder: "例如：手机屏幕碎裂、笔记本维修、电钻借用",
-          listItemPlaceholder: "例如：无绳电钻、单反相机、露营装备",
-          feeLabel: "费用 (USD)",
-          trackButton: "跟踪物品",
-          listButton: "发布列表",
-        },
-        ar: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "السوق العالمي للإصلاح والإقراض",
-          globalMarketSub:
-            "ابحث عن ورش إصلاح، واستعِر أو أعرِض منتجات للإعارة، واحصل على نقاط تأثير مجتمعية في جميع أنحاء العالم.",
-          repairSearchLabel: "ابحث عن ورش الإصلاح",
-          borrowMarketLabel: "سوق الإعارة/الاستعارة",
-          searchPlaceholder:
-            "مثال: شاشة هاتف مكسورة، إصلاح حاسوب محمول، حفر كهربائي",
-          listItemPlaceholder: "مثال: مثقاب لاسلكي، كاميرا DSLR، معدات تخييم",
-          feeLabel: "الرسوم (USD)",
-          trackButton: "تتبع العنصر",
-          listButton: "نشر الإعلان",
-        },
-        hi: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "वैश्विक मरम्मत और उधार बाज़ार",
-          globalMarketSub:
-            "दुनिया भर में मरम्मत की दुकानें खोजें, सामग्री उधार लें या दें, और सामुदायिक इम्पैक्ट अंकों को अर्जित करें।",
-          repairSearchLabel: "मरम्मत की दुकानों को खोजें",
-          borrowMarketLabel: "उधार/लेंड मार्केट",
-          searchPlaceholder:
-            "उदा. क्रैक्ड फोन स्क्रीन, लैपटॉप मरम्मत, ड्रिल ऋण",
-          listItemPlaceholder: "उदा. कॉर्डलेस ड्रिल, DSLR कैमरा, कैम्पिंग गियर",
-          feeLabel: "शुल्क (USD)",
-          trackButton: "आइटम ट्रैक करें",
-          listButton: "लिस्टिंग पोस्ट करें",
-        },
-        pt: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "Mercado Global de Reparos e Empréstimos",
-          globalMarketSub:
-            "Encontre oficinas, empreste ou pegue itens emprestados e ganhe pontos de impacto comunitário em todo o mundo.",
-          repairSearchLabel: "Encontre oficinas de reparo",
-          borrowMarketLabel: "Mercado de Empréstimo/Aluguel",
-          searchPlaceholder:
-            "ex. tela quebrada do telefone, conserto de laptop, empréstimo de furadeira",
-          listItemPlaceholder:
-            "ex. furadeira sem fio, câmera DSLR, equipamentos de acampamento",
-          feeLabel: "Taxa (USD)",
-          trackButton: "Rastrear item",
-          listButton: "Publicar anúncio",
-        },
-        ru: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "Глобальный рынок ремонта и аренды",
-          globalMarketSub:
-            "Найдите мастерские, арендуйте или сдайте вещи и зарабатывайте очки влияния по всему миру.",
-          repairSearchLabel: "Найдите ремонтную мастерскую",
-          borrowMarketLabel: "Рынок аренды/заимствования",
-          searchPlaceholder:
-            "напр. треснутый экран телефона, ремонт ноутбука, дрель",
-          listItemPlaceholder:
-            "напр. беспроводная дрель, фотоаппарат DSLR, походное снаряжение",
-          feeLabel: "Плата (USD)",
-          trackButton: "Отследить item",
-          listButton: "Опубликовать объявление",
-        },
-        ja: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "グローバル修理・貸借マーケット",
-          globalMarketSub:
-            "世界中の修理店を検索し、アイテムを借りたり貸したりして、コミュニティポイントを獲得します。",
-          repairSearchLabel: "修理店を検索する",
-          borrowMarketLabel: "借りる/貸すマーケット",
-          searchPlaceholder: "例: 画面割れのスマホ、ノートPC修理、ドリル借りる",
-          listItemPlaceholder: "例: コードレスドリル、DSLRカメラ、キャンプ用品",
-          feeLabel: "料金 (USD)",
-          trackButton: "アイテム追跡",
-          listButton: "リスティングを投稿",
-        },
-        de: {
-          appTitle: "FixTogether",
-          globalMarketTitle: "Globaler Reparatur- & Verleihmarkt",
-          globalMarketSub:
-            "Finde Werkstätten, leihe aus oder verleihe Gegenstände und sammle Impact-Punkte weltweit.",
-          repairSearchLabel: "Finde Reparaturwerkstätten",
-          borrowMarketLabel: "Leih-/Verleihmarkt",
-          searchPlaceholder:
-            "z.B. gesprungener Handybildschirm, Laptopreparatur, Bohrmaschine ausleihen",
-          listItemPlaceholder:
-            "z.B. Akku-Bohrmaschine, DSLR-Kamera, Campingausrüstung",
-          feeLabel: "Gebühr (USD)",
-          trackButton: "Artikel verfolgen",
-          listButton: "Angebot posten",
-        },
-        all: {
-          appTitle: "FixTogether Global",
-          globalMarketTitle: "All Languages Global Marketplace",
-          globalMarketSub:
-            "This interface supports users from every language and every continent, with global repair, lending, and impact coordination.",
-          repairSearchLabel: "Find repair shops worldwide",
-          borrowMarketLabel: "Borrow/Lend Marketplace",
-          searchPlaceholder:
-            "e.g. cracked phone screen, laptop repair, drill borrow",
-          listItemPlaceholder: "e.g. Cordless drill, DSLR camera, camping gear",
-          feeLabel: "Fee (USD)",
-          trackButton: "Track Item",
-          listButton: "Post Listing",
-        },
-      };
-
-      let liveState = {
-        xpAccumulated: 1420,
-        affiliateRevenue: 0.0,
-        subscriptionRevenue: 0.0,
-        totalOffsetsPool: 4812.0,
-        freeQueryTokens: 2,
-        marketPoints: 1420,
-        trackedItems: 18,
-        borrowListings: [],
-        neighborhoodActions: 24,
-        activeItem: null,
-        trafficIntervalTimer: null,
-        currentFriction: 12,
-        items: [
-          {
-            id: 901,
-            title: "Dyson V11 Vacuum battery drops charge instantly",
-            desc: "Blue indicator light flashes twice on trigger pull. Motor runs for 2 seconds then dies.",
-            complexity: "low",
-            part: "Replacement Li-Ion Pack for Dyson V11",
-            price: 42.0,
-            targetURL:
-              "https://www.amazon.com/s?k=Dyson+V11+replacement+battery",
-            co2: 42.5,
-            waste: 4.2,
-          },
-          {
-            id: 902,
-            title: "Breville Barista Express pressure holds but no water flow",
-            desc: "Solvent pump buzzing. Pressure gauge spikes but no water reaches the portal group assembly.",
-            complexity: "medium",
-            part: "Solenoid Valve 3-Way Assembly for Breville",
-            price: 29.5,
-            targetURL:
-              "https://www.ebay.com/sch/i.html?_nkw=Breville+3-way+solenoid+valve",
-            co2: 28.1,
-            waste: 5.6,
-          },
-          {
-            id: 903,
-            title: "Short Circuit on Smart LED Microwave control panel",
-            desc: "Sparked once near rear wiring harness panel during run. Entire faceplate has gone black.",
-            complexity: "high",
-            part: "Full Control Panel Circuit Assembly",
-            price: 89.0,
-            targetURL: "https://www.ifixit.com",
-            co2: 64.0,
-            waste: 18.2,
-          },
-        ],
-        ledgerRecords: [
-          {
-            hash: "0x8f2c_e19a",
-            channel: "Direct Sponsorship Lease",
-            detail: "Patagonia Global Campaign Header Placement",
-            value: 2500.0,
-            mass: "124.0 kg CO2e",
-            status: "Active",
-          },
-          {
-            hash: "0x9d1a_f822",
-            channel: "Local Depot Reclaim",
-            detail: "Kitchen Oven Induction Panel",
-            value: 420.0,
-            mass: "342.5 kg CO2e",
-            status: "Verified",
-          },
-        ],
-      };
-
-      const REPAIR_SHOP_NETWORK = [
-        {
-          id: 1401,
-          name: "Global Fix Hub",
-          continent: "all",
-          region: "Global",
-          specialty: "Electronics & Appliances",
-          rating: 4.9,
-          availability: "24/7",
-          fee: "$$",
-          distance: "Worldwide",
-          url: "https://globalfix.example.com",
-        },
-        {
-          id: 1402,
-          name: "Eco Repair Collective",
-          continent: "eu",
-          region: "Europe",
-          specialty: "Smart Devices",
-          rating: 4.8,
-          availability: "Mon-Sat",
-          fee: "$",
-          distance: "Local",
-          url: "https://eco-repair.example.com",
-        },
-        {
-          id: 1403,
-          name: "Asia Tech Clinic",
-          continent: "as",
-          region: "Asia",
-          specialty: "Mobile & Battery",
-          rating: 4.7,
-          availability: "24/7",
-          fee: "$$",
-          distance: "Regional",
-          url: "https://asia-tech.example.com",
-        },
-        {
-          id: 1404,
-          name: "Africa Repair Network",
-          continent: "af",
-          region: "Africa",
-          specialty: "Solar & Power",
-          rating: 4.6,
-          availability: "Mon-Fri",
-          fee: "$",
-          distance: "Local",
-          url: "https://africa-repair.example.com",
-        },
-        {
-          id: 1405,
-          name: "Northern Makers Lab",
-          continent: "na",
-          region: "North America",
-          specialty: "Tools & Appliances",
-          rating: 4.8,
-          availability: "Weekends",
-          fee: "$$$",
-          distance: "Nearby",
-          url: "https://makerslab.example.com",
-        },
-        {
-          id: 1406,
-          name: "South American Fix Works",
-          continent: "sa",
-          region: "South America",
-          specialty: "Bike & Gear",
-          rating: 4.7,
-          availability: "Everyday",
-          fee: "$",
-          distance: "Regional",
-          url: "https://sa-fix.example.com",
-        },
-        {
-          id: 1407,
-          name: "Oceania Repair Vault",
-          continent: "oc",
-          region: "Oceania",
-          specialty: "Household Repair",
-          rating: 4.8,
-          availability: "Mon-Sat",
-          fee: "$$",
-          distance: "Local",
-          url: "https://oceania-vault.example.com",
-        },
-      ];
-
-      const BORROW_LEND_LISTINGS = [
-        {
-          id: 2001,
-          title: "Cordless drill set",
-          type: "tool",
-          region: "North America",
-          fee: 8,
-          duration: "3 days",
-          status: "Available",
-          description: "Fast charger included, ideal for home repairs.",
-          tracking: false,
-        },
-        {
-          id: 2002,
-          title: "DSLR camera body",
-          type: "device",
-          region: "Europe",
-          fee: 20,
-          duration: "5 days",
-          status: "Available",
-          description: "Perfect for event photography and product shots.",
-          tracking: false,
-        },
-        {
-          id: 2003,
-          title: "Camping gear kit",
-          type: "other",
-          region: "Asia",
-          fee: 12,
-          duration: "7 days",
-          status: "Available",
-          description: "Tent, stove, lantern bundle ready for adventure.",
-          tracking: false,
-        },
-        {
-          id: 2004,
-          title: "DJ speaker pack",
-          type: "device",
-          region: "Africa",
-          fee: 15,
-          duration: "2 days",
-          status: "Available",
-          description: "Mobile sound system for small neighborhood events.",
-          tracking: false,
-        },
-      ];
-
-      function setMarketplaceMode(mode) {
-        const buttons = {
-          repair: "market-mode-repair",
-          borrow: "market-mode-borrow",
-          impact: "market-mode-impact",
-        };
-        Object.keys(buttons).forEach((key) => {
-          const btn = document.getElementById(buttons[key]);
-          if (btn) {
-            btn.className = `rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.3em] font-black transition ${
-              key === mode
-                ? "bg-emerald-500/10 text-emerald-200"
-                : "bg-slate-800 text-slate-300"
-            }`;
-          }
-        });
-        if (mode === "repair") {
-          searchRepairShops();
-        } else if (mode === "borrow") {
-          renderBorrowListings();
-        } else {
-          updateMarketStats();
-        }
-      }
-
-      function renderRepairShops(results) {
-        const container = document.getElementById("repair-shop-results");
-        if (!container) return;
-        container.innerHTML = "";
-        if (!results.length) {
-          container.innerHTML = `<div class="rounded-2xl border border-slate-800 bg-slate-900 p-4 text-slate-400 text-xs">No repair shops found. Expand your search or try another continent.</div>`;
-          return;
-        }
-        results.forEach((shop) => {
-          container.innerHTML += `
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-4 text-xs">
-              <div class="flex justify-between items-start gap-3">
-                <div>
-                  <p class="font-black text-white">${shop.name}</p>
-                  <p class="text-slate-400">${shop.specialty} • ${shop.region}</p>
-                </div>
-                <span class="text-[10px] text-emerald-400 font-black">${shop.rating.toFixed(1)}★</span>
-              </div>
-              <p class="mt-2 text-slate-500">${shop.availability} • ${shop.distance} • ${shop.fee}</p>
-              <a href="${shop.url}" target="_blank" class="inline-flex mt-3 rounded-full bg-emerald-500/10 text-emerald-200 px-3 py-1 text-[10px] uppercase font-black">View Shop</a>
-            </div>`;
-        });
-      }
-
-      function searchRepairShops() {
-        const keyword = document
-          .getElementById("repair-shop-search-in")
-          .value.trim()
-          .toLowerCase();
-        const continent = document.getElementById("repair-shop-region").value;
-        const results = REPAIR_SHOP_NETWORK.filter((shop) => {
-          const matchesText =
-            keyword.length === 0 ||
-            shop.name.toLowerCase().includes(keyword) ||
-            shop.specialty.toLowerCase().includes(keyword) ||
-            shop.region.toLowerCase().includes(keyword);
-          const matchesContinent =
-            continent === "all" ||
-            shop.continent === "all" ||
-            shop.continent === continent;
-          return matchesText && matchesContinent;
-        });
-        renderRepairShops(results);
-        showNotification(
-          `Found ${results.length} repair shop${results.length === 1 ? "" : "s"}.`,
-        );
-      }
-
-      function renderBorrowListings() {
-        const container = document.getElementById("borrow-listings");
-        if (!container) return;
-        const listings = liveState.borrowListings.length
-          ? liveState.borrowListings
-          : BORROW_LEND_LISTINGS;
-        container.innerHTML = "";
-        if (!listings.length) {
-          container.innerHTML = `<div class="rounded-2xl border border-slate-800 bg-slate-900 p-4 text-slate-400 text-xs">No active borrow/lend listings yet. Post one to build your neighborhood economy.</div>`;
-          return;
-        }
-        listings.forEach((listing) => {
-          container.innerHTML += `
-            <div class="rounded-2xl border border-slate-800 bg-slate-900 p-3 text-xs">
-              <div class="flex justify-between items-start gap-3">
-                <div>
-                  <p class="font-black text-white">${listing.title}</p>
-                  <p class="text-slate-400">${listing.type} • ${listing.region} • ${listing.duration}</p>
-                </div>
-                <span class="text-[10px] text-emerald-400 font-black">$${listing.fee}</span>
-              </div>
-              <p class="mt-2 text-slate-500">${listing.description}</p>
-              <div class="mt-3 flex flex-wrap gap-2">
-                <button onclick="trackItem(${listing.id})" class="rounded-full bg-emerald-500/10 px-3 py-1 text-[10px] uppercase font-black text-emerald-200">Track Item</button>
-                <span class="rounded-full border border-slate-800 px-2 py-1 text-[10px] ${listing.tracking ? "text-emerald-300 border-emerald-500/30" : "text-slate-400"}">${listing.tracking ? "Tracking Active" : "Not Tracked"}</span>
-              </div>
-            </div>`;
-        });
-        updateMarketStats();
-      }
-
-      function postBorrowListing() {
-        const title = document.getElementById("borrow-item-title").value.trim();
-        const type = document.getElementById("borrow-item-type").value;
-        const region =
-          document.getElementById("borrow-item-region").value.trim() ||
-          "Global";
-        const fee =
-          Number(document.getElementById("borrow-item-fee").value.trim()) || 0;
-        const duration =
-          document.getElementById("borrow-item-duration").value.trim() ||
-          "3 days";
-        const description = document
-          .getElementById("borrow-item-desc")
-          .value.trim();
-        if (!title || !description) {
-          return showNotification(
-            "Please enter the item name and description before posting.",
-          );
-        }
-        const listing = {
-          id: Date.now(),
-          title,
-          type,
-          region,
-          fee: fee || 5,
-          duration,
-          status: "Available",
-          description,
-          tracking: false,
-        };
-        liveState.borrowListings.unshift(listing);
-        liveState.marketPoints += 25;
-        liveState.neighborhoodActions += 1;
-        renderBorrowListings();
-        updateMarketStats();
-        document.getElementById("borrow-item-title").value = "";
-        document.getElementById("borrow-item-region").value = "";
-        document.getElementById("borrow-item-fee").value = "";
-        document.getElementById("borrow-item-duration").value = "";
-        document.getElementById("borrow-item-desc").value = "";
-        showNotification(`Listing posted: ${title}`);
-      }
-
-      function trackItem(listingId) {
-        const listing =
-          liveState.borrowListings.find((item) => item.id === listingId) ||
-          BORROW_LEND_LISTINGS.find((item) => item.id === listingId);
-        if (!listing) return;
-        listing.tracking = true;
-        liveState.trackedItems += 1;
-        renderBorrowListings();
-        updateMarketStats();
-        showNotification(`${listing.title} is now under active tracking.`);
-      }
-
-      function updateMarketStats() {
-        document.getElementById("impact-points-value").innerText =
-          liveState.marketPoints.toLocaleString();
-        document.getElementById("tracked-items-value").innerText =
-          liveState.trackedItems.toLocaleString();
-        document.getElementById("neighborhood-actions-value").innerText =
-          liveState.neighborhoodActions.toLocaleString();
-        document.getElementById("borrow-listings-count").innerText = (
-          liveState.borrowListings.length || BORROW_LEND_LISTINGS.length
-        ).toString();
-      }
-
-      function switchLanguage(language) {
-        activeLanguage = language;
-        document.documentElement.lang = language === "all" ? "en" : language;
-        const strings = LANGUAGE_ENGINES[language] || LANGUAGE_ENGINES.en;
-        document.getElementById("global-market-title").innerText =
-          strings.globalMarketTitle;
-        document.getElementById("global-market-subtitle").innerText =
-          strings.globalMarketSub;
-        document.getElementById("repair-search-label").innerText =
-          strings.repairSearchLabel;
-        document.getElementById("borrow-market-label").innerText =
-          strings.borrowMarketLabel;
-        document.getElementById("repair-shop-search-in").placeholder =
-          strings.searchPlaceholder;
-        document.getElementById("borrow-item-title").placeholder =
-          strings.listItemPlaceholder;
-        document.getElementById("borrow-item-fee").placeholder =
-          strings.feeLabel;
-        document.getElementById("borrow-item-desc").placeholder =
-          strings.listItemPlaceholder;
-        showNotification(
-          `Language switched to ${language === "all" ? "All Languages" : language.toUpperCase()}.`,
-        );
-      }
-
-      function switchRegion(regionId) {
-        activeRegion = regionId;
-        triggerNotification(
-          `Ecosystem region shifted to: ${regionId.toUpperCase()}`,
-        );
-
-        document.querySelectorAll('button[id^="reg-btn-"]').forEach((btn) => {
-          btn.className =
-            "px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all text-slate-400 hover:text-white";
-        });
-        document.getElementById("reg-btn-" + regionId).className =
-          "px-2.5 py-1 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all bg-emerald-500 text-slate-950";
-
-        const lang = REGIONAL_ENGINES[regionId].lang;
-        document.getElementById("label-xp-metric").innerText =
-          lang.xpAccumulated;
-        document.getElementById("label-rev-metric").innerText =
-          lang.revenueYield;
-        document.getElementById("label-offset-metric").innerText =
-          lang.offsetsPool;
-        document.getElementById("hero-mini-tag").innerText = lang.heroTag;
-        document.getElementById("hero-title").innerText = lang.heroTitle;
-        document.getElementById("hero-desc").innerText = lang.heroDesc;
-        document.getElementById("hero-level-badge").innerText = lang.heroLevel;
-        document.getElementById("hero-level-sub").innerText = lang.heroProgress;
-        document.getElementById("label-district-goal").innerText =
-          lang.districtGoal;
-        document.getElementById("label-district-sub").innerText =
-          lang.districtSub;
-        document.getElementById("feed-title").innerText =
-          lang.mobileNearbyHeader;
-        document.getElementById("label-diagnostics-header").innerText =
-          lang.diagnosticsHeader;
-        document.getElementById("label-diagnostics-sub").innerText =
-          lang.diagnosticsSub;
-        document.getElementById("label-affiliate-match").innerText =
-          lang.affiliateMatch;
-        document.getElementById("label-refurbished-match").innerText =
-          lang.refurbishedMatch;
-        document.getElementById("label-refurbished-title").innerText =
-          lang.refurbishedTitle;
-        document.getElementById("label-paywall-header").innerText =
-          lang.paywallHeader;
-        document.getElementById("label-paywall-desc").innerText =
-          lang.paywallDesc;
-        document.getElementById("label-pay-per-fix").innerText = lang.payPerFix;
-        document.getElementById("label-pro-membership").innerText =
-          lang.proMembership;
-        document.getElementById("label-manual-sourcing").innerText =
-          lang.manualSourcing;
-        document.getElementById("label-top-menders").innerText =
-          lang.topMenders;
-        document.getElementById("label-achievements").innerText =
-          lang.achievements;
-        document.getElementById("label-lithium-badge").innerText =
-          lang.lithiumBadge;
-        document.getElementById("label-lithium-sub").innerText =
-          lang.lithiumSub;
-        document.getElementById("label-fabric-badge").innerText =
-          lang.fabricBadge;
-        document.getElementById("label-fabric-sub").innerText = lang.fabricSub;
-        document.getElementById("label-ecosystem-radar").innerText =
-          lang.radarProximity;
-        document.getElementById("label-mobile-report-header").innerText =
-          lang.mobileReportHeader;
-        document.getElementById("label-mobile-nearby-header").innerText =
-          lang.mobileNearbyHeader;
-        document.getElementById("label-saas-arr-header").innerText =
-          lang.saasArrHeader;
-        document.getElementById("label-saas-revenue-header").innerText =
-          lang.saasRevenueHeader;
-        document.getElementById("label-saas-offsets-header").innerText =
-          lang.saasOffsetsHeader;
-        document.getElementById("label-traffic-header").innerText =
-          lang.trafficHeader;
-        document.getElementById("label-traffic-desc").innerText =
-          lang.trafficDesc;
-        document.getElementById("label-config-header").innerText =
-          lang.configHeader;
-        document.getElementById("label-config-desc").innerText =
-          lang.configDesc;
-        document.getElementById("label-sponsor-config-header").innerText =
-          lang.sponsorConfigHeader;
-        document.getElementById("label-sponsor-config-desc").innerText =
-          lang.sponsorConfigDesc;
-        document.getElementById("label-ledger-header").innerText =
-          lang.ledgerHeader;
-        document.getElementById("btn-mint-volume").innerText = lang.btnMint;
-        document.getElementById("btn-update-sponsor").innerText =
-          lang.btnUpdateSponsor;
-
-        const headerRow = document.getElementById("ledger-header-row");
-        headerRow.innerHTML = `
-        <th class="p-3">${lang.thHash}</th>
-        <th class="p-3">${lang.thChannel}</th>
-        <th class="p-3">${lang.thRecord}</th>
-        <th class="p-3">${lang.thValue}</th>
-        <th class="p-3 text-right">${lang.thStatus}</th>
-      `;
-
-        recalculateBalances();
-        renderEcosystemViews();
-        renderBorrowListings();
-        updateMarketStats();
-      }
-
-      function formatCurrency(val) {
-        const region = REGIONAL_ENGINES[activeRegion];
-        return `${region.currency}${(val * region.rate).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-      }
-
-      function showNotification(msg) {
-        const toast = document.getElementById("master-toast");
-        toast.innerText = msg;
-        toast.classList.remove(
-          "opacity-0",
-          "pointer-events-none",
-          "translate-y-2",
-        );
-        setTimeout(
-          () =>
-            toast.classList.add(
-              "opacity-0",
-              "pointer-events-none",
-              "translate-y-2",
-            ),
-          3500,
-        );
-      }
-
-      function triggerNotification(msg) {
-        showNotification(msg);
-      }
-
-      function triggerDopamineBlast() {
-        const container = document.getElementById("celebration-container");
-        container.innerHTML = "";
-        const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b"];
-        for (let i = 0; i < 30; i++) {
-          const particle = document.createElement("div");
-          particle.className = `absolute particle-fire rounded-full`;
-          particle.style.width = `8px`;
-          particle.style.height = `8px`;
-          particle.style.backgroundColor =
-            colors[Math.floor(Math.random() * colors.length)];
-          const angle = Math.random() * Math.PI * 2;
-          const radius = Math.random() * 100 + 30;
-          particle.style.transform = "translate(0, 0)";
-          container.appendChild(particle);
-          setTimeout(() => {
-            particle.style.transform = `translate(${Math.cos(angle) * radius}px, ${Math.sin(angle) * radius}px) scale(0)`;
-            particle.style.transition =
-              "transform 0.6s cubic-bezier(0.1, 0.8, 0.3, 1)";
-          }, 10);
-        }
-      }
-
-      function renderEcosystemViews() {
-        const lang = REGIONAL_ENGINES[activeRegion].lang;
-        const webFeed = document.getElementById("web-requests-feed");
-        webFeed.innerHTML = "";
-        liveState.items.forEach((item) => {
-          webFeed.innerHTML += `
-          <div onclick="selectActiveDiagnosticItem(${item.id})" class="bg-slate-950 p-4 rounded-xl border ${liveState.activeItem?.id === item.id ? "border-emerald-500 bg-emerald-950/10" : "border-slate-850 hover:border-slate-800"} cursor-pointer transition-all flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div class="flex-grow">
-              <span class="bg-slate-900 border border-slate-850 text-slate-400 text-[9px] font-black uppercase px-2 py-0.5 rounded">${item.complexity.toUpperCase()}</span>
-              <h4 class="font-bold text-sm text-white mt-1.5">${item.title}</h4>
-              <p class="text-xs text-slate-400 mt-1">${item.desc}</p>
-            </div>
-            <div class="text-left md:text-right whitespace-nowrap">
-              <p class="text-xs font-black text-emerald-400">+${item.co2}kg CO2</p>
-              <p class="text-[10px] text-slate-500 mt-0.5">Deflects ${item.waste}kg waste</p>
-            </div>
-          </div>
-        `;
-        });
-
-        const mobileFeed = document.getElementById("mobile-live-requests-list");
-        mobileFeed.innerHTML = "";
-        liveState.items.forEach((item) => {
-          mobileFeed.innerHTML += `
-          <div onclick="selectActiveDiagnosticItem(${item.id}); changeActiveView('consumer')" class="bg-slate-950 p-2.5 rounded-xl border border-slate-850 cursor-pointer flex justify-between items-center text-xs">
-            <span class="font-bold text-white truncate max-w-[150px]">${item.title}</span>
-            <span class="text-[9px] text-emerald-400 font-semibold">Diagnose ⚡</span>
-          </div>
-        `;
-        });
-
-        const ledgerFeed = document.getElementById("corporate-ledger-rows");
-        ledgerFeed.innerHTML = "";
-        liveState.ledgerRecords.forEach((row) => {
-          ledgerFeed.innerHTML += `
-          <tr class="border-b border-slate-850 hover:bg-slate-900/30">
-            <td class="p-3 font-mono text-emerald-400">${row.hash}</td>
-            <td class="p-3 text-slate-300 font-bold">${row.channel}</td>
-            <td class="p-3 text-slate-400">${row.detail}</td>
-            <td class="p-3 font-bold text-emerald-400">${formatCurrency(row.value)}</td>
-            <td class="p-3 text-right"><span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded text-[10px] font-black">${row.status}</span></td>
-          </tr>
-        `;
-        });
-      }
-
-      function recalculateBalances() {
-        const totalRevenue =
-          liveState.affiliateRevenue + liveState.subscriptionRevenue + 2500.0;
-        document.getElementById("header-revenue").innerText =
-          formatCurrency(totalRevenue);
-        document.getElementById("header-carbon").innerText =
-          `${liveState.totalOffsetsPool.toFixed(2)} kg`;
-        document.getElementById("header-xp").innerText =
-          `${liveState.xpAccumulated} XP`;
-        document.getElementById("metric-revenue").innerText =
-          formatCurrency(totalRevenue);
-        document.getElementById("metric-offsets").innerText =
-          `${liveState.totalOffsetsPool.toFixed(2)} kg`;
-        document.getElementById("saas-arr-value").innerText =
-          formatCurrency(145000.0);
-        document.getElementById("saas-revenue-metric").innerText =
-          formatCurrency(liveState.affiliateRevenue);
-        document.getElementById("saas-offsets-metric").innerText =
-          `${liveState.totalOffsetsPool.toFixed(2)} kg`;
-      }
-
-      function changeActiveView(viewId) {
-        document
-          .querySelectorAll('section[id^="view-"]')
-          .forEach((el) => el.classList.add("hidden"));
-        document.getElementById("view-" + viewId).classList.remove("hidden");
-        document
-          .querySelectorAll('button[id^="nav-btn-"]')
-          .forEach(
-            (btn) =>
-              (btn.className =
-                "px-3.5 py-1.5 rounded-lg font-bold text-slate-400 transition-all flex-1 lg:flex-none"),
-          );
-        if (document.getElementById("nav-btn-" + viewId)) {
-          document.getElementById("nav-btn-" + viewId).className =
-            "px-3.5 py-1.5 rounded-xl font-bold bg-emerald-500 text-slate-950 transition-all flex-1 lg:flex-none";
-        }
-      }
-
-      function injectFrictionTelemetry() {
-        liveState.currentFriction = Math.min(
-          liveState.currentFriction + 12,
-          100,
-        );
-        document.getElementById("friction-log-badge").innerText =
-          `${liveState.currentFriction}% Friction`;
-        document.getElementById("friction-log-badge").className =
-          "text-[9px] font-black text-rose-400 animate-pulse";
-        showNotification("Telemetry friction indexes updated.");
-      }
-
-      function triggerAutonomousUpgradeCycle() {
-        showNotification("Analyzing layout friction curves...");
-        setTimeout(() => {
-          document.getElementById("master-body").className =
-            "bg-[#03060c] text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden evolve-transition";
-          document.getElementById("brand-logo").className =
-            "bg-emerald-400 text-slate-950 p-2.5 rounded-2xl shadow-xl shadow-emerald-400/30 scale-105 evolve-transition";
-          document.getElementById("ai-status-tag").innerText = "V3.4 Optimized";
-          document.getElementById("ai-status-tag").className =
-            "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-black uppercase px-2.5 py-0.5 rounded-full";
-          liveState.currentFriction = 12;
-          document.getElementById("friction-log-badge").innerText =
-            "12% Friction (Optimized)";
-          document.getElementById("friction-log-badge").className =
-            "text-[9px] font-black text-emerald-400";
-          showNotification("AI interface layout self-healed successfully.");
-        }, 500);
-      }
-
-      function selectActiveDiagnosticItem(itemId) {
-        if (liveState.freeQueryTokens <= 0) {
-          document.getElementById("ai-text-output").classList.add("hidden");
-          document.getElementById("affiliate-gateway").classList.add("hidden");
-          document.getElementById("recommerce-gateway").classList.add("hidden");
-          document.getElementById("paywall-gateway").classList.remove("hidden");
-          showNotification("Diagnostic limit reached. Premium paywall active.");
-          return;
-        }
-        const item = liveState.items.find((i) => i.id === itemId);
-        if (!item) return;
-        liveState.activeItem = item;
-        renderEcosystemViews();
-        liveState.freeQueryTokens -= 1;
-
-        document.getElementById("affiliate-gateway").classList.add("hidden");
-        document.getElementById("recommerce-gateway").classList.add("hidden");
-        const textOut = document.getElementById("ai-text-output");
-        textOut.innerHTML = `⚙️ Evaluating physical blueprints for:<br><span class="text-emerald-400 font-bold">${item.title}</span>...`;
-
-        setTimeout(() => {
-          textOut.innerHTML = `<strong>AI RECOMMENDATION:</strong> Connection or assembly degradation confirmed. Safe mount replacement part: <span class="text-emerald-400 font-bold">${item.part}</span>.`;
-          if (item.complexity === "high") {
-            document.getElementById("refurbished-alternative-price").innerText =
-              formatCurrency(119.0);
-            document
-              .getElementById("recommerce-gateway")
-              .classList.remove("hidden");
-          } else {
-            document.getElementById("part-name").innerText = item.part;
-            document.getElementById("part-price").innerText = formatCurrency(
-              item.price,
-            );
-            document
-              .getElementById("affiliate-gateway")
-              .classList.remove("hidden");
-          }
-        }, 600);
-      }
-
-      function executeSimulatedSourcedOrder() {
-        if (!liveState.activeItem) return;
-        const item = liveState.activeItem;
-        const comm = item.price * 0.15;
-        liveState.affiliateRevenue += comm;
-        liveState.totalOffsetsPool += item.co2;
-        liveState.xpAccumulated += 50;
-        liveState.ledgerRecords.unshift({
-          hash: "0x" + Math.floor(Math.random() * 16777).toString(16) + "_e88",
-          channel: "Partnership Dropship",
-          detail: `Commission on ${item.part}`,
-          value: comm,
-          mass: `${item.co2} kg CO2e`,
-          status: "Settled",
-        });
-        document.getElementById("affiliate-gateway").classList.add("hidden");
-        document.getElementById("ai-text-output").innerText =
-          "Transaction audited. Margin credited to metrics pool.";
-        liveState.activeItem = null;
-        recalculateBalances();
-        renderEcosystemViews();
-        triggerDopamineBlast();
-        showNotification(`Sourcing completion yield transacted!`);
-      }
-
-      function executeSimulatedRecommerceOrder() {
-        const comm = 119.0 * 0.08;
-        liveState.affiliateRevenue += comm;
-        liveState.totalOffsetsPool += 64.0;
-        liveState.xpAccumulated += 75;
-        liveState.ledgerRecords.unshift({
-          hash: "0x" + Math.floor(Math.random() * 16777).toString(16) + "_r22",
-          channel: "Re-Commerce Hub",
-          detail: "8% split on Refurbished Alternative",
-          value: comm,
-          mass: "64.0 kg CO2e",
-          status: "Settled",
-        });
-        document.getElementById("recommerce-gateway").classList.add("hidden");
-        document.getElementById("ai-text-output").innerText =
-          "Refurbished unit conversion tracked successfully.";
-        liveState.activeItem = null;
-        recalculateBalances();
-        renderEcosystemViews();
-        triggerDopamineBlast();
-        showNotification("Re-commerce asset successfully mapped.");
-      }
-
-      let paystackRegion = "local";
-
-      // Centralized Paystack config — update these URLs to real checkout links
-      const PAYSTACK_CONFIG = {
-        plans: {
-          "pro-monthly": {
-            id: "pro-monthly",
-            label: "FixTogether Pro",
-            // You can point these to your server-side redirect `/create-checkout` for better control
-            checkoutUrl: "/create-checkout?plan=pro-monthly&mode={mode}",
-            price: 499,
-            currency: "USD",
-          },
-          "elite-monthly": {
-            id: "elite-monthly",
-            label: "FixTogether Elite",
-            checkoutUrl: "/create-checkout?plan=elite-monthly&mode={mode}",
-            price: 999,
-            currency: "USD",
-          },
-          lifetime: {
-            id: "lifetime",
-            label: "FixTogether Lifetime",
-            checkoutUrl: "/create-checkout?plan=lifetime&mode={mode}",
-            price: 4999,
-            currency: "USD",
-          },
-          "single-fix": {
-            id: "single-fix",
-            label: "Pay-Per-Fix",
-            checkoutUrl: "/create-checkout?plan=single-fix&mode={mode}",
-            price: 29,
-            currency: "USD",
-          },
-        },
-        defaultMode: "local",
-      };
-
-      function setPaystackRegion(region) {
-        paystackRegion = region;
-        document
-          .getElementById("paystack-region-local")
-          .classList.toggle("bg-emerald-500/10", region === "local");
-        document
-          .getElementById("paystack-region-local")
-          .classList.toggle("text-emerald-200", region === "local");
-        document
-          .getElementById("paystack-region-local")
-          .classList.toggle("bg-slate-950", region !== "local");
-        document
-          .getElementById("paystack-region-foreign")
-          .classList.toggle("bg-emerald-500/10", region === "foreign");
-        document
-          .getElementById("paystack-region-foreign")
-          .classList.toggle("text-emerald-200", region === "foreign");
-        document
-          .getElementById("paystack-region-foreign")
-          .classList.toggle("bg-slate-950", region !== "foreign");
-        showNotification(
-          `Paystack checkout set to ${region === "local" ? "local" : "international"} mode.`,
-        );
-      }
-
-      let pendingCheckoutPlan = null;
-
-      function openCheckoutPreview(planId) {
-        const plan =
-          PAYSTACK_CONFIG.plans[planId] || PAYSTACK_CONFIG.plans["pro-monthly"];
-        pendingCheckoutPlan = planId;
-        const mode = paystackRegion === "foreign" ? "International" : "Local";
-        document.getElementById("checkout-plan-label").innerText = plan.label;
-        document.getElementById("checkout-plan-sub").innerText =
-          `${plan.currency} ${plan.price.toLocaleString()} • ${mode} payment`;
-        document.getElementById("checkout-plan-region").innerText = mode;
-        document.getElementById("checkout-plan-price").innerText =
-          `${plan.currency}${plan.price.toLocaleString()}`;
-        document.getElementById("checkout-plan-feature").innerText =
-          plan.id === "lifetime"
-            ? "Lifetime access with premium support and unlimited marketplace insights."
-            : plan.id === "elite-monthly"
-            ? "Elite tier for scaling teams with advanced coordination tools."
-            : "Popular premium tier for high-frequency community repair and lending.";
-        document.getElementById("checkout-overlay").classList.remove("hidden");
-        document.getElementById("checkout-overlay").setAttribute("aria-hidden", "false");
-        showNotification(`Review your ${plan.label} checkout before redirecting.`);
-      }
-
-      function closeCheckoutPreview() {
-        document.getElementById("checkout-overlay").classList.add("hidden");
-        document.getElementById("checkout-overlay").setAttribute("aria-hidden", "true");
-        pendingCheckoutPlan = null;
-      }
-
-      function confirmCheckout() {
-        if (!pendingCheckoutPlan) return;
-        closeCheckoutPreview();
-        initiatePaystackPayment(pendingCheckoutPlan);
-      }
-
-      function initiatePaystackPayment(planId) {
-        const plan =
-          PAYSTACK_CONFIG.plans[planId] || PAYSTACK_CONFIG.plans["pro-monthly"];
-        const mode =
-          paystackRegion === "foreign"
-            ? "international"
-            : PAYSTACK_CONFIG.defaultMode;
-        const checkoutUrl = (plan.checkoutUrl || "").replace("{mode}", mode);
-
-        showNotification(`Redirecting to Paystack for ${plan.label}...`);
-
-        document.body.classList.add("cursor-wait");
-        setTimeout(() => {
-          document.body.classList.remove("cursor-wait");
-          window.location.href = checkoutUrl;
-        }, 250);
-      }
-
-      function copyTrackingLink() {
-        if (!liveState.activeItem) return;
-        const url = `${liveState.activeItem.targetURL}&tag=${document.getElementById("cfg-amazon-tag").value}`;
-        const input = document.createElement("input");
-        input.value = url;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand("copy");
-        document.body.removeChild(input);
-        showNotification("Monetized anchor tag link copied.");
-      }
-
-      function executeManualSearchQuery() {
-        const q = document.getElementById("manual-search-in").value;
-        if (!q.trim()) return;
-        document.getElementById("ai-text-output").innerHTML =
-          `🔎 Querying catalogs for: "${q}"...`;
-        setTimeout(() => {
-          document.getElementById("ai-text-output").innerHTML =
-            `Custom inventory match found for "${q}". Engineering parameters initialized below.`;
-          document.getElementById("part-name").innerText =
-            `Replacement Element for ${q}`;
-          document.getElementById("part-price").innerText =
-            formatCurrency(24.99);
-          document
-            .getElementById("affiliate-gateway")
-            .classList.remove("hidden");
-          liveState.activeItem = {
-            part: `Custom match ${q}`,
-            price: 24.99,
-            co2: 12.0,
-          };
-        }, 600);
-      }
-
-      function handleMobileSubmission() {
-        const title = document.getElementById("mob-title-input").value;
-        const desc = document.getElementById("mob-desc-input").value;
-        const cat = document.getElementById("mob-cat-input").value;
-        if (!title || !desc) return;
-        liveState.items.unshift({
-          id: Date.now(),
-          title,
-          desc,
-          complexity: "medium",
-          part: `OEM Link for ${cat}`,
-          price: 19.99,
-          targetURL: "https://www.ifixit.com",
-          co2: 20.0,
-          waste: 2.5,
-        });
-        document.getElementById("mob-title-input").value = "";
-        document.getElementById("mob-desc-input").value = "";
-        liveState.xpAccumulated += 30;
-        recalculateBalances();
-        renderEcosystemViews();
-        triggerDopamineBlast();
-        showNotification("Asset reported to neighborhood mesh nodes.");
-      }
-
-      function mintManualCarbonVolume() {
-        liveState.totalOffsetsPool += 500.0;
-        liveState.xpAccumulated += 200;
-        recalculateBalances();
-        renderEcosystemViews();
-        triggerDopamineBlast();
-        showNotification("Institutional scale carbon offset certified.");
-      }
-
-      function updateActiveSponsorCampaign() {
-        const name = document.getElementById("cfg-sponsor-name").value;
-        document.getElementById("sponsor-banner-text").innerText =
-          `${name} Sustainability — Direct funding of hyperlocal community tool lockers and recycling networks`;
-        showNotification("Sponsorship configurations synced.");
-      }
-
-      function engageSimulatedTraffic() {
-        document.getElementById("btn-traffic-start").classList.add("hidden");
-        document.getElementById("btn-traffic-stop").classList.remove("hidden");
-        showNotification("Traffic generator streaming...");
-        liveState.trafficIntervalTimer = setInterval(() => {
-          if (Math.random() > 0.5) {
-            liveState.subscriptionRevenue += 0.99;
-            liveState.ledgerRecords.unshift({
-              hash:
-                "0x" + Math.floor(Math.random() * 167).toString(16) + "_sim",
-              channel: "Traffic Funnel",
-              detail: "Pay-Per-Fix Automated Conversion",
-              value: 0.99,
-              mass: "0 kg",
-              status: "Settled",
-            });
-          } else {
-            liveState.affiliateRevenue += 4.5;
-            liveState.totalOffsetsPool += 25.0;
-            liveState.ledgerRecords.unshift({
-              hash:
-                "0x" + Math.floor(Math.random() * 167).toString(16) + "_sim",
-              channel: "Affiliate Pipeline",
-              detail: "Passive Search Click Check-out",
-              value: 4.5,
-              mass: "25 kg",
-              status: "Settled",
-            });
-          }
-          recalculateBalances();
-          renderEcosystemViews();
-        }, 3000);
-      }
-
-      function disengageSimulatedTraffic() {
-        document.getElementById("btn-traffic-start").classList.remove("hidden");
-        document.getElementById("btn-traffic-stop").classList.add("hidden");
-        clearInterval(liveState.trafficIntervalTimer);
-        showNotification("Simulation paused.");
-      }
-
-      // Launch configuration initialization
-      window.onload = function () {
-        // default region, view, language, marketplace and payment mode
-        switchRegion("us");
-        changeActiveView("consumer");
-        try {
-          switchLanguage("en");
-        } catch (e) {
-          console.warn("switchLanguage not available on load:", e);
-        }
-        try {
-          setMarketplaceMode("repair");
-        } catch (e) {
-          console.warn("setMarketplaceMode not available on load:", e);
-        }
-        try {
-          setPaystackRegion("local");
-        } catch (e) {
-          console.warn("setPaystackRegion not available on load:", e);
-        }
-      };
-    </script>
   </body>
 </html>
