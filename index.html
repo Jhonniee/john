@@ -1,758 +1,832 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta
-      name="google-site-verification"
-      content="YrSPeuIzXCngydz0oweIWJJl00j9VFwT8kOknscwhcE"
-    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixTogether - Tri-Continental Production Core</title>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "FixTogether",
-        "operatingSystem": "iOS, Android, Windows, macOS, Linux",
-        "applicationCategory": "BusinessApplication, LifestyleApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "ratingCount": "14820"
-        }
-      }
-    </script>
-
+    <title>FixTogether - Peer Rental & Escrow System</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <style>
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
+      .modal-transition {
         transition:
-          background-color 0.5s ease,
-          color 0.5s ease;
-        background-image:
-          radial-gradient(
-            circle at top left,
-            rgba(59, 130, 246, 0.16),
-            transparent 25%
-          ),
-          radial-gradient(
-            circle at bottom right,
-            rgba(16, 185, 129, 0.12),
-            transparent 20%
-          );
+          opacity 0.3s ease,
+          transform 0.3s ease;
       }
-      .heading-font {
-        font-family: "Space Grotesk", sans-serif;
-      }
-      .evolve-transition {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .text-glow-blue {
-        text-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
-      }
-      .glass-card {
-        background: rgba(15, 23, 42, 0.92);
-        backdrop-filter: blur(14px);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-      }
-      .btn-primary {
-        border-radius: 1rem;
-        padding: 0.75rem 1.4rem;
-        font-size: 0.7rem;
-        font-weight: 900;
-        letter-spacing: 0.22em;
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease,
-          opacity 0.25s ease;
-        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-        color: #ffffff;
-        box-shadow: 0 18px 45px rgba(59, 130, 246, 0.25);
-      }
-      .btn-secondary {
-        border-radius: 1rem;
-        padding: 0.75rem 1.4rem;
-        font-size: 0.7rem;
-        font-weight: 900;
-        letter-spacing: 0.22em;
-        transition:
-          transform 0.25s ease,
-          background 0.25s ease,
-          border-color 0.25s ease;
-        background: rgba(15, 23, 42, 0.98);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        color: #f8fafc;
-      }
-      .btn-primary:hover,
-      .btn-secondary:hover {
-        transform: translateY(-2px);
-        opacity: 0.95;
-      }
-      .card-fade:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 24px 65px rgba(59, 130, 246, 0.15);
-      }
-      .checkout-overlay {
-        backdrop-filter: blur(10px);
-        background: rgba(0, 0, 0, 0.62);
-      }
-      .checkout-panel {
-        background: rgba(15, 23, 42, 0.96);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-      }
-      .blur-highlight {
-        background: rgba(15, 23, 42, 0.6);
-        backdrop-filter: blur(12px);
-      }
-      @keyframes particle-burst {
-        0% {
-          transform: scale(0.5);
-          opacity: 0;
+      /* Dynamic state breath pulses for active node telemetry */
+      @keyframes ambientGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
         }
         50% {
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1.3);
-          opacity: 0;
+          box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
         }
       }
-      .particle-fire {
-        animation: particle-burst 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+      .eco-evolved-card {
+        animation: ambientGlow 4s infinite ease-in-out;
       }
     </style>
   </head>
   <body
     id="master-body"
-    class="bg-[#03050a] text-slate-200 min-h-screen flex flex-col justify-between overflow-x-hidden evolve-transition"
+    class="bg-[#03050a] text-slate-200 min-h-screen flex flex-col font-sans transition-all duration-700"
   >
     <header
-      class="bg-[#070a14]/95 border-b border-blue-950/40 px-4 py-2 sticky top-0 z-50 backdrop-blur-md shadow-2xl"
+      class="border-b border-slate-800 bg-[#060913] px-6 py-4 flex flex-wrap items-center justify-between sticky top-0 z-40 gap-4"
     >
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <div class="flex items-center gap-4">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
           <div
-            id="brand-logo"
-            class="bg-blue-500 text-slate-950 p-2 rounded-xl w-9 h-9 flex items-center justify-center shrink-0 shadow-lg shadow-blue-400/30"
+            id="brand-logo-node"
+            class="bg-blue-600/10 p-2 rounded-xl border border-blue-500/20 text-blue-400 transition-all duration-500"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2.5"
-              class="w-5 h-5"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6"
             >
-              <path d="m14 2 8 8" />
               <path
-                d="M20 11a1.3 1.3 0 0 1-1.8 0l-4.5-4.5a1.3 1.3 0 0 1 0-1.8l1-1a1.3 1.3 0 0 1 1.8 0l4.5 4.5a1.3 1.3 0 0 1 0 1.8z"
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
               />
-              <path d="M15 11 4.5 21.5a1.5 1.5 0 0 1-2.1-2.1L13 9" />
-              <path d="M4.5 16.5 3 15" />
+              <circle cx="12" cy="12" r="3" class="opacity-40" />
+              <path d="M14.7 9.3 9.3 14.7" />
+              <path d="m10 9-1 1 1.5 1.5L12 10l-2-1z" />
+              <path d="M13.5 11.5 15 13" />
             </svg>
           </div>
-
-          <div class="shrink-0">
-            <div class="flex items-center gap-1.5">
-              <h1
-                class="text-base font-black text-white heading-font tracking-tight text-glow-blue"
-              >
-                FixTogether
-              </h1>
-              <span
-                class="bg-blue-500/20 text-blue-300 border border-blue-500/30 text-[8px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-full"
-                >Tri-Con</span
-              >
-            </div>
-          </div>
-
-          <div
-            class="hidden lg:flex bg-slate-950 p-1 rounded-xl border border-slate-800 gap-1 text-[10px]"
+          <span class="text-xl font-bold tracking-wider text-white"
+            >FixTogether</span
           >
-            <button
-              onclick="changeActiveView('consumer')"
-              id="nav-btn-consumer"
-              class="px-2.5 py-1 rounded-lg font-bold bg-blue-500 text-white"
-            >
-              🌐 Consumer Hub
-            </button>
-            <button
-              onclick="changeActiveView('mobile')"
-              id="nav-btn-mobile"
-              class="px-2.5 py-1 rounded-lg font-bold text-slate-400"
-            >
-              📱 Mobile App
-            </button>
-            <button
-              onclick="changeActiveView('corporate')"
-              id="nav-btn-corporate"
-              class="px-2.5 py-1 rounded-lg font-bold text-slate-400"
-            >
-              🏢 ESG Console
-            </button>
-          </div>
         </div>
+      </div>
 
-        <div class="flex items-center gap-3">
-          <select
-            id="region-selector"
-            onchange="switchRegion(this.value)"
-            class="bg-slate-950 border border-slate-800 text-[10px] font-bold p-1.5 rounded-lg text-white outline-none cursor-pointer"
-          >
-            <option value="gl">GL World</option>
-            <option value="us">US USA</option>
-            <option value="eu">EU Europe</option>
-            <option value="as">AS Asia</option>
-            <option value="af">AF Africa</option>
-            <option value="na">NA N. America</option>
-            <option value="sa">SA S. America</option>
-            <option value="oc">OC Oceania</option>
-          </select>
-
-          <select
-            id="language-selector"
-            onchange="switchLanguage(this.value)"
-            class="bg-slate-950 border border-slate-800 text-[10px] text-white rounded-lg p-1.5 font-bold outline-none cursor-pointer"
-          >
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-            <option value="fr">FR</option>
-            <option value="zh">ZH</option>
-            <option value="ar">AR</option>
-            <option value="hi">HI</option>
-            <option value="pt">PT</option>
-            <option value="ru">RU</option>
-            <option value="ja">JA</option>
-            <option value="de">DE</option>
-          </select>
-
-          <div
-            class="hidden xl:flex items-center gap-3 text-[10px] bg-slate-950/60 border border-slate-900 px-3 py-1.5 rounded-xl font-medium"
-          >
-            <span class="text-slate-400"
-              >XP:
-              <strong id="header-xp" class="text-purple-300 font-bold"
-                >1,420 XP</strong
-              ></span
-            >
-            <span class="text-slate-400"
-              >Rev:
-              <strong id="header-revenue" class="text-blue-300 font-bold"
-                >$2,500.00</strong
-              ></span
-            >
-            <span class="text-slate-400"
-              >Pool:
-              <strong id="metric-offsets" class="text-teal-300 font-bold"
-                >4,812.00 kg</strong
-              ></span
-            >
-          </div>
-
-          <button
-            onclick="openCheckoutPreview('pro-monthly')"
-            class="btn-primary text-[10px] px-3 py-1.5 rounded-xl font-bold tracking-normal"
-          >
-            Premium
-          </button>
+      <div class="flex items-center gap-4 text-sm flex-wrap">
+        <div
+          id="xp-ledger-badge"
+          class="text-slate-300 font-mono bg-slate-900 px-3 py-1 rounded-lg border border-slate-800 transition-all duration-500"
+        >
+          XP:
+          <span id="xp-counter" class="text-emerald-400 font-bold">1,420</span>
         </div>
+        <button
+          onclick="openListingModal()"
+          class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-lg text-xs font-bold transition-all"
+        >
+          + List Item For Rent
+        </button>
       </div>
     </header>
 
-    <section
-      id="global-sponsor-slot"
-      class="bg-blue-950/10 py-1.5 px-4 text-center text-[10px] text-blue-300 font-bold border-b border-blue-950/20"
-    >
-      📢
-      <span class="text-white uppercase font-black tracking-wider mr-1"
-        >Global Carbon Sponsor:</span
+    <main class="flex-1 max-w-7xl w-full mx-auto p-6 space-y-8">
+      <section
+        id="hero-banner-section"
+        class="bg-gradient-to-r from-[#0a0f24] to-[#060a17] border border-slate-800 rounded-2xl p-8 relative overflow-hidden shadow-2xl transition-all duration-700"
       >
-      <span id="sponsor-banner-text" class="hover:underline cursor-pointer"
-        >IKEA Sustainability — Hyperlocal community tool lockers and recycling
-        networks</span
-      >
-    </section>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.1),transparent_50%)]"
+        ></div>
+        <div class="relative z-10 space-y-4 max-w-3xl">
+          <span
+            class="text-xs uppercase font-bold tracking-widest text-amber-500 flex items-center gap-2"
+          >
+            📢 Q2 Platform Campaign: Micro-Escrow Revenue Pipeline
+          </span>
+          <h1
+            class="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight"
+          >
+            Monetize Heavy Equipment & Appliances with Live Telemetry
+          </h1>
+          <p class="text-slate-400 text-sm md:text-base">
+            FixTogether keeps transactions productive. Rent out idle assets or
+            purchase professional blueprints. Standard listings attract a minor
+            flat escrow fee, while Premium accounts unlock zero-fee peer
+            processing modules.
+          </p>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button
+              onclick="openSubscriptionOverlay('Premium Access Pool')"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-bold text-sm shadow-lg shadow-blue-600/20 transition-all"
+            >
+              Upgrade to Premium
+            </button>
+          </div>
+        </div>
+      </section>
 
-    <div
-      id="master-toast"
-      class="fixed top-24 right-6 z-50 bg-blue-600 text-white font-black text-xs px-5 py-3 rounded-xl shadow-2xl transition-all duration-300 opacity-0 pointer-events-none transform translate-y-2"
-    >
-      Ecosystem alert message.
-    </div>
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div
+          id="repair-panel-container"
+          class="lg:col-span-2 bg-[#060a14] border border-slate-800 rounded-2xl p-6 space-y-4 shadow-xl transition-all duration-500"
+        >
+          <div
+            class="border-b border-slate-800/60 pb-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2"
+          >
+            <div>
+              <h2
+                class="text-md font-bold text-white tracking-wide flex items-center gap-2"
+              >
+                <span
+                  id="live-indicator-dot"
+                  class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse transition-all"
+                ></span>
+                Global Repair API Node Engine
+              </h2>
+              <p class="text-xs text-slate-500">
+                Query physical stores or cloud-based app networks directly
+                through synchronized spatial maps.
+              </p>
+            </div>
+          </div>
 
-    <div
-      id="checkout-overlay"
-      class="hidden fixed inset-0 z-50 checkout-overlay flex items-center justify-center p-4 text-left"
-      aria-hidden="true"
-    >
-      <div class="checkout-panel max-w-2xl w-full rounded-3xl p-6 relative">
-        <button
-          onclick="closeCheckoutPreview()"
-          class="absolute right-5 top-5 text-white hover:text-red-400 font-bold"
-          aria-label="Close checkout preview"
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+            <div>
+              <label
+                class="block text-[10px] uppercase text-slate-500 font-bold mb-1"
+                >Continent</label
+              >
+              <select
+                id="repair-continent"
+                onchange="handleContinentChange()"
+                class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-300 focus:outline-none focus:border-blue-500"
+              >
+                <option value="Africa">Africa</option>
+                <option value="North America">North America</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="block text-[10px] uppercase text-slate-500 font-bold mb-1"
+                >Region/City</label
+              >
+              <select
+                id="repair-region"
+                class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-300 focus:outline-none focus:border-blue-500"
+              ></select>
+            </div>
+            <div>
+              <label
+                class="block text-[10px] uppercase text-slate-500 font-bold mb-1"
+                >Street / Location Keyword</label
+              >
+              <input
+                type="text"
+                id="repair-street"
+                placeholder="e.g. Aba Road, Broadway"
+                class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-300 focus:outline-none focus:border-blue-500 placeholder:text-slate-700"
+              />
+            </div>
+            <div class="flex items-end">
+              <button
+                onclick="queryGlobalRepairAPIs()"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition-all text-xs"
+              >
+                Sync Live Stores
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="repair-stores-feed"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2"
+          ></div>
+        </div>
+
+        <div
+          id="eco-panel-container"
+          class="bg-[#050912] border border-slate-800 rounded-2xl p-6 space-y-4 shadow-xl flex flex-col justify-between transition-all duration-500"
         >
-          ✕
-        </button>
-        <span
-          class="text-[10px] uppercase tracking-[0.3em] text-blue-300 font-black"
-        >
-          Premium Checkout Preview
-        </span>
-        <h3
-          id="checkout-plan-label"
-          class="mt-4 text-2xl font-black text-white"
-        ></h3>
-        <p
-          id="checkout-plan-sub"
-          class="mt-2 text-sm text-white font-medium"
-        ></p>
-        <div class="mt-5 grid gap-3 sm:grid-cols-2">
-          <div class="rounded-3xl border border-slate-800 bg-slate-900 p-4">
-            <p class="text-[9px] uppercase tracking-[0.3em] text-white">
-              Region
-            </p>
-            <p id="checkout-plan-region" class="mt-2 text-white font-bold">
-              Local
+          <div class="space-y-3">
+            <div class="border-b border-slate-800/60 pb-3">
+              <h2
+                class="text-md font-bold text-emerald-400 tracking-wide flex items-center gap-2"
+              >
+                🌿 Circular Eco-Stores & Apps
+              </h2>
+              <p class="text-xs text-slate-500">
+                Connected recycling, token apps, and zero-waste networks.
+              </p>
+            </div>
+
+            <div id="eco-apps-feed" class="space-y-3"></div>
+          </div>
+
+          <div
+            class="bg-emerald-950/20 border border-emerald-900/30 rounded-xl p-3 text-center mt-4"
+          >
+            <span
+              class="text-[10px] uppercase tracking-wider text-emerald-400 font-mono font-bold block mb-1"
+              >Eco-System Reward Ledger</span
+            >
+            <p class="text-xs text-slate-400 leading-snug">
+              Renting from green-certified API stores adds multipliers to your
+              platform profile XP loop automatically.
             </p>
           </div>
-          <div class="rounded-3xl border border-slate-800 bg-slate-900 p-4">
-            <p class="text-[9px] uppercase tracking-[0.3em] text-white">
-              Price
-            </p>
-            <p id="checkout-plan-price" class="mt-2 text-white font-bold">
-              $0.00
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <div
+          class="border-b border-slate-800 pb-2 flex justify-between items-center flex-wrap gap-2"
+        >
+          <div>
+            <h2
+              id="catalog-heading"
+              class="text-xl font-bold tracking-tight text-white"
+            >
+              Active Global Rental Pools
+            </h2>
+            <p id="catalog-subtext" class="text-xs text-slate-500">
+              Rent high-grade machinery, construction components, or residential
+              appliances safely.
             </p>
           </div>
         </div>
         <div
-          class="mt-5 rounded-3xl border border-slate-800 bg-slate-950 p-4 text-white text-sm"
+          id="rental-inventory-container"
+          class="grid grid-cols-1 md:grid-cols-3 gap-6"
+        ></div>
+      </section>
+
+      <section
+        class="bg-[#060a14] border border-slate-800 rounded-xl p-6 space-y-4"
+      >
+        <div
+          class="flex items-center justify-between border-b border-slate-800/60 pb-3"
         >
-          <p id="checkout-plan-feature" class="font-bold text-white"></p>
+          <div>
+            <h3 class="text-md font-bold text-white">
+              Item Tracking Registry Node
+            </h3>
+            <p class="text-xs text-slate-500">
+              Hardware location signatures and smart lock statuses.
+            </p>
+          </div>
+          <span
+            class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
+          ></span>
         </div>
-        <div class="mt-5 flex flex-wrap gap-3 items-center">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr
+                class="text-slate-500 border-b border-slate-800 text-xs uppercase font-mono"
+              >
+                <th class="pb-2">Tracking ID</th>
+                <th class="pb-2">Asset Item Name</th>
+                <th class="pb-2">Current Custodian</th>
+                <th class="pb-2">Status Node</th>
+                <th class="pb-2 text-right">Action Log</th>
+              </tr>
+            </thead>
+            <tbody
+              id="tracker-table-body"
+              class="divide-y divide-slate-800 font-mono text-xs"
+            ></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div
+      id="payment-overlay"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 modal-transition"
+    >
+      <div
+        class="bg-[#090f20] border border-slate-800 w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
+      >
+        <div
+          class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-950/40"
+        >
+          <div>
+            <span
+              class="text-[10px] uppercase font-bold tracking-widest text-blue-400"
+              >FixTogether Checkout Engine</span
+            >
+            <h3 id="modal-plan-title" class="text-xl font-bold text-white mt-1">
+              Premium Core
+            </h3>
+          </div>
           <button
-            id="checkout-confirm-btn"
-            onclick="confirmCheckout()"
-            class="btn-primary"
+            onclick="closeSubscriptionOverlay()"
+            class="text-slate-400 hover:text-white text-lg"
           >
-            Proceed to Paystack
+            &times;
           </button>
-          <button onclick="closeCheckoutPreview()" class="btn-secondary">
+        </div>
+        <div class="p-6 space-y-4">
+          <div class="space-y-1.5">
+            <label
+              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+              >Select Payment Region</label
+            >
+            <select
+              id="checkout-currency"
+              onchange="handleCurrencyChangeUpdate()"
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500"
+            >
+              <option value="NGN">NGN (₦) Local Account Mode</option>
+              <option value="USD">USD ($) Global Merchant Mode</option>
+            </select>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+              >Enter Payment Amount</label
+            >
+            <div class="relative">
+              <span
+                id="currency-prefix"
+                class="absolute left-4 top-1/2 -translate-y-1/2 font-mono font-bold text-slate-400"
+                >₦</span
+              >
+              <input
+                type="number"
+                id="custom-payment-amount"
+                min="1"
+                step="any"
+                required
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 font-mono text-xl text-white focus:outline-none focus:border-blue-500"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-6 border-t border-slate-800 bg-slate-950/40 flex justify-end gap-3"
+        >
+          <button
+            onclick="closeSubscriptionOverlay()"
+            class="bg-slate-900 border border-slate-800 text-slate-400 px-4 py-2 rounded-xl text-xs font-semibold"
+          >
             Cancel
+          </button>
+          <button
+            onclick="executePaystackTransaction()"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-xs font-bold shadow-md shadow-blue-600/20"
+          >
+            Authorize with Paystack
           </button>
         </div>
       </div>
     </div>
 
     <div
-      id="celebration-container"
-      class="fixed inset-0 pointer-events-none z-50 overflow-hidden flex items-center justify-center"
-    ></div>
-
-    <main class="flex-grow w-full max-w-7xl mx-auto p-4 md:p-8">
-      <section id="view-consumer" class="space-y-6">
+      id="listing-modal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 modal-transition"
+    >
+      <div
+        class="bg-[#090f20] border border-slate-800 w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
+      >
         <div
-          id="hero-banner"
-          class="bg-gradient-to-br from-blue-950/30 via-slate-900/50 to-indigo-950/30 p-5 sm:p-8 rounded-3xl border border-blue-500/30 shadow-2xl shadow-blue-500/5 evolve-transition flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden"
+          class="p-6 border-b border-slate-800 flex items-center justify-between"
         >
-          <div class="space-y-2 flex-1">
-            <span
-              id="hero-mini-tag"
-              class="text-[9px] font-extrabold uppercase text-blue-300 tracking-widest evolve-transition"
-              >✨ Tri-Continental Operations Live</span
-            >
-            <h2
-              id="hero-title"
-              class="text-2xl font-black text-white heading-font tracking-tight"
-            >
-              Your neighbors are borrowing tools and saving carbon right now.
-            </h2>
-            <p
-              id="hero-desc"
-              class="text-xs text-white leading-relaxed max-w-xl font-medium"
-            >
-              Join the green revolution. Every diagnostic, repair completed, or
-              tool shared increases your neighborhood XP level and mints carbon
-              tokens on the live ledger.
-            </p>
-
-            <div class="flex items-center space-x-2 mt-4">
-              <span
-                id="hero-level-badge"
-                class="bg-purple-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider shadow-lg shadow-purple-500/20"
-              >
-                Level 4: Green Alchemist
-              </span>
-              <span id="hero-level-sub" class="text-white font-bold text-xs"
-                >Progression: 1,420 / 2,000 XP</span
-              >
-            </div>
-
-            <div class="mt-6 max-w-md">
-              <div
-                class="rounded-3xl border border-slate-700 bg-slate-950/90 p-4 card-fade"
-              >
-                <p
-                  class="text-[10px] uppercase tracking-[0.3em] text-blue-300 font-bold"
-                >
-                  Instant Global Sync
-                </p>
-                <p class="mt-2 text-sm font-bold text-white">
-                  Repair visibility across 7 regions
-                </p>
-              </div>
-            </div>
-
-            <div class="flex flex-wrap gap-3 mt-6">
-              <button
-                onclick="openCheckoutPreview('pro-monthly')"
-                class="btn-primary"
-              >
-                Start Premium
-              </button>
-              <button
-                onclick="setMarketplaceMode('repair')"
-                class="btn-secondary"
-              >
-                Explore Marketplace
-              </button>
-            </div>
-          </div>
-
-          <div
-            class="flex items-center space-x-4 shrink-0 bg-slate-950/60 p-4 rounded-2xl border border-slate-700"
+          <h3 class="text-md font-bold text-white">
+            Create Asset Rental Listing
+          </h3>
+          <button
+            onclick="closeListingModal()"
+            class="text-slate-400 hover:text-white"
           >
-            <div class="relative w-16 h-16 flex items-center justify-center">
-              <svg
-                class="w-full h-full transform -rotate-90"
-                viewBox="0 0 36 36"
-              >
-                <path
-                  class="text-slate-800"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  fill="none"
-                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <path
-                  id="progress-circle-path"
-                  class="text-blue-400"
-                  stroke-dasharray="71, 100"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke="currentColor"
-                  fill="none"
-                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-              </svg>
-              <span
-                id="progress-text"
-                class="absolute text-white font-black text-xs"
-                >71%</span
-              >
-            </div>
-            <div>
-              <p
-                id="label-district-goal"
-                class="text-[9px] uppercase font-black text-white"
-              >
-                District Goal
-              </p>
-              <p
-                id="label-district-sub"
-                class="text-xs font-black text-white mt-0.5"
-              >
-                Landfill Avoided
-              </p>
-              <p
-                id="label-district-val"
-                class="text-[11px] font-bold text-blue-300"
-              >
-                712.5 kg / 1000 kg
-              </p>
-            </div>
-          </div>
+            &times;
+          </button>
         </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div
-            id="content-container"
-            class="lg:col-span-2 bg-slate-900/40 p-6 rounded-3xl border border-blue-950/40 space-y-4 evolve-transition"
-          >
-            <div
-              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3"
+        <form
+          id="listing-form"
+          onsubmit="handleFormSubmission(event)"
+          class="p-6 space-y-4 text-sm"
+        >
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-slate-400"
+              >Item Name</label
             >
-              <h3
-                id="feed-title"
-                class="text-sm font-black uppercase tracking-wider text-white"
-              >
-                Neighborhood Repair Board
-              </h3>
-
-              <div
-                class="flex flex-wrap items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-900"
-              >
-                <span class="text-[9px] text-white uppercase font-black"
-                  >Friction Log:</span
-                >
-                <span
-                  id="friction-log-badge"
-                  class="text-[9px] font-black text-blue-300"
-                  >12% Friction (Optimized)</span
-                >
-                <button
-                  onclick="injectFrictionTelemetry()"
-                  class="text-[9px] bg-slate-900 text-white hover:bg-slate-800 px-2 py-0.5 rounded border border-slate-700 font-bold"
-                >
-                  Inject Friction
-                </button>
-                <button
-                  onclick="triggerAutonomousUpgradeCycle()"
-                  class="text-[9px] bg-blue-500 text-white px-2 py-0.5 rounded font-black shadow-md shadow-blue-500/20"
-                >
-                  Evolve UI
-                </button>
-              </div>
-            </div>
-
-            <div id="web-requests-feed" class="space-y-3"></div>
+            <input
+              type="text"
+              id="form-name"
+              required
+              placeholder="e.g., Heavy Rotary Hammer Drill"
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white focus:outline-none focus:border-blue-500"
+            />
           </div>
-
-          <div
-            class="bg-slate-900/60 p-6 rounded-3xl border border-slate-800 space-y-4 flex flex-col justify-between"
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label class="text-xs font-semibold text-slate-400"
+                >Category</label
+              >
+              <select
+                id="form-category"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white focus:outline-none"
+              >
+                <option value="Machinery">Machinery</option>
+                <option value="Appliances">Appliances</option>
+                <option value="Tools">Tools</option>
+              </select>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-xl font-bold tracking-wide transition-all mt-2"
           >
-            <div class="space-y-4">
-              <div
-                class="border-b border-slate-800 pb-3 flex justify-between items-center"
-              >
-                <div>
-                  <h3
-                    id="label-diagnostics-header"
-                    class="text-sm font-black uppercase tracking-wider text-blue-300 flex items-center gap-1.5"
-                  >
-                    <span>⚡</span> Live AI Diagnostics
-                  </h3>
-                  <p
-                    id="label-diagnostics-sub"
-                    class="text-xs text-white font-medium mt-1"
-                  >
-                    Select a neighborhood request to begin diagnostics.
-                  </p>
+            Publish to Global Registry Feed
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // --- 1. CONFIGURATIONS & STATE MANAGEMENT ---
+      let activeCheckoutTitle = "";
+      let isConsumerFilterActive = false;
+      let activeEvolutionTier = 0; // Driven dynamically: 0 = Standard, 1 = Eco-Aware, 2 = Bio-Guardian
+
+      const globalRepairStoreDatabase = {
+        Africa: [
+          {
+            name: "Umuahia Micro-Tech Workshop",
+            type: "Offline Store",
+            street: "Aba Road Central Node",
+            status: "Active",
+            ping: "22ms",
+            specialization: "Electronics & Power Systems",
+          },
+          {
+            name: "Lagos Mech-Clinic Gateway",
+            type: "Offline Store",
+            street: "Herbert Macaulay Way",
+            status: "Active",
+            ping: "14ms",
+            specialization: "Heavy Machinery Repair",
+          },
+          {
+            name: "Abuja CircuitFix Mobile App",
+            type: "Online Service",
+            street: "Cloud Server Node",
+            status: "Active",
+            ping: "45ms",
+            specialization: "Smart App Appliances Diagnostics",
+          },
+        ],
+        "North America": [
+          {
+            name: "iFixApp Cloud Diagnostics",
+            type: "Online Service",
+            street: "AWS East Server Hub",
+            status: "Active",
+            ping: "8ms",
+            specialization: "Software Patching & Micro-Controllers",
+          },
+        ],
+        Europe: [
+          {
+            name: "Berlin Circular Fixers Hub",
+            type: "Offline Store",
+            street: "Müllerstraße Route",
+            status: "Active",
+            ping: "11ms",
+            specialization: "Home Utilities & Green Maintenance",
+          },
+        ],
+        Asia: [
+          {
+            name: "Tokyo Digital Hardware Lab",
+            type: "Offline Store",
+            street: "Chiyoda High-Tech Block",
+            status: "Active",
+            ping: "4ms",
+            specialization: "Precision Lasers & Telemetry Sensors",
+          },
+        ],
+      };
+
+      const ecoAppsDatabase = [
+        {
+          id: "eco-1",
+          name: "EcoSwap Green Marketplace",
+          platform: "Mobile Web App",
+          focus: "Zero-Waste Component Lifecycle",
+          active: false,
+        },
+        {
+          id: "eco-2",
+          name: "SustainaRent Hardware Node",
+          platform: "Distributed Ledger",
+          focus: "Carbon Footprint Minimization",
+          active: false,
+        },
+      ];
+
+      const hardwareRentalCatalog = [
+        {
+          id: "CAT-45",
+          name: "Heavy Duty Excavator Module",
+          category: "Machinery",
+          tag: "Heavy Machine",
+          location: "Zone Alpha",
+          consumerBeneficial: false,
+        },
+        {
+          id: "CAT-89",
+          name: "Smart Inverter Power Generator",
+          category: "Appliances",
+          tag: "Home Power",
+          location: "Zone Beta",
+          consumerBeneficial: true,
+        },
+        {
+          id: "CAT-12",
+          name: "Laser Diagnostic Leveler Kit",
+          category: "Tools",
+          tag: "Precision Gear",
+          location: "Zone Delta",
+          consumerBeneficial: true,
+        },
+      ];
+
+      const telemetryLiveFeeds = [
+        {
+          id: "TRK-9801",
+          label: "Escrow Unit #45 (Excavator)",
+          holder: "Engr. Obi",
+          progress: "In Transit [GPS: Active]",
+          codeColor: "text-amber-400",
+        },
+      ];
+
+      // --- 2. MULTI-TIER AUTOMATED UI EVOLUTION SYSTEM ---
+      function runUiEvolutionPaint() {
+        const bodyNode = document.getElementById("master-body");
+        const heroSection = document.getElementById("hero-banner-section");
+        const liveDot = document.getElementById("live-indicator-dot");
+        const logoNode = document.getElementById("brand-logo-node");
+        const xpCounter = document.getElementById("xp-counter");
+
+        if (activeEvolutionTier === 1) {
+          bodyNode.className =
+            "bg-[#02090f] text-slate-200 min-h-screen flex flex-col font-sans transition-all duration-700";
+          liveDot.className =
+            "w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse transition-all";
+          logoNode.className =
+            "bg-emerald-600/10 p-2 rounded-xl border border-emerald-500/20 text-emerald-400 transition-all duration-500";
+          xpCounter.innerText = "1,620";
+          heroSection.className =
+            "bg-gradient-to-r from-[#031525] to-[#060a17] border border-slate-800 rounded-2xl p-8 relative overflow-hidden shadow-2xl transition-all duration-700";
+        } else if (activeEvolutionTier === 2) {
+          bodyNode.className =
+            "bg-[#010c0a] text-slate-200 min-h-screen flex flex-col font-sans transition-all duration-700";
+          heroSection.className =
+            "bg-gradient-to-r from-[#031c15] to-[#050b12] border border-emerald-800/40 rounded-2xl p-8 relative overflow-hidden shadow-2xl transition-all duration-700 eco-evolved-card";
+          liveDot.className =
+            "w-2.5 h-2.5 rounded-full bg-teal-400 animate-ping transition-all";
+          logoNode.className =
+            "bg-teal-600/10 p-2 rounded-xl border border-teal-500/20 text-teal-400 transition-all duration-500";
+          xpCounter.innerText = "2,150";
+        } else {
+          bodyNode.className =
+            "bg-[#03050a] text-slate-200 min-h-screen flex flex-col font-sans transition-all duration-700";
+          heroSection.className =
+            "bg-gradient-to-r from-[#0a0f24] to-[#060a17] border border-slate-800 rounded-2xl p-8 relative overflow-hidden shadow-2xl transition-all duration-700";
+          liveDot.className =
+            "w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse transition-all";
+          logoNode.className =
+            "bg-blue-600/10 p-2 rounded-xl border border-blue-500/20 text-blue-400 transition-all duration-500";
+          xpCounter.innerText = "1,420";
+        }
+      }
+
+      // --- 3. PLATFORM CORE FUNCTIONALITY MODULES ---
+      grid = null;
+      function handleContinentChange() {
+        const continent = document.getElementById("repair-continent").value;
+        const regionSelect = document.getElementById("repair-region");
+        const stores = globalRepairStoreDatabase[continent] || [];
+        regionSelect.innerHTML = stores
+          .map(
+            (store) => `<option value="${store.name}">${store.name}</option>`,
+          )
+          .join("");
+      }
+
+      function queryGlobalRepairAPIs() {
+        const continent = document.getElementById("repair-continent").value;
+        const streetKeyword = document
+          .getElementById("repair-street")
+          .value.trim()
+          .toLowerCase();
+        const feedContainer = document.getElementById("repair-stores-feed");
+
+        let dataset = globalRepairStoreDatabase[continent] || [];
+        if (streetKeyword) {
+          dataset = dataset.filter((store) =>
+            store.street.toLowerCase().includes(streetKeyword),
+          );
+        }
+
+        if (dataset.length === 0) {
+          feedContainer.innerHTML = `<div class="col-span-full text-center py-6 text-slate-600 border border-dashed border-slate-800 rounded-xl text-xs font-mono">🚫 No matching repair store APIs.</div>`;
+          return;
+        }
+
+        feedContainer.innerHTML = dataset
+          .map(
+            (store) => `
+                <div class="bg-slate-950/70 border border-slate-800 p-4 rounded-xl space-y-3 font-mono text-xs flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <h4 class="text-white font-bold text-sm font-sans tracking-tight">${store.name}</h4>
+                        <p class="text-slate-400 text-[11px] font-sans">📍 ${store.street}</p>
+                        <p class="text-[11px] text-amber-500 font-sans pt-1">🛠️ Core: ${store.specialization}</p>
+                    </div>
+                    <button onclick="bookRepairServiceEscrow('${store.name}')" class="bg-blue-600/10 text-blue-400 border border-blue-500/30 font-bold px-3 py-1 rounded-lg text-[10px] self-end font-sans">Book Node</button>
                 </div>
-                <span
-                  id="free-queries-badge"
-                  class="bg-blue-500/20 text-blue-300 border border-blue-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full"
-                >
-                  Free System Ready
-                </span>
-              </div>
+            `,
+          )
+          .join("");
+      }
 
-              <div
-                id="diagnostic-pane"
-                class="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs font-mono min-h-[220px] flex flex-col justify-between"
-              >
-                <div
-                  id="ai-text-output"
-                  class="text-white font-medium leading-relaxed"
-                >
-                  Select an item from the neighborhood repair board on the left
-                  to start automated troubleshooting...
-                </div>
-
-                <div
-                  id="affiliate-gateway"
-                  class="hidden bg-slate-900/80 p-3.5 rounded-lg border border-blue-500/30 space-y-2.5 mt-3"
-                >
-                  <div class="flex justify-between items-center text-[10px]">
-                    <span
-                      id="label-affiliate-match"
-                      class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2.5 py-0.5 rounded font-black uppercase"
-                      >Part Matches Found</span
-                    >
-                    <span id="part-price" class="font-bold text-white font-mono"
-                      >$0.00</span
-                    >
-                  </div>
-                  <p id="part-name" class="text-xs font-bold text-white">
-                    OEM Replacement Module
-                  </p>
-
-                  <div class="flex gap-2">
-                    <button
-                      id="affiliate-buy-btn"
-                      onclick="executeSimulatedSourcedOrder()"
-                      class="flex-grow bg-blue-500 hover:bg-blue-400 text-white font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
-                    >
-                      Purchase Part via Amazon Affiliate
+      function populateEcoFriendlyApps() {
+        const ecoContainer = document.getElementById("eco-apps-feed");
+        ecoContainer.innerHTML = ecoAppsDatabase
+          .map(
+            (app) => `
+                <div class="bg-slate-950 border ${app.active ? "border-emerald-500/40 bg-emerald-950/10" : "border-slate-800/60"} p-3 rounded-xl flex items-center justify-between gap-3 font-mono text-xs">
+                    <div>
+                        <h4 class="text-slate-200 font-bold font-sans text-xs">${app.name}</h4>
+                        <p class="text-slate-400 text-[11px] font-sans leading-tight">${app.focus}</p>
+                    </div>
+                    <button onclick="toggleEcoAppSync('${app.id}')" class="text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded text-[10px] font-bold font-sans">
+                        ${app.active ? "Synced" : "Sync"}
                     </button>
-                    <button
-                      onclick="copyTrackingLink()"
-                      class="bg-slate-800 hover:bg-slate-700 text-white px-2.5 rounded-lg"
-                      title="Copy Monetized Tracking Link"
-                    >
-                      🔗
-                    </button>
-                  </div>
                 </div>
+            `,
+          )
+          .join("");
+      }
 
-                <div
-                  id="recommerce-gateway"
-                  class="hidden bg-slate-900/80 p-3.5 rounded-lg border border-teal-500/20 space-y-2.5 mt-3"
-                >
-                  <div class="flex justify-between items-center text-[10px]">
-                    <span
-                      id="label-refurbished-match"
-                      class="bg-teal-500/10 text-teal-300 border border-teal-500/20 px-2.5 py-0.5 rounded font-black uppercase"
-                      >Refurbished Option</span
-                    >
-                    <span
-                      id="refurbished-alternative-price"
-                      class="font-bold text-white font-mono"
-                      >$119.00</span
-                    >
-                  </div>
-                  <p
-                    id="label-refurbished-title"
-                    class="text-xs font-bold text-white"
-                  >
-                    Certified Pre-owned Alternative Device
-                  </p>
-                  <button
-                    id="recommerce-buy-btn"
-                    onclick="executeSimulatedRecommerceOrder()"
-                    class="w-full bg-teal-500 hover:bg-teal-400 text-white font-black text-[11px] py-2 rounded uppercase tracking-wider transition-all"
-                  >
-                    Buy Alternative via Back Market
-                  </button>
+      function toggleEcoAppSync(id) {
+        const app = ecoAppsDatabase.find((a) => a.id === id);
+        if (!app) return;
+        app.active = !app.active;
+
+        // Auto-advance UI tier progression dynamically based on sync activity
+        const activeCount = ecoAppsDatabase.filter((a) => a.active).length;
+        activeEvolutionTier = activeCount > 1 ? 2 : activeCount === 1 ? 1 : 0;
+
+        populateEcoFriendlyApps();
+        runUiEvolutionPaint();
+      }
+
+      function bookRepairServiceEscrow(storeName) {
+        openSubscriptionOverlay(`Diagnostics Cover: ${storeName}`);
+      }
+
+      function populateMarketplaceCatalog() {
+        const container = document.getElementById("rental-inventory-container");
+        container.innerHTML = hardwareRentalCatalog
+          .map(
+            (item) => `
+                <div class="bg-[#060a14] border border-slate-800 rounded-xl p-5 flex flex-col justify-between">
+                    <h3 class="text-white font-bold text-md">${item.name}</h3>
+                    <button onclick="openSubscriptionOverlay('Rent: ${item.name}')" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs py-2 rounded-lg font-bold mt-4">Rent Now</button>
                 </div>
+            `,
+          )
+          .join("");
+      }
 
-                <div
-                  id="paywall-gateway"
-                  class="hidden mt-4 rounded-3xl glass-card p-5 text-center shadow-2xl shadow-blue-500/10"
-                >
-                  <div class="max-w-3xl mx-auto">
-                    <div class="flex justify-center mb-4">
-                      <span
-                        class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 text-blue-300 text-xl"
-                        >💎</span
-                      >
-                    </div>
-                    <h3
-                      class="text-xs font-black uppercase tracking-[0.4em] text-[#deff9a] mb-3"
-                    >
-                      FixTogether Premium Access
-                    </h3>
-                    <p
-                      class="text-[11px] text-white leading-relaxed mb-5 font-medium"
-                    >
-                      Unlock unlimited expert repairs, global supplier sync, and
-                      priority service with secure Paystack checkout.
-                    </p>
+      function populateTelemetryTracker() {
+        const tbody = document.getElementById("tracker-table-body");
+        tbody.innerHTML = telemetryLiveFeeds
+          .map(
+            (feed) => `
+                <tr>
+                    <td class="py-3 text-blue-400 font-bold">${feed.id}</td>
+                    <td class="py-3 text-white font-semibold">${feed.label}</td>
+                    <td class="py-3 text-slate-400">${feed.holder}</td>
+                    <td class="py-3 ${feed.codeColor} font-bold">${feed.progress}</td>
+                    <td class="py-3 text-right"><button class="bg-slate-900 border border-slate-800 text-slate-400 text-[10px] px-2 py-1 rounded">Poll</button></td>
+                </tr>
+            `,
+          )
+          .join("");
+      }
 
-                    <div
-                      class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center"
-                    >
-                      <span
-                        class="text-[10px] uppercase tracking-[0.3em] text-white font-bold"
-                        >Checkout mode</span
-                      >
-                      <div class="flex gap-2">
-                        <button
-                          id="paystack-region-local"
-                          onclick="setPaystackRegion('local')"
-                          class="btn-secondary"
-                        >
-                          Local Payment
-                        </button>
-                        <button
-                          id="paystack-region-foreign"
-                          onclick="setPaystackRegion('foreign')"
-                          class="btn-secondary"
-                        >
-                          Intl Payment
-                        </button>
-                      </div>
-                    </div>
+      // --- 4. TRANSACTION ENGINE WINDOW CONTROL HANDLERS ---
+      function openSubscriptionOverlay(title) {
+        activeCheckoutTitle = title;
+        document.getElementById("modal-plan-title").innerText = title;
+        const modal = document.getElementById("payment-overlay");
+        modal.classList.remove("hidden");
+        setTimeout(() => modal.classList.remove("opacity-0"), 10);
+      }
 
-                    <div class="grid gap-3 md:grid-cols-3">
-                      <div
-                        class="rounded-3xl border border-slate-800 bg-slate-950 p-4 text-left card-fade"
-                      >
-                        <p
-                          class="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-2"
-                        >
-                          Popular
-                        </p>
-                        <p class="text-2xl font-black text-white">
-                          $4.99<span
-                            class="text-sm font-semibold text-slate-400"
-                          >
-                            / mo</span
-                          >
-                        </p>
-                        <p
-                          class="text-[10px] text-white mt-3 leading-5 font-medium"
-                        >
-                          Unlimited diagnostics, AI repair blueprints, and live
-                          global hubs.
-                        </p>
-                        <button
-                          onclick="openCheckoutPreview('pro-monthly')"
-                          class="mt-4 w-full btn-primary"
-                        >
-                          Upgrade Pro
-                        </button>
-                      </div>
+      function handleCurrencyChangeUpdate() {
+        const chosenCurrency =
+          document.getElementById("checkout-currency").value;
+        document.getElementById("currency-prefix").innerText =
+          chosenCurrency === "NGN" ? "₦" : "$";
+      }
 
-                      <div
-                        class="rounded-3xl border border-slate-800 bg-slate-950 p-4 text-left card-fade"
-                      >
-                        <p
-                          class="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-2"
-                        >
-                          Elite
-                        </p>
-                        <p class="text-2xl font-black text-white">
-                          $49.99<span
-                            class="text-sm font-semibold text-slate-400"
-                          >
-                            / mo</span
-                          >
-                        </p>
-                        <p
-                          class="text-[10px] text-white mt-3 leading-5 font-medium"
-                        >
-                          Premium fleet access, priority onboarding, and
-                          enterprise-level insights.
-                        </p>
-                        <button
-                          onclick="openCheckoutPreview('elite-monthly')"
-                          class="mt-4 w-full btn-primary"
-                        >
-                          Unlock Elite
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+      function closeSubscriptionOverlay() {
+        const modal = document.getElementById("payment-overlay");
+        modal.classList.add("opacity-0");
+        setTimeout(() => modal.classList.add("hidden"), 300);
+      }
+
+      function executePaystackTransaction() {
+        const chosenCurrency =
+          document.getElementById("checkout-currency").value;
+        const userEnteredAmount = parseFloat(
+          document.getElementById("custom-payment-amount").value,
+        );
+
+        if (isNaN(userEnteredAmount) || userEnteredAmount <= 0) {
+          alert(
+            "Please input a valid numeric transaction balance amount before continuing.",
+          );
+          return;
+        }
+
+        const finalAmountSubunits = Math.round(userEnteredAmount * 100);
+
+        let handler = PaystackPop.setup({
+          // 👇 REPLACE THIS STRING VALUE WITH YOUR ACTUAL TEST PUBLIC KEY FROM PAYSTACK DASHBOARD
+          key: "pk_live_47bd1d09044d11148a792c5a741cf31f203d85b3",
+          email: "customer@fixtogether.com",
+          amount: finalAmountSubunits,
+          currency: chosenCurrency,
+          callback: function (response) {
+            alert(
+              "🎉 Gateway Cleared! Payment Reference: " + response.reference,
+            );
+            closeSubscriptionOverlay();
+
+            if (
+              activeCheckoutTitle.startsWith("Rent:") ||
+              activeCheckoutTitle.startsWith("Diagnostics Cover:")
+            ) {
+              const cleanItemName = activeCheckoutTitle
+                .replace("Rent: ", "")
+                .replace("Diagnostics Cover: ", "");
+              telemetryLiveFeeds.push({
+                id: "TRK-" + Math.floor(1000 + Math.random() * 9000),
+                label: cleanItemName,
+                holder: "You (Active Transaction)",
+                progress: "Secured In Escrow Pipeline",
+                codeColor: "text-blue-400",
+              });
+              populateTelemetryTracker();
+            }
+          },
+        });
+        handler.openIframe();
+      }
+
+      function openListingModal() {
+        const modal = document.getElementById("listing-modal");
+        modal.classList.remove("hidden");
+        setTimeout(() => modal.classList.remove("opacity-0"), 10);
+      }
+
+      function closeListingModal() {
+        const modal = document.getElementById("listing-modal");
+        modal.classList.add("opacity-0");
+        setTimeout(() => modal.classList.add("hidden"), 300);
+      }
+
+      function handleFormSubmission(event) {
+        event.preventDefault();
+        const name = document.getElementById("form-name").value;
+        const category = document.getElementById("form-category").value;
+
+        hardwareRentalCatalog.push({
+          id: "CAT-" + Math.floor(10 + Math.random() * 89),
+          name: name,
+          category: category,
+          tag: category === "Machinery" ? "Industrial" : "Utility Asset",
+          location: "Local Node",
+          consumerBeneficial: category !== "Machinery",
+        });
+
+        populateMarketplaceCatalog();
+        closeListingModal();
+        document.getElementById("listing-form").reset();
+        alert("🚀 Listing integrated into the live network feed successfully!");
+      }
+
+      window.onload = () => {
+        handleContinentChange();
+        queryGlobalRepairAPIs();
+        populateEcoFriendlyApps();
+        populateMarketplaceCatalog();
+        populateTelemetryTracker();
+        runUiEvolutionPaint();
+      };
+    </script>
   </body>
 </html>
